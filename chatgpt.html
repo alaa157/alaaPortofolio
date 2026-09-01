@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>[YOUR NAME] — Software Tester</title>
+  <meta
+    name="description"
+    content="Independent software tester specializing in web applications, APIs, exploratory testing and quality assurance."
+  />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --bg: #050608;
+      --bg2: #090b10;
+      --panel: rgba(12, 15, 21, 0.82);
+      --panel-solid: #0c0f15;
+      --text: #e9eef5;
+      --muted: #7d8796;
+      --cyan: #00f0ff;
+      --violet: #8b5cf6;
+      --pink: #ff2d75;
+      --green: #5dff9a;
+      --yellow: #ffd166;
+      --border: rgba(255,255,255,.09);
+      --mono: "Space Mono", monospace;
+      --sans: "Inter", sans-serif;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::selection {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -5;
+
+      background:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      top: -250px;
+      right: -250px;
+      border-radius: 50%;
+      background: rgba(0,240,255,.08);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: -6;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .035;
+      z-index: 100;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 99;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 3px,
+        rgba(255,255,255,.008) 4px
+      );
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      padding: 20px 30px;
+      backdrop-filter: blur(18px);
+      background: rgba(5,6,8,.65);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-weight: 700;
+      letter-spacing: -1px;
+      font-size: 15px;
+    }
+
+    .logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green);
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--green);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      50% { opacity: .35; transform: scale(.75); }
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .container {
+      width: min(var(--max), calc(100% - 50px));
+      margin: auto;
+    }
+
+    section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--cyan);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "// ";
+      color: var(--violet);
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .98;
+      letter-spacing: -3px;
+      max-width: 750px;
+      margin-bottom: 22px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .mono {
+      font-family: var(--mono);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 8vw, 110px);
+      line-height: .88;
+      letter-spacing: -7px;
+      max-width: 900px;
+      margin-bottom: 35px;
+    }
+
+    .hero h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.55);
+    }
+
+    .hero h1 .cyan {
+      color: var(--cyan);
+      text-shadow:
+        0 0 15px rgba(0,240,255,.4),
+        0 0 70px rgba(0,240,255,.15);
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: #9ba5b3;
+      font-size: 17px;
+      margin-bottom: 38px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 21px;
+      border: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      transition: .25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: #020507;
+      border-color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 35px rgba(0,240,255,.25);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* Hero diagnostic card */
+
+    .terminal {
+      background: rgba(8,10,14,.9);
+      border: 1px solid rgba(0,240,255,.17);
+      box-shadow:
+        0 0 80px rgba(0,240,255,.05),
+        inset 0 0 50px rgba(0,240,255,.02);
+      position: relative;
+      transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+    }
+
+    .terminal::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(139,92,246,.12);
+      transform: translate(8px, 8px);
+      z-index: -1;
+    }
+
+    .terminal-bar {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      border-bottom: 1px solid var(--border);
+      gap: 6px;
+    }
+
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .red { background: #ff4d6d; }
+    .yellow { background: #ffd166; }
+    .green { background: #5dff9a; }
+
+    .terminal-title {
+      margin-left: auto;
+      font: 9px var(--mono);
+      color: #505968;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font: 11px/2 var(--mono);
+      color: #738091;
+    }
+
+    .terminal-line {
+      display: flex;
+      gap: 10px;
+    }
+
+    .terminal-line .prompt {
+      color: var(--cyan);
+    }
+
+    .terminal-line .success {
+      color: var(--green);
+    }
+
+    .terminal-line .warning {
+      color: var(--yellow);
+    }
+
+    .terminal-line .danger {
+      color: var(--pink);
+    }
+
+    .terminal-space {
+      height: 15px;
+    }
+
+    .progress {
+      height: 4px;
+      background: #161a22;
+      margin: 8px 0 15px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 87%;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      box-shadow: 0 0 15px var(--cyan);
+    }
+
+    /* =========================
+       METRICS
+    ========================= */
+
+    .metrics {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .metric {
+      padding: 15px 30px;
+      border-right: 1px solid var(--border);
+    }
+
+    .metric:first-child {
+      padding-left: 0;
+    }
+
+    .metric:last-child {
+      border: 0;
+    }
+
+    .metric-number {
+      font-size: 35px;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font: 9px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .service {
+      padding: 38px;
+      min-height: 260px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .service:hover {
+      background: rgba(0,240,255,.025);
+    }
+
+    .service::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      right: -30px;
+      bottom: -30px;
+      border: 1px solid rgba(0,240,255,.18);
+      transform: rotate(45deg);
+    }
+
+    .service-number {
+      color: #303744;
+      font: 11px var(--mono);
+      margin-bottom: 30px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 13px;
+      letter-spacing: -.8px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 440px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border: 1px solid var(--border);
+      color: #6e7887;
+      font: 9px var(--mono);
+    }
+
+    /* =========================
+       CASE STUDIES
+    ========================= */
+
+    .cases {
+      background: #07090d;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 430px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .case + .case {
+      margin-top: 25px;
+    }
+
+    .case-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 400px;
+      background:
+        radial-gradient(circle at 60% 40%, rgba(0,240,255,.12), transparent 35%),
+        linear-gradient(135deg, #0c1018, #06080c);
+      border-right: 1px solid var(--border);
+    }
+
+    .case-visual::before {
+      content: "CASE / 00" attr(data-case);
+      position: absolute;
+      top: 22px;
+      left: 25px;
+      font: 10px var(--mono);
+      color: #5b6675;
+    }
+
+    .case-map {
+      position: absolute;
+      inset: 70px 40px 40px;
+      background:
+        linear-gradient(rgba(0,240,255,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,240,255,.07) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .case-node {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--cyan);
+      background: var(--bg);
+      box-shadow: 0 0 15px var(--cyan);
+    }
+
+    .node-1 { top: 25%; left: 20%; }
+    .node-2 { top: 45%; left: 52%; }
+    .node-3 { top: 72%; left: 35%; }
+    .node-4 { top: 30%; left: 78%; border-color: var(--pink); box-shadow: 0 0 15px var(--pink); }
+
+    .case-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      transform-origin: left;
+    }
+
+    .line-1 {
+      top: 29%;
+      left: 22%;
+      width: 180px;
+      transform: rotate(18deg);
+    }
+
+    .line-2 {
+      top: 49%;
+      left: 54%;
+      width: 140px;
+      transform: rotate(-25deg);
+    }
+
+    .line-3 {
+      top: 74%;
+      left: 37%;
+      width: 120px;
+      transform: rotate(-65deg);
+    }
+
+    .case-info {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .case-meta {
+      font: 9px var(--mono);
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .case h3 {
+      font-size: 32px;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .case p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .finding {
+      border-left: 2px solid var(--pink);
+      padding: 12px 15px;
+      background: rgba(255,45,117,.04);
+      font: 10px/1.7 var(--mono);
+      color: #8993a2;
+    }
+
+    .finding strong {
+      color: var(--pink);
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .process {
+      position: relative;
+      padding: 30px 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .process:not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+
+    .process-num {
+      font: 35px var(--mono);
+      color: #242b36;
+      margin-bottom: 40px;
+    }
+
+    .process h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .process p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       STACK
+    ========================= */
+
+    .stack {
+      background: #080a0e;
+      border-top: 1px solid var(--border);
+    }
+
+    .stack-grid {
+      margin-top: 55px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stack-item {
+      border: 1px solid var(--border);
+      padding: 15px 20px;
+      font: 11px var(--mono);
+      color: #929cab;
+      transition: .25s;
+    }
+
+    .stack-item:hover {
+      color: var(--cyan);
+      border-color: rgba(0,240,255,.4);
+      background: rgba(0,240,255,.03);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .portrait {
+      aspect-ratio: 1 / 1;
+      max-width: 350px;
+      border: 1px solid var(--border);
+      position: relative;
+      background: #0a0d12;
+      overflow: hidden;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.15);
+      opacity: .75;
+    }
+
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: 15px;
+      border: 1px solid rgba(0,240,255,.3);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .portrait::after {
+      content: "IDENTITY VERIFIED";
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: var(--cyan);
+      font: 9px var(--mono);
+      letter-spacing: 1px;
+      z-index: 3;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 680px;
+    }
+
+    .about-facts {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+
+    .fact {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+      font: 10px var(--mono);
+    }
+
+    .fact:nth-child(odd) {
+      margin-right: 25px;
+    }
+
+    .fact span {
+      color: #4d5664;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* =========================
+       TESTIMONIAL
+    ========================= */
+
+    .testimonial {
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        110deg,
+        rgba(0,240,255,.035),
+        rgba(139,92,246,.035)
+      );
+      padding: 55px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(255,255,255,.05);
+    }
+
+    .testimonial blockquote {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.25;
+      letter-spacing: -1px;
+      max-width: 900px;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-author {
+      font: 10px var(--mono);
+      color: var(--cyan);
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(139,92,246,.07);
+      filter: blur(100px);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .contact-inner {
+      width: 100%;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(55px, 9vw, 120px);
+      letter-spacing: -7px;
+      line-height: .85;
+      margin-bottom: 35px;
+    }
+
+    .contact h2 span {
+      color: var(--cyan);
+      text-shadow: 0 0 40px rgba(0,240,255,.2);
+    }
+
+    .contact-copy {
+      color: var(--muted);
+      max-width: 540px;
+      margin: auto auto 35px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font: clamp(15px, 2vw, 20px) var(--mono);
+      color: #dfe7ef;
+      border-bottom: 1px solid var(--cyan);
+      padding-bottom: 8px;
+      margin-bottom: 35px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer p,
+    footer a {
+      color: #515b69;
+      font: 9px var(--mono);
+    }
+
+    footer a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+
+      .terminal {
+        max-width: 650px;
+        transform: none;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .metric {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .metric:nth-child(2) {
+        border-right: 0;
+      }
+
+      .metric:nth-child(3),
+      .metric:nth-child(4) {
+        padding-top: 25px;
+      }
+
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .case-visual {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process:nth-child(2) {
+        border-right: 0;
+      }
+
+      .process:nth-child(3),
+      .process:nth-child(4) {
+        border-top: 1px solid var(--border);
+      }
+
+      .about-grid {
+        gap: 50px;
+      }
+
+      .portrait {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 17px 20px;
+      }
+
+      .container {
+        width: min(100% - 32px, var(--max));
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .hero h1 {
+        font-size: 57px;
+        letter-spacing: -4px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .metric {
+        padding: 15px 10px !important;
+      }
+
+      .metric-number {
+        font-size: 27px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: auto;
+      }
+
+      .case-info {
+        padding: 30px;
+      }
+
+      .case h3 {
+        font-size: 27px;
+      }
+
+      .case-visual {
+        min-height: 300px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        border-right: 0 !important;
+      }
+
+      .about-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .fact:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      .testimonial {
+        padding: 30px;
+      }
+
+      .contact h2 {
+        font-size: 60px;
+        letter-spacing: -4px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="nav-inner">
+
+      <a href="#" class="logo">
+        [<span>YOUR</span>_NAME]
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">SERVICES</a>
+        <a href="#cases">WORK</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        AVAILABLE FOR WORK
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">Independent Software Tester</div>
+
+          <h1>
+            FIND THE
+            <span class="outline">PROBLEMS</span>.
+            <br>
+            <span class="cyan">BEFORE</span>
+            YOUR USERS DO.
+          </h1>
+
+          <p class="hero-copy">
+            I test web applications, APIs and digital products from the
+            perspective of a real user — looking for broken workflows,
+            edge cases, regressions and the bugs automated checks miss.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cases" class="btn btn-primary">
+              View selected work →
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Start a project
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="terminal reveal">
+
+          <div class="terminal-bar">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">qa_session.sh</span>
+          </div>
+
+          <div class="terminal-body">
+
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span>initializing test session...</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="prompt">></span>
+              <span class="success">target connected</span>
+            </div>
+
+            <div class="terminal-space"></div>
+
+            <div class="terminal-line">
+              <span class="prompt">[01]</span>
+              <span>authentication flows</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="prompt">[02]</span>
+              <span>user permissions</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="prompt">[03]</span>
+              <span>API responses</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="prompt">[04]</span>
+              <span>edge cases</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="prompt">[05]</span>
+              <span>cross-browser behavior</span>
+            </div>
+
+            <div class="terminal-space"></div>
+
+            <div class="terminal-line">
+              <span class="prompt">coverage:</span>
+            </div>
+
+            <div class="progress">
+              <span></span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="success">✓ 38 checks passed</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="warning">⚠ 04 observations</span>
+            </div>
+
+            <div class="terminal-line">
+              <span class="danger">✕ 03 defects found</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         METRICS
+    ========================== -->
+
+    <div class="metrics">
+      <div class="container metric-grid">
+
+        <div class="metric">
+          <div class="metric-number">[XX]+</div>
+          <div class="metric-label">Projects / Test Sessions</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-number">[XX]+</div>
+          <div class="metric-label">Issues Reported</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-number">[XX]</div>
+          <div class="metric-label">Testing Tools</div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-number">24h</div>
+          <div class="metric-label">Typical Response</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="eyebrow reveal">What I do</div>
+
+        <h2 class="section-title reveal">
+          I don't just click buttons.
+          <span style="color:#596272;">I investigate systems.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Testing is more than confirming that the happy path works.
+          I deliberately look for the conditions where software behaves
+          differently than its creators expected.
+        </p>
+
+
+        <div class="services-grid">
+
+          <article class="service reveal">
+
+            <div class="service-number">01 / WEB APPLICATIONS</div>
+
+            <h3>Web Application Testing</h3>
+
+            <p>
+              Structured and exploratory testing of websites and web
+              applications across critical workflows, browsers,
+              devices and user scenarios.
+            </p>
+
+            <div class="service-tags">
+              <span class="tag">FUNCTIONAL</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">REGRESSION</span>
+              <span class="tag">EXPLORATORY</span>
+            </div>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">02 / API</div>
+
+            <h3>API Testing</h3>
+
+            <p>
+              Validation of endpoints, authentication, request handling,
+              response behavior, status codes and unexpected inputs.
+            </p>
+
+            <div class="service-tags">
+              <span class="tag">REST</span>
+              <span class="tag">POSTMAN</span>
+              <span class="tag">JSON</span>
+              <span class="tag">HTTP</span>
+            </div>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">03 / EXPLORATION</div>
+
+            <h3>Exploratory Testing</h3>
+
+            <p>
+              Unscripted investigation designed to uncover edge cases,
+              inconsistent behavior and defects that predefined test
+              cases don't anticipate.
+            </p>
+
+            <div class="service-tags">
+              <span class="tag">EDGE CASES</span>
+              <span class="tag">FREESTYLE</span>
+              <span class="tag">SCENARIOS</span>
+            </div>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">04 / REPORTING</div>
+
+            <h3>Bug Reporting</h3>
+
+            <p>
+              Clear, reproducible defect reports with severity,
+              environment, reproduction steps, expected behavior and
+              supporting evidence.
+            </p>
+
+            <div class="service-tags">
+              <span class="tag">JIRA</span>
+              <span class="tag">EVIDENCE</span>
+              <span class="tag">REPRODUCTION</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CASE STUDIES
+    ========================== -->
+
+    <section id="cases" class="cases">
+
+      <div class="container">
+
+        <div class="eyebrow reveal">Selected investigations</div>
+
+        <h2 class="section-title reveal">
+          Proof beats promises.
+        </h2>
+
+        <p class="section-description reveal">
+          Replace these placeholders with your real projects. If you
+          cannot disclose client information, anonymize the company
+          and describe the problem, methodology and result.
+        </p>
+
+
+        <!-- CASE 01 -->
+
+        <article class="case reveal">
+
+          <div class="case-visual" data-case="01">
+
+            <div class="case-map">
+
+              <div class="case-node node-1"></div>
+              <div class="case-node node-2"></div>
+              <div class="case-node node-3"></div>
+              <div class="case-node node-4"></div>
+
+              <div class="case-line line-1"></div>
+              <div class="case-line line-2"></div>
+              <div class="case-line line-3"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="case-info">
+
+            <div class="case-meta">
+              WEB APPLICATION / FUNCTIONAL TESTING
+            </div>
+
+            <h3>[Client / Project Name]</h3>
+
+            <p>
+              [Describe the product in one or two sentences. Example:
+              An e-commerce platform where I performed exploratory
+              testing across registration, checkout, payments and
+              account management.]
+            </p>
+
+            <div class="finding">
+              <strong>FINDING:</strong>
+              [Describe the most interesting bug you discovered and
+              why it mattered to the business.]
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CASE 02 -->
+
+        <article class="case reveal">
+
+          <div class="case-visual" data-case="02">
+
+            <div class="case-map">
+
+              <div class="case-node node-1"></div>
+              <div class="case-node node-2"></div>
+              <div class="case-node node-3"></div>
+              <div class="case-node node-4"></div>
+
+              <div class="case-line line-1"></div>
+              <div class="case-line line-2"></div>
+              <div class="case-line line-3"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="case-info">
+
+            <div class="case-meta">
+              REST API / API TESTING
+            </div>
+
+            <h3>[API Testing Project]</h3>
+
+            <p>
+              [Describe the API, what you tested, the tools you used
+              and the scope of your investigation.]
+            </p>
+
+            <div class="finding">
+              <strong>FINDING:</strong>
+              [Describe a meaningful API defect or unexpected behavior.]
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CASE 03 -->
+
+        <article class="case reveal">
+
+          <div class="case-visual" data-case="03">
+
+            <div class="case-map">
+
+              <div class="case-node node-1"></div>
+              <div class="case-node node-2"></div>
+              <div class="case-node node-3"></div>
+              <div class="case-node node-4"></div>
+
+              <div class="case-line line-1"></div>
+              <div class="case-line line-2"></div>
+              <div class="case-line line-3"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="case-info">
+
+            <div class="case-meta">
+              EXPLORATORY / REGRESSION
+            </div>
+
+            <h3>[Testing Engagement]</h3>
+
+            <p>
+              [Explain what you were asked to test and how you approached
+              the investigation.]
+            </p>
+
+            <div class="finding">
+              <strong>RESULT:</strong>
+              [Explain what changed because of your testing.]
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="eyebrow reveal">How I work</div>
+
+        <h2 class="section-title reveal">
+          A testing process built around evidence.
+        </h2>
+
+
+        <div class="process-grid">
+
+          <div class="process reveal">
+            <div class="process-num">01</div>
+            <h3>Understand</h3>
+            <p>
+              Learn the product, users, requirements and critical
+              business workflows before testing begins.
+            </p>
+          </div>
+
+          <div class="process reveal">
+            <div class="process-num">02</div>
+            <h3>Explore</h3>
+            <p>
+              Test normal workflows first, then deliberately move
+              outside the expected path.
+            </p>
+          </div>
+
+          <div class="process reveal">
+            <div class="process-num">03</div>
+            <h3>Document</h3>
+            <p>
+              Reproduce defects and record precise evidence so another
+              developer can understand and fix the issue.
+            </p>
+          </div>
+
+          <div class="process reveal">
+            <div class="process-num">04</div>
+            <h3>Verify</h3>
+            <p>
+              Retest fixes, check for regressions and communicate the
+              remaining risk clearly.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================== -->
+
+    <section class="stack">
+
+      <div class="container">
+
+        <div class="eyebrow reveal">Toolbox</div>
+
+        <h2 class="section-title reveal">
+          Tools are useful.
+          <span style="color:#596272;">Thinking is the skill.</span>
+        </h2>
+
+        <p class="section-description reveal">
+          Replace this list with tools you actually use. Never add a
+          technology just because it looks impressive.
+        </p>
+
+
+        <div class="stack-grid reveal">
+
+          <div class="stack-item">JIRA</div>
+          <div class="stack-item">POSTMAN</div>
+          <div class="stack-item">BURP SUITE</div>
+          <div class="stack-item">SELENIUM</div>
+          <div class="stack-item">PLAYWRIGHT</div>
+          <div class="stack-item">PYTHON</div>
+          <div class="stack-item">JAVASCRIPT</div>
+          <div class="stack-item">SQL</div>
+          <div class="stack-item">GIT</div>
+          <div class="stack-item">CHROME DEVTOOLS</div>
+          <div class="stack-item">LINUX</div>
+          <div class="stack-item">GITHUB</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container about-grid">
+
+        <div class="portrait reveal">
+
+          <!-- Replace this URL with your own photo -->
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"
+            alt="[YOUR NAME]"
+          />
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <div class="eyebrow reveal">About me</div>
+
+          <h2 class="reveal">
+            Curious enough to
+            <span style="color:var(--cyan);">break things.</span>
+            Careful enough to explain them.
+          </h2>
+
+          <p class="reveal">
+            I'm [YOUR NAME], a software tester and computer science
+            student based in [CITY, COUNTRY].
+          </p>
+
+          <p class="reveal">
+            My approach combines structured QA with exploratory
+            thinking. I don't assume that software works because the
+            obvious scenario works. I try different inputs, unusual
+            sequences, unexpected states and real-world user behavior.
+          </p>
+
+          <p class="reveal">
+            My goal is simple: give developers useful information about
+            what is broken, how to reproduce it and how much it matters.
+          </p>
+
+
+          <div class="about-facts reveal">
+
+            <div class="fact">
+              <span>LOCATION</span>
+              [CITY, COUNTRY]
+            </div>
+
+            <div class="fact">
+              <span>ROLE</span>
+              SOFTWARE TESTER / QA
+            </div>
+
+            <div class="fact">
+              <span>LANGUAGES</span>
+              [ENGLISH / ARABIC / ...]
+            </div>
+
+            <div class="fact">
+              <span>AVAILABILITY</span>
+              OPEN TO PROJECTS
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIAL
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="eyebrow reveal">Client feedback</div>
+
+        <div class="testimonial reveal">
+
+          <div class="quote-mark">"</div>
+
+          <blockquote>
+            “[PLACEHOLDER TESTIMONIAL — replace this with a genuine
+            sentence from a client, teammate, professor, or project
+            collaborator about your testing work.]”
+          </blockquote>
+
+          <div class="testimonial-author">
+            — [CLIENT NAME], [ROLE / COMPANY]
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact">
+
+      <div class="container contact-inner">
+
+        <div class="eyebrow reveal">Open channel</div>
+
+        <h2 class="reveal">
+          HAVE A<br>
+          <span>BUG?</span>
+        </h2>
+
+        <p class="contact-copy reveal">
+          Building something that needs another pair of eyes?
+          Send me the product, the problem or simply what you need tested.
+        </p>
+
+        <a
+          class="contact-email reveal"
+          href="mailto:[YOUR_EMAIL@example.com]"
+        >
+          [YOUR_EMAIL@example.com]
+        </a>
+
+        <br>
+
+        <a
+          href="mailto:[YOUR_EMAIL@example.com]"
+          class="btn btn-primary reveal"
+        >
+          Let's test it →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 [YOUR NAME]. ALL RIGHTS RESERVED.
+      </p>
+
+      <div class="footer-links">
+
+        <a href="[YOUR_GITHUB_URL]" target="_blank">
+          GITHUB
+        </a>
+
+        <a href="[YOUR_LINKEDIN_URL]" target="_blank">
+          LINKEDIN
+        </a>
+
+        <a href="[YOUR_BUGCROWD_URL]" target="_blank">
+          BUGCROWD
+        </a>
+
+        <a href="[YOUR_EMAIL_LINK]">
+          EMAIL
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /*
+      Scroll reveal
+    */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+
+    /*
+      Slight cursor glow
+    */
+
+    const glow = document.createElement("div");
+
+    glow.style.position = "fixed";
+    glow.style.width = "300px";
+    glow.style.height = "300px";
+    glow.style.borderRadius = "50%";
+    glow.style.pointerEvents = "none";
+    glow.style.zIndex = "-2";
+    glow.style.background = "rgba(0,240,255,.035)";
+    glow.style.filter = "blur(50px)";
+    glow.style.transform = "translate(-50%, -50%)";
+
+    document.body.appendChild(glow);
+
+    window.addEventListener("mousemove", (event) => {
+
+      glow.style.left = event.clientX + "px";
+      glow.style.top = event.clientY + "px";
+
+    });
+
+
+    /*
+      Dynamic year
+    */
+
+    const yearText = document.querySelector("footer p");
+
+    if (yearText) {
+      yearText.innerHTML =
+        yearText.innerHTML.replace(
+          "2026",
+          new Date().getFullYear()
+        );
+    }
+
+  </script>
+
+</body>
+</html>
