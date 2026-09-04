@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alaa Adel — Software Quality Engineer</title>
+<style>
+/* === RESET === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* === THEME === */
+:root {
+  --bg-deep: #070a10;
+  --bg-surface: #0d111c;
+  --bg-elevated: #131a2a;
+  --border: rgba(148, 163, 184, 0.08);
+  --border-hover: rgba(148, 163, 184, 0.18);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3d6b54;
+  --accent-light: #5a8f73;
+  --accent-glow: rgba(61, 107, 84, 0.15);
+  --highlight: #b89f6e;
+  --danger: #c45a5a;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 100;
+  padding: 1.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 10, 16, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+.nav-logo span { color: var(--accent-light); }
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.25s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--accent-light);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a:hover::after { width: 100%; }
+
+/* === SECTIONS === */
+section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 7rem 2rem 4rem;
+}
+
+/* === HERO === */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem;
+}
+.hero-greet {
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero-name {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.hero-name span { color: var(--accent-light); }
+.hero-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+  max-width: 560px;
+}
+.hero-desc {
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 0.85rem 1.8rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+/* === SECTION HEADERS === */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-num {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.75rem;
+  color: var(--accent-light);
+  font-variant-numeric: tabular-nums;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-title {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* === ABOUT === */
+.about-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+.about-text strong { color: var(--text-primary); font-weight: 500; }
+.about-highlights {
+  list-style: none;
+}
+.about-highlights li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.about-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+  font-size: 0.8rem;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.stat-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+.stat-box:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+.stat-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  display: block;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.3rem;
+}
+
+/* === SKILLS === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.skill-category {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.8rem;
+  transition: all 0.3s;
+}
+.skill-category:hover {
+  border-color: var(--border-hover);
+}
+.skill-cat-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.skill-cat-title::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.skill-tag {
+  padding: 0.35rem 0.9rem;
+  background: rgba(61, 107, 84, 0.1);
+  border: 1px solid rgba(61, 107, 84, 0.2);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.skill-tag:hover {
+  background: rgba(61, 107, 84, 0.18);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* === PROJECTS === */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.project-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  transition: all 0.3s;
+}
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateX(4px);
+}
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+.project-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(61, 107, 84, 0.25);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.project-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.project-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.project-meta span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'SF Mono', Monaco, monospace;
+}
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.project-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.project-links a:hover {
+  color: var(--accent-light);
+  border-color: var(--accent);
+}
+
+/* === EXPERIENCE === */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -1.55rem; top: 0.3rem;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border: 2px solid var(--bg-deep);
+  border-radius: 50%;
+}
+.timeline-date {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.75rem;
+  color: var(--accent-light);
+  margin-bottom: 0.3rem;
+}
+.timeline-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+.timeline-company {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+.timeline-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* === CONTACT === */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.contact-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.6rem 0;
+  transition: color 0.2s;
+}
+.contact-link:hover { color: var(--accent-light); }
+.contact-link svg {
+  width: 18px; height: 18px;
+  stroke: var(--accent-light);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+.contact-form {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.25s;
+  font-family: inherit;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+footer a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+/* === FADE IN === */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  section { padding: 5rem 1.5rem 3rem; }
+  .about-grid,
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .project-card { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Alaa<span>.</span>Adel</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-greet">Hello, I am</div>
+  <h1 class="hero-name">Alaa <span>Adel</span></h1>
+  <p class="hero-title">Software Quality Engineer & Test Automation Specialist</p>
+  <p class="hero-desc">
+    I build reliable testing frameworks, hunt down elusive bugs, and ensure software ships with confidence. 
+    I believe quality is not an afterthought — it is a practice.
+  </p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01.</span>
+    <span class="section-title">About Me</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I am a <strong>Software Quality Engineer</strong> with a deep focus on test automation, API validation, 
+        and performance engineering. I do not just find bugs — I design systems that prevent them.
+      </p>
+      <p>
+        My approach combines <strong>technical rigor</strong> with <strong>pragmatic thinking</strong>. 
+        I write clean, maintainable test suites. I analyze bottlenecks before they become incidents. 
+        I treat every release as a commitment to the end user.
+      </p>
+      <ul class="about-highlights">
+        <li>End-to-end test automation with Selenium, Cypress & Playwright</li>
+        <li>API testing & contract validation for distributed systems</li>
+        <li>Performance profiling under real-world load conditions</li>
+        <li>CI/CD pipeline integration for automated quality gates</li>
+      </ul>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Projects Tested</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">10K+</span>
+        <span class="stat-label">Bugs Caught</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">99.9%</span>
+        <span class="stat-label">Uptime Protected</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">02.</span>
+    <span class="section-title">Technical Skills</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <div class="skill-cat-title">Test Automation</div>
+      <div class="skill-list">
+        <span class="skill-tag">Selenium</span>
+        <span class="skill-tag">Cypress</span>
+        <span class="skill-tag">Playwright</span>
+        <span class="skill-tag">TestNG</span>
+        <span class="skill-tag">JUnit</span>
+        <span class="skill-tag">PyTest</span>
+        <span class="skill-tag">Robot Framework</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">API & Backend</div>
+      <div class="skill-list">
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">REST Assured</span>
+        <span class="skill-tag">Karate</span>
+        <span class="skill-tag">SoapUI</span>
+        <span class="skill-tag">GraphQL</span>
+        <span class="skill-tag">Swagger</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Performance</div>
+      <div class="skill-list">
+        <span class="skill-tag">JMeter</span>
+        <span class="skill-tag">Gatling</span>
+        <span class="skill-tag">k6</span>
+        <span class="skill-tag">LoadRunner</span>
+        <span class="skill-tag">New Relic</span>
+        <span class="skill-tag">Grafana</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">DevOps & CI/CD</div>
+      <div class="skill-list">
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">GitLab CI</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">AWS</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Languages</div>
+      <div class="skill-list">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Bash</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">Security & Tools</div>
+      <div class="skill-list">
+        <span class="skill-tag">OWASP ZAP</span>
+        <span class="skill-tag">Burp Suite</span>
+        <span class="skill-tag">SonarQube</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">Confluence</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03.</span>
+    <span class="section-title">Featured Work</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="projects-list">
+    <div class="project-card">
+      <div>
+        <div class="project-header">
+          <div class="project-icon">🧪</div>
+          <h3 class="project-title">E-Commerce Test Automation Framework</h3>
+        </div>
+        <p class="project-desc">
+          Built a comprehensive end-to-end testing framework for a multi-vendor e-commerce platform. 
+          Covers checkout flows, payment gateways, inventory sync, and cross-browser compatibility.
+        </p>
+        <div class="project-meta">
+          <span>Python</span>
+          <span>Selenium</span>
+          <span>PyTest</span>
+          <span>Allure</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="#">View Details</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-header">
+          <div class="project-icon">⚡</div>
+          <h3 class="project-title">API Contract Testing Suite</h3>
+        </div>
+        <p class="project-desc">
+          Designed and implemented automated contract tests for 40+ microservices. 
+          Caught breaking changes in CI before they reached staging. Reduced integration failures by 78%.
+        </p>
+        <div class="project-meta">
+          <span>REST Assured</span>
+          <span>Postman</span>
+          <span>Jenkins</span>
+          <span>Docker</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="#">View Details</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div>
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <h3 class="project-title">Performance Monitoring Dashboard</h3>
+        </div>
+        <p class="project-desc">
+          Created a real-time load testing dashboard that visualizes response times, throughput, 
+          and error rates. Integrated with JMeter and Grafana for continuous performance visibility.
+        </p>
+        <div class="project-meta">
+          <span>JMeter</span>
+          <span>Grafana</span>
+          <span>InfluxDB</span>
+          <span>Node.js</span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="#">View Details</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">04.</span>
+    <span class="section-title">Experience</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2023 — Present</div>
+      <div class="timeline-role">Senior QA Automation Engineer</div>
+      <div class="timeline-company">TechCorp Solutions</div>
+      <div class="timeline-desc">
+        Lead test automation strategy across 5 product teams. Built CI/CD pipelines with automated quality gates. 
+        Reduced regression cycle from 3 days to 4 hours.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2021 — 2023</div>
+      <div class="timeline-role">QA Engineer</div>
+      <div class="timeline-company">Digital Innovations Ltd</div>
+      <div class="timeline-desc">
+        Owned API testing and performance validation for a fintech platform. 
+        Discovered critical security vulnerabilities in authentication flows.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2019 — 2021</div>
+      <div class="timeline-role">Junior Test Analyst</div>
+      <div class="timeline-company">SoftStart Agency</div>
+      <div class="timeline-desc">
+        Manual testing for web and mobile applications. Transitioned into automation, 
+        building the company's first Selenium-based regression suite.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <span class="section-num">05.</span>
+    <span class="section-title">Get In Touch</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <p>
+        I am currently open to new opportunities, freelance projects, and collaborations. 
+        If you have a project that needs a rigorous quality mindset, let us talk.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:alaa.adel@email.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          alaa.adel@email.com
+        </a>
+        <a href="#" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/></svg>
+          linkedin.com/in/alaaadel
+        </a>
+        <a href="#" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          github.com/alaaadel
+        </a>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%" id="submitBtn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed & Built by <a href="#">Alaa Adel</a></p>
+  <p style="margin-top:0.4rem;">© 2026 — All rights reserved.</p>
+</footer>
+
+<script>
+/* === SCROLL REVEAL === */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section > *').forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+
+/* === FORM HANDLER === */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = 'var(--accent-light)';
+    e.target.reset();
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }, 1500);
+}
+</script>
+
+</body>
+</html>

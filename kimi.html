@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alaa Adel | Software Tester & QA Engineer</title>
+<meta name="description" content="Alaa Adel - Software Tester & QA Engineer specializing in manual testing, web testing, API testing, bug reporting, regression testing, and freelance QA services.">
+<meta name="keywords" content="Software Tester, QA Engineer, Manual Testing, Web Testing, API Testing, Bug Reporting, Regression Testing, Freelance QA">
+<meta property="og:title" content="Alaa Adel | Software Tester & QA Engineer">
+<meta property="og:description" content="Professional QA engineer helping teams deliver reliable, high-quality software through systematic testing and clear defect documentation.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#0d0d0f;--bg2:#141418;--bg3:#1a1a20;--text:#e8e8ec;--text2:#9ca3af;--accent:#06b6d4;--accent2:#0891b2;--border:#27272a;--success:#22c55e;--warn:#f59e0b;--danger:#ef4444;--glass:rgba(20,20,24,.7)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--accent);color:#000}
+a{color:var(--accent);text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:92%;max-width:1200px;margin:0 auto;padding:0 1rem}
+.section{padding:5rem 0}
+.section-title{font-size:2.2rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.02em}
+.section-subtitle{color:var(--text2);font-size:1.05rem;margin-bottom:3rem}
+.accent{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:all .25s}
+.btn-primary{background:var(--accent);color:#000}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.tag{display:inline-block;padding:.35rem .8rem;background:var(--bg3);border:1px solid var(--border);border-radius:2rem;font-size:.8rem;color:var(--text2);margin:.25rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:1rem;padding:1.75rem;transition:all .3s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 40px rgba(6,182,212,.08)}
+.grid{display:grid;gap:1.5rem}
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.logo{font-size:1.3rem;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+.nav-links a{color:var(--text2);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links .btn-primary{padding:.5rem 1.2rem;font-size:.85rem}
+.mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(6,182,212,.08) 0%,transparent 50%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-title{font-size:3.5rem;font-weight:800;line-height:1.1;letter-spacing:-.03em}
+.hero-role{font-size:1.3rem;color:var(--accent);font-weight:600;margin:1rem 0}
+.hero-desc{color:var(--text2);font-size:1.1rem;max-width:520px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-size:.9rem;color:var(--text2)}
+.status-dot{width:8px;height:8px;background:var(--success);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* Terminal */
+.terminal{background:var(--bg3);border:1px solid var(--border);border-radius:1rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.terminal-header{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;background:var(--bg2);border-bottom:1px solid var(--border)}
+.terminal-dot{width:12px;height:12px;border-radius:50%}
+.td-r{background:var(--danger)}.td-y{background:var(--warn)}.td-g{background:var(--success)}
+.terminal-body{padding:1.25rem;font-family:'Cascadia Code','Fira Code',monospace;font-size:.85rem;line-height:1.8}
+.terminal-line{display:flex;gap:1rem;align-items:flex-start}
+.term-prompt{color:var(--accent);white-space:nowrap}
+.term-out{color:var(--text2)}
+.term-ok{color:var(--success)}.term-warn{color:var(--warn)}.term-err{color:var(--danger)}
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text{font-size:1.05rem;color:var(--text2);margin-bottom:1.5rem}
+.qualities{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.quality-item{display:flex;align-items:center;gap:.75rem;padding:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:.75rem}
+.quality-icon{width:36px;height:36px;border-radius:.5rem;background:rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem}
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.skill-group h3{font-size:1.1rem;margin-bottom:1rem;color:var(--accent);display:flex;align-items:center;gap:.5rem}
+.skill-group h3::before{content:'';display:block;width:4px;height:18px;background:var(--accent);border-radius:2px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card h3{font-size:1.15rem;margin-bottom:.75rem}
+.service-card p{color:var(--text2);font-size:.95rem}
+.service-icon{font-size:1.5rem;margin-bottom:1rem;color:var(--accent)}
+/* Process */
+.process{position:relative}
+.process-line{position:absolute;left:24px;top:0;bottom:0;width:2px;background:var(--border)}
+.process-step{position:relative;padding-left:3.5rem;padding-bottom:2.5rem}
+.process-step:last-child{padding-bottom:0}
+.process-num{position:absolute;left:0;top:0;width:50px;height:50px;border-radius:50%;background:var(--bg2);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:1.1rem;z-index:2}
+.process-step h3{font-size:1.1rem;margin-bottom:.4rem}
+.process-step p{color:var(--text2);font-size:.95rem;max-width:600px}
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
+.project-card{cursor:pointer}
+.project-type{font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:.5rem}
+.project-card h3{font-size:1.2rem;margin-bottom:.75rem}
+.project-scope{color:var(--text2);font-size:.9rem;margin-bottom:1rem}
+.project-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:1rem;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text2);font-size:1.5rem;cursor:pointer;width:36px;height:36px;border-radius:.5rem;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--bg3);color:var(--text)}
+.modal-body{padding:2rem}
+.modal-body h2{margin-bottom:1rem}
+.modal-body h4{color:var(--accent);margin:1.25rem 0 .5rem;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em}
+.modal-body ul{margin-left:1.25rem;color:var(--text2)}
+.modal-body li{margin-bottom:.35rem}
+/* Techniques */
+.techniques-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.tech-card h3{font-size:1.05rem;margin-bottom:.5rem}
+.tech-card p{color:var(--text2);font-size:.9rem}
+/* Tools */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem}
+.tool-card{text-align:center;padding:1.5rem 1rem}
+.tool-icon{font-size:2rem;margin-bottom:.75rem;color:var(--accent)}
+.tool-card h4{font-size:.95rem}
+/* Deliverables */
+.deliv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
+.deliv-card h3{font-size:1.05rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.deliv-card p{color:var(--text2);font-size:.9rem}
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.why-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.why-card p{color:var(--text2);font-size:.95rem}
+/* Bug Report */
+.bug-report{background:var(--bg3);border:1px solid var(--border);border-radius:1rem;overflow:hidden}
+.bug-header{padding:1rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem}
+.bug-badge{padding:.25rem .75rem;border-radius:.25rem;font-size:.75rem;font-weight:600;text-transform:uppercase}
+.bug-sev{background:var(--warn);color:#000}
+.bug-pri{background:var(--accent);color:#000}
+.bug-body{padding:1.5rem}
+.bug-field{margin-bottom:1rem}
+.bug-field label{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text2);margin-bottom:.25rem}
+.bug-field .value{color:var(--text);font-size:.95rem}
+.bug-steps{background:var(--bg);padding:1rem;border-radius:.5rem;border:1px solid var(--border);font-family:monospace;font-size:.9rem}
+.bug-steps ol{margin-left:1.25rem;color:var(--text2)}
+.bug-steps li{margin-bottom:.3rem}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group label{font-size:.9rem;font-weight:500;color:var(--text2)}
+.form-group input,.form-group select,.form-group textarea{padding:.85rem 1rem;background:var(--bg3);border:1px solid var(--border);border-radius:.5rem;color:var(--text);font-size:.95rem;font-family:inherit;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-group textarea{min-height:140px;resize:vertical}
+.form-success{display:none;padding:1.25rem;background:rgba(34,197,94,.1);border:1px solid var(--success);border-radius:.5rem;color:var(--success);text-align:center}
+.form-success.show{display:block}
+.contact-info h3{font-size:1.3rem;margin-bottom:1rem}
+.contact-info p{color:var(--text2);margin-bottom:1.5rem}
+.contact-item{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;color:var(--text2)}
+.contact-item-icon{width:40px;height:40px;border-radius:.5rem;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+/* Footer */
+.footer{border-top:1px solid var(--border);padding:3rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.footer-brand{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.footer-brand span{color:var(--accent)}
+.footer-desc{color:var(--text2);font-size:.9rem;max-width:320px}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{color:var(--text2);font-size:.9rem}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{text-align:center;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border);color:var(--text2);font-size:.85rem}
+/* Back to top */
+.back-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#000;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:1.2rem;z-index:90;box-shadow:0 4px 20px rgba(6,182,212,.3);transition:transform .2s}
+.back-top:hover{transform:translateY(-3px)}
+.back-top.show{display:flex}
+/* Animations */
+.reveal{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* Mobile */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr;gap:2rem}
+.about-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.nav-links{position:fixed;top:4rem;right:-100%;width:260px;height:calc(100vh - 4rem);background:var(--bg2);border-left:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:2rem;gap:1.5rem;transition:right .3s}
+.nav-links.open{right:0}
+.mobile-toggle{display:block}
+}
+@media(max-width:600px){
+.hero-title{font-size:2.2rem}
+.section-title{font-size:1.7rem}
+.section{padding:3.5rem 0}
+.process-step{padding-left:3rem}
+.process-num{width:40px;height:40px;font-size:.95rem}
+.footer-grid{grid-template-columns:1fr;text-align:center}
+.footer-desc{margin:0 auto}
+.footer-links{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}
+}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+<div class="container nav-inner">
+<a href="#" class="logo">Alaa<span>Adel</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#contact" class="btn btn-primary">Hire Me</a></li>
+</ul>
+<button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-grid">
+<div>
+<h1 class="hero-title">Breaking software<br>before your <span class="accent">users</span> do.</h1>
+<p class="hero-role">Software Tester & QA Engineer</p>
+<p class="hero-desc">I help teams deliver reliable, high-quality software by systematically finding defects, validating user experiences, and providing structured QA feedback that developers can act on.</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-primary">Hire Me</a>
+<a href="#projects" class="btn btn-secondary">View My Work</a>
+</div>
+<div class="status"><span class="status-dot"></span>Available for freelance QA projects</div>
+</div>
+<div class="terminal">
+<div class="terminal-header">
+<span class="terminal-dot td-r"></span>
+<span class="terminal-dot td-y"></span>
+<span class="terminal-dot td-g"></span>
+<span style="margin-left:auto;color:var(--text2);font-size:.75rem">qa-dashboard — bash</span>
+</div>
+<div class="terminal-body">
+<div class="terminal-line"><span class="term-prompt">$</span><span class="term-out">run_test_suite --module=checkout</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-ok">Test Cases: 24</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-ok">Passed: 21</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-warn">Failed: 2</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-err">Critical: 1</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-out">Regression: 3 defects found in v2.4.1</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-out">Status: <span class="term-warn">QA Blocked</span> — awaiting fix confirmation</span></div>
+<div class="terminal-line"><span class="term-prompt">$</span><span class="term-out">generate_report --format=detailed</span></div>
+<div class="terminal-line"><span class="term-prompt">&gt;</span><span class="term-ok">Report exported: qa_summary_2026.pdf</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="container">
+<h2 class="section-title reveal">About Me</h2>
+<p class="section-subtitle reveal">Quality-first mindset with a passion for detail.</p>
+<div class="about-grid reveal">
+<div>
+<p class="about-text">I approach software testing with a methodical mindset and genuine curiosity about how systems break. Every application has edge cases waiting to be discovered, and I specialize in finding them before they reach end users.</p>
+<p class="about-text">My philosophy centers on understanding user intent first, then validating that the software behaves correctly under expected and unexpected conditions. I believe clear bug reporting is as important as finding the bug itself — developers need precise, reproducible information to fix issues efficiently.</p>
+<p class="about-text">I collaborate closely with development teams, treating QA as a partnership in building better products rather than a gatekeeping function. Continuous improvement drives my work: every test cycle teaches something new about the application and how to test it more effectively.</p>
+</div>
+<div class="qualities">
+<div class="quality-item"><div class="quality-icon">&#128269;</div><div><strong>Detail-Oriented</strong><div style="font-size:.85rem;color:var(--text2)">Nothing escapes careful inspection</div></div></div>
+<div class="quality-item"><div class="quality-icon">&#128161;</div><div><strong>Analytical</strong><div style="font-size:.85rem;color:var(--text2)">Structured, logical problem solving</div></div></div>
+<div class="quality-item"><div class="quality-icon">&#128100;</div><div><strong>User-Focused</strong><div style="font-size:.85rem;color:var(--text2)">Testing from real user perspectives</div></div></div>
+<div class="quality-item"><div class="quality-icon">&#128208;</div><div><strong>Systematic</strong><div style="font-size:.85rem;color:var(--text2)">Organized test coverage</div></div></div>
+<div class="quality-item"><div class="quality-icon">&#10004;</div><div><strong>Quality-Driven</strong><div style="font-size:.85rem;color:var(--text2)">Committed to software excellence</div></div></div>
+<div class="quality-item"><div class="quality-icon">&#128172;</div><div><strong>Clear Communicator</strong><div style="font-size:.85rem;color:var(--text2)">Actionable, precise reporting</div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="skills" style="background:var(--bg2)">
+<div class="container">
+<h2 class="section-title reveal">Core QA Skills</h2>
+<p class="section-subtitle reveal">Comprehensive testing capabilities across the software lifecycle.</p>
+<div class="skills-grid reveal">
+<div class="card skill-group">
+<h3>Functional Testing</h3>
+<div class="skill-tags">
+<span class="tag">Functional Testing</span><span class="tag">Feature Validation</span><span class="tag">Requirement-Based Testing</span><span class="tag">End-to-End Testing</span><span class="tag">Smoke Testing</span><span class="tag">Sanity Testing</span>
+</div>
+</div>
+<div class="card skill-group">
+<h3>Regression & Integration</h3>
+<div class="skill-tags">
+<span class="tag">Regression Testing</span><span class="tag">Integration Testing</span><span class="tag">System Testing</span><span class="tag">Compatibility Testing</span>
+</div>
+</div>
+<div class="card skill-group">
+<h3>UI / UX Quality</h3>
+<div class="skill-tags">
+<span class="tag">UI Testing</span><span class="tag">Usability Testing</span><span class="tag">Cross-Browser Testing</span><span class="tag">Responsive Testing</span><span class="tag">User Flow Validation</span>
+</div>
+</div>
+<div class="card skill-group">
+<h3>API & Backend Testing</h3>
+<div class="skill-tags">
+<span class="tag">REST API Testing</span><span class="tag">Request/Response Validation</span><span class="tag">Status Code Validation</span><span class="tag">Data Validation</span><span class="tag">API Workflow Testing</span>
+</div>
+</div>
+<div class="card skill-group">
+<h3>Defect Management</h3>
+<div class="skill-tags">
+<span class="tag">Bug Identification</span><span class="tag">Bug Reproduction</span><span class="tag">Severity/Priority Classification</span><span class="tag">Root-Cause Investigation</span><span class="tag">Clear Bug Documentation</span>
+</div>
+</div>
+<div class="card skill-group">
+<h3>QA Practices</h3>
+<div class="skill-tags">
+<span class="tag">Test Case Design</span><span class="tag">Test Scenarios</span><span class="tag">Test Planning</span><span class="tag">Test Execution</span><span class="tag">Regression Suites</span><span class="tag">Test Reporting</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="services">
+<div class="container">
+<h2 class="section-title reveal">QA Services</h2>
+<p class="section-subtitle reveal">Freelance testing services designed to help your team ship with confidence.</p>
+<div class="services-grid reveal">
+<div class="card service-card">
+<div class="service-icon">&#128187;</div>
+<h3>Manual Software Testing</h3>
+<p>Thorough validation of web and software applications against requirements and expected user behavior, ensuring features work as intended.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#9989;</div>
+<h3>Functional Testing</h3>
+<p>Validate features, workflows, forms, authentication flows, business rules, and edge cases to confirm correct application behavior.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#128260;</div>
+<h3>Regression Testing</h3>
+<p>Ensure existing functionality remains stable after updates, new releases, and code changes by re-executing critical test scenarios.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#127760;</div>
+<h3>Web Application Testing</h3>
+<p>Evaluate websites across workflows, browsers, screen sizes, and real-world usage scenarios to catch issues before launch.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#128279;</div>
+<h3>API Testing</h3>
+<p>Validate REST APIs, response structures, status codes, data consistency, and endpoint behavior against specifications.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#127912;</div>
+<h3>UI & Usability Testing</h3>
+<p>Identify interface inconsistencies, usability problems, confusing interactions, and responsive layout issues across devices.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#128030;</div>
+<h3>Bug Reporting</h3>
+<p>Deliver clear, reproducible defect reports containing steps, expected behavior, actual behavior, severity, and supporting evidence.</p>
+</div>
+<div class="card service-card">
+<div class="service-icon">&#128221;</div>
+<h3>Test Case & Scenario Creation</h3>
+<p>Create structured test scenarios and cases designed to provide meaningful coverage and guide systematic test execution.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="process" style="background:var(--bg2)">
+<div class="container">
+<h2 class="section-title reveal">Testing Process</h2>
+<p class="section-subtitle reveal">A structured approach to every QA engagement.</p>
+<div class="process reveal">
+<div class="process-line"></div>
+<div class="process-step"><div class="process-num">01</div><h3>Understand Requirements</h3><p>Review documentation, user stories, and acceptance criteria to build a clear picture of what the software should do.</p></div>
+<div class="process-step"><div class="process-num">02</div><h3>Analyze User Flows</h3><p>Map out how users interact with the application to identify critical paths, edge cases, and potential failure points.</p></div>
+<div class="process-step"><div class="process-num">03</div><h3>Build Test Scenarios</h3><p>Design comprehensive test cases and scenarios that cover functional, boundary, negative, and exploratory testing dimensions.</p></div>
+<div class="process-step"><div class="process-num">04</div><h3>Execute Tests</h3><p>Run tests systematically across environments, browsers, and devices while documenting results and observations.</p></div>
+<div class="process-step"><div class="process-num">05</div><h3>Identify & Reproduce Defects</h3><p>Log bugs with precise reproduction steps, screenshots, and environment details to enable quick developer resolution.</p></div>
+<div class="process-step"><div class="process-num">06</div><h3>Document Findings</h3><p>Compile test execution reports, defect summaries, and risk assessments into clear, actionable documentation.</p></div>
+<div class="process-step"><div class="process-num">07</div><h3>Regression Test Fixes</h3><p>Verify that resolved defects are fixed correctly and that fixes have not introduced new issues elsewhere.</p></div>
+<div class="process-step"><div class="process-num">08</div><h3>Deliver QA Report</h3><p>Present a comprehensive quality summary including test coverage, defect metrics, and a go/no-go recommendation.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="projects">
+<div class="container">
+<h2 class="section-title reveal">Selected Testing Projects</h2>
+<p class="section-subtitle reveal">Sample projects demonstrating testing methodology and approach. These represent portfolio work and testing exercises.</p>
+<div class="projects-grid reveal">
+<div class="card project-card" data-modal="modal1">
+<div class="project-type">Web Application QA</div>
+<h3>E-Commerce Web Application QA</h3>
+<p class="project-scope">Comprehensive testing of an e-commerce platform covering product browsing, search, filtering, cart, checkout, authentication, and responsive behavior.</p>
+<div class="project-meta"><span class="tag">Functional</span><span class="tag">Regression</span><span class="tag">UI</span><span class="tag">Cross-Browser</span></div>
+<button class="btn btn-secondary" style="width:100%;justify-content:center">View Details</button>
+</div>
+<div class="card project-card" data-modal="modal2">
+<div class="project-type">API Testing</div>
+<h3>REST API Testing Project</h3>
+<p class="project-scope">Systematic validation of REST API endpoints covering authentication, CRUD operations, response validation, status codes, error handling, and data consistency.</p>
+<div class="project-meta"><span class="tag">API</span><span class="tag">Negative Testing</span><span class="tag">Boundary</span></div>
+<button class="btn btn-secondary" style="width:100%;justify-content:center">View Details</button>
+</div>
+<div class="card project-card" data-modal="modal3">
+<div class="project-type">Responsive Testing</div>
+<h3>Responsive Web Application Testing</h3>
+<p class="project-scope">Multi-device validation of a web application across desktop, tablet, and mobile viewports focusing on navigation, forms, layout behavior, and interactive elements.</p>
+<div class="project-meta"><span class="tag">Responsive</span><span class="tag">Cross-Browser</span><span class="tag">Usability</span></div>
+<button class="btn btn-secondary" style="width:100%;justify-content:center">View Details</button>
+</div>
+<div class="card project-card" data-modal="modal4">
+<div class="project-type">Authentication QA</div>
+<h3>Authentication & User Management QA</h3>
+<p class="project-scope">Focused testing of user authentication flows including registration, login, logout, password validation, session behavior, and access control mechanisms.</p>
+<div class="project-meta"><span class="tag">Functional</span><span class="tag">Negative Testing</span><span class="tag">Security-Minded</span></div>
+<button class="btn btn-secondary" style="width:100%;justify-content:center">View Details</button>
+</div>
+</div>
+</div>
+</section>
+
+<div class="modal-overlay" id="modal1">
+<div class="modal">
+<button class="modal-close" aria-label="Close modal">&times;</button>
+<div class="modal-body">
+<h2>E-Commerce Web Application QA</h2>
+<p style="color:var(--text2);margin-bottom:1.5rem">A sample testing project demonstrating comprehensive QA coverage for an online retail platform.</p>
+<h4>Testing Scope</h4>
+<ul><li>Product browsing, search, and filtering functionality</li><li>Shopping cart operations and persistence</li><li>Checkout flow and payment gateway integration</li><li>User authentication and account management</li><li>Form validation and error messaging</li><li>Responsive behavior across breakpoints</li></ul>
+<h4>Testing Techniques</h4>
+<ul><li>Functional testing of core user journeys</li><li>Regression testing after feature updates</li><li>UI consistency and visual regression checks</li><li>Edge-case testing for inventory and pricing</li><li>Cross-browser testing on Chrome, Firefox, Safari, Edge</li></ul>
+<h4>Key Scenarios</h4>
+<ul><li>Add/remove items from cart with quantity updates</li><li>Apply and remove discount codes</li><li>Complete purchase as guest vs. registered user</li><li>Test search with special characters and empty results</li><li>Validate responsive layout on 320px to 1920px widths</li></ul>
+<h4>QA Deliverables</h4>
+<ul><li>Test scenarios and test cases document</li><li>Bug reports with screenshots and reproduction steps</li><li>Regression test summary</li><li>Cross-browser compatibility report</li></ul>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal2">
+<div class="modal">
+<button class="modal-close" aria-label="Close modal">&times;</button>
+<div class="modal-body">
+<h2>REST API Testing Project</h2>
+<p style="color:var(--text2);margin-bottom:1.5rem">A sample API testing project focused on validating backend service reliability and data integrity.</p>
+<h4>Testing Scope</h4>
+<ul><li>Authentication and authorization endpoints</li><li>CRUD operations for core resources</li><li>Response schema validation</li><li>HTTP status code verification</li><li>Error handling and edge cases</li><li>Data consistency across requests</li></ul>
+<h4>Testing Techniques</h4>
+<ul><li>API functional testing with valid and invalid payloads</li><li>Negative testing with malformed data</li><li>Boundary value analysis for numeric fields</li><li>Response time and payload structure validation</li></ul>
+<h4>Key Scenarios</h4>
+<ul><li>Register user with valid and invalid email formats</li><li>Update resource with missing required fields</li><li>Verify 401/403 responses for unauthorized access</li><li>Test pagination and filtering parameters</li><li>Validate JSON schema against API specification</li></ul>
+<h4>QA Deliverables</h4>
+<ul><li>API test cases and request collections</li><li>Defect reports with request/response pairs</li><li>API test execution summary</li></ul>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal3">
+<div class="modal">
+<button class="modal-close" aria-label="Close modal">&times;</button>
+<div class="modal-body">
+<h2>Responsive Web Application Testing</h2>
+<p style="color:var(--text2);margin-bottom:1.5rem">A sample responsive testing project ensuring consistent experience across all device categories.</p>
+<h4>Testing Scope</h4>
+<ul><li>Desktop, tablet, and mobile viewport rendering</li><li>Navigation behavior across breakpoints</li><li>Form usability on touch devices</li><li>Layout behavior during resize and orientation change</li><li>Interactive element accessibility</li></ul>
+<h4>Testing Techniques</h4>
+<ul><li>Responsive testing on real devices and emulators</li><li>Cross-browser testing for layout consistency</li><li>UI consistency checks against design specifications</li><li>Usability testing for touch interactions</li></ul>
+<h4>Key Scenarios</h4>
+<ul><li>Verify hamburger menu opens/closes correctly on mobile</li><li>Test form input fields with on-screen keyboards</li><li>Validate image scaling and text readability at 200% zoom</li><li>Check horizontal scroll absence on all viewports</li><li>Verify sticky headers do not obscure content</li></ul>
+<h4>QA Deliverables</h4>
+<ul><li>Responsive test matrix across devices and browsers</li><li>UI discrepancy reports with viewport annotations</li><li>Usability observations and recommendations</li></ul>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal4">
+<div class="modal">
+<button class="modal-close" aria-label="Close modal">&times;</button>
+<div class="modal-body">
+<h2>Authentication & User Management QA</h2>
+<p style="color:var(--text2);margin-bottom:1.5rem">A sample security-minded testing project validating authentication robustness and session integrity.</p>
+<h4>Testing Scope</h4>
+<ul><li>User registration and email verification</li><li>Login with valid and invalid credentials</li><li>Logout and session termination</li><li>Password validation rules and strength</li><li>Invalid credential handling</li><li>Session timeout and concurrent login behavior</li><li>Access control and privilege escalation</li></ul>
+<h4>Testing Techniques</h4>
+<ul><li>Functional testing of auth flows</li><li>Negative testing with SQL injection attempts in inputs</li><li>Boundary testing for password length and complexity</li><li>Security-minded validation of session handling</li></ul>
+<h4>Key Scenarios</h4>
+<ul><li>Register with duplicate email address</li><li>Login with empty fields and special characters</li><li>Verify session expires after inactivity timeout</li><li>Test password reset flow end-to-end</li><li>Attempt accessing protected routes without authentication</li></ul>
+<h4>QA Deliverables</h4>
+<ul><li>Authentication test case document</li><li>Security observation report</li><li>Session behavior documentation</li></ul>
+</div>
+</div>
+</div>
+
+<section class="section" id="techniques" style="background:var(--bg2)">
+<div class="container">
+<h2 class="section-title reveal">Testing Techniques</h2>
+<p class="section-subtitle reveal">Professional methodologies applied to ensure thorough coverage.</p>
+<div class="techniques-grid reveal">
+<div class="card tech-card"><h3>Equivalence Partitioning</h3><p>Divide input data into equivalent classes to reduce redundant tests while maintaining coverage of valid and invalid ranges.</p></div>
+<div class="card tech-card"><h3>Boundary Value Analysis</h3><p>Focus testing on the edges of input ranges where defects most commonly occur, such as minimum, maximum, and just-outside values.</p></div>
+<div class="card tech-card"><h3>Decision Table Testing</h3><p>Map combinations of conditions and actions to ensure all business rule permutations are tested systematically.</p></div>
+<div class="card tech-card"><h3>State Transition Testing</h3><p>Validate that the application moves through expected states correctly based on inputs and events, especially for workflows.</p></div>
+<div class="card tech-card"><h3>Error Guessing</h3><p>Apply experience and intuition to predict where defects are likely to hide, targeting historically problematic areas.</p></div>
+<div class="card tech-card"><h3>Exploratory Testing</h3><p>Simultaneously design and execute tests while learning about the application, uncovering issues scripted tests might miss.</p></div>
+<div class="card tech-card"><h3>Positive Testing</h3><p>Verify that the application behaves correctly when provided with valid inputs and used as intended by legitimate users.</p></div>
+<div class="card tech-card"><h3>Negative Testing</h3><p>Confirm that the application handles invalid inputs, unexpected actions, and error conditions gracefully without crashing.</p></div>
+<div class="card tech-card"><h3>Retesting</h3><p>Re-execute tests that previously failed to confirm that reported defects have been fixed correctly by the development team.</p></div>
+<div class="card tech-card"><h3>Regression Testing</h3><p>Re-run existing test suites after code changes to ensure new modifications have not broken previously working functionality.</p></div>
+<div class="card tech-card"><h3>Smoke Testing</h3><p>Perform a quick sanity check of critical functionality to determine whether the build is stable enough for further testing.</p></div>
+<div class="card tech-card"><h3>Sanity Testing</h3><p>Narrowly verify that specific bug fixes or small changes work as expected without testing the entire application.</p></div>
+<div class="card tech-card"><h3>End-to-End Testing</h3><p>Validate complete user journeys through the application, ensuring all integrated components work together correctly.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="tools">
+<div class="container">
+<h2 class="section-title reveal">Testing Toolkit</h2>
+<p class="section-subtitle reveal">Technologies and tools used to execute, manage, and report on testing activities.</p>
+<div class="tools-grid reveal">
+<div class="card tool-card"><div class="tool-icon">&#128640;</div><h4>Postman</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#9881;</div><h4>Selenium</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#9654;</div><h4>Playwright</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128295;</div><h4>JUnit</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128279;</div><h4>REST APIs</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128209;</div><h4>Git</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128190;</div><h4>GitHub</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128203;</div><h4>Jira</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128300;</div><h4>DevTools</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#128451;</div><h4>SQL</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#60;&#47;&#62;</div><h4>HTML</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#123;&#125;</div><h4>CSS</h4></div>
+<div class="card tool-card"><div class="tool-icon">&#123;&#125;</div><h4>JavaScript</h4></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="deliverables" style="background:var(--bg2)">
+<div class="container">
+<h2 class="section-title reveal">QA Deliverables</h2>
+<p class="section-subtitle reveal">What you can expect to receive from a testing engagement.</p>
+<div class="deliv-grid reveal">
+<div class="card deliv-card"><h3>&#128221; Test Cases</h3><p>Structured, step-by-step instructions with preconditions, inputs, and expected results to guide systematic test execution.</p></div>
+<div class="card deliv-card"><h3>&#128203; Test Scenarios</h3><p>High-level descriptions of functionality to be tested, derived from requirements and user stories to ensure coverage.</p></div>
+<div class="card deliv-card"><h3>&#128030; Bug Reports</h3><p>Clear, reproducible defect documentation containing steps, expected vs. actual behavior, severity, and visual evidence.</p></div>
+<div class="card deliv-card"><h3>&#128200; Test Execution Reports</h3><p>Detailed logs of what was tested, when, on which environment, and the outcome of each test case.</p></div>
+<div class="card deliv-card"><h3>&#128260; Regression Results</h3><p>Summary of re-test outcomes confirming that fixes work and existing functionality remains unaffected.</p></div>
+<div class="card deliv-card"><h3>&#128279; API Test Results</h3><p>Request/response documentation, status code verification, and schema validation for backend services.</p></div>
+<div class="card deliv-card"><h3>&#128196; QA Summary Reports</h3><p>Executive-level overview of test coverage, defect density, risk areas, and a quality recommendation.</p></div>
+<div class="card deliv-card"><h3>&#128214; Defect Documentation</h3><p>Comprehensive defect tracking with history, reproduction steps, environment details, and resolution verification.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="why">
+<div class="container">
+<h2 class="section-title reveal">Why Work With Me</h2>
+<p class="section-subtitle reveal">Qualities that make a difference in your QA partnership.</p>
+<div class="why-grid reveal">
+<div class="card why-card"><h3>&#128269; Detail-Oriented Testing</h3><p>I look beyond happy paths and investigate edge cases, boundary conditions, and unexpected user behaviors that automated scripts often miss.</p></div>
+<div class="card why-card"><h3>&#128172; Clear Communication</h3><p>I translate technical findings into actionable information that developers and stakeholders can understand and act upon without confusion.</p></div>
+<div class="card why-card"><h3>&#128100; User-Centered QA</h3><p>I test software from the perspective of real users, ensuring that functionality is not just technically correct but genuinely usable.</p></div>
+<div class="card why-card"><h3>&#128208; Structured Process</h3><p>I use organized testing workflows, documented results, and consistent reporting formats so nothing falls through the cracks.</p></div>
+<div class="card why-card"><h3>&#128221; Reliable Feedback</h3><p>Every defect report includes clear evidence and reproducible steps, minimizing back-and-forth and accelerating resolution.</p></div>
+<div class="card why-card"><h3>&#10004; Quality Mindset</h3><p>I focus on preventing issues from reaching users by catching problems early and advocating for quality throughout the development cycle.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="bug-report" style="background:var(--bg2)">
+<div class="container">
+<h2 class="section-title reveal">Sample QA Deliverable</h2>
+<p class="section-subtitle reveal">An example of the clarity and structure you can expect in bug reports.</p>
+<div class="bug-report reveal">
+<div class="bug-header">
+<strong>Checkout form accepts an invalid email format</strong>
+<div style="margin-left:auto;display:flex;gap:.5rem">
+<span class="bug-badge bug-sev">Severity: Medium</span>
+<span class="bug-badge bug-pri">Priority: Medium</span>
+</div>
+</div>
+<div class="bug-body">
+<div class="bug-field"><label>Environment</label><div class="value">Web Application — Chrome 126, Windows 11</div></div>
+<div class="bug-field"><label>Status</label><div class="value">Open</div></div>
+<div class="bug-field"><label>Preconditions</label><div class="value">User has items in cart and is on the checkout page.</div></div>
+<div class="bug-field">
+<label>Steps to Reproduce</label>
+<div class="bug-steps"><ol><li>Navigate to the checkout page.</li><li>Enter "user@invalid" in the email field (missing TLD).</li><li>Fill in remaining required fields with valid data.</li><li>Click the "Place Order" button.</li></ol></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+<div class="bug-field"><label>Expected Result</label><div class="value">The form displays a validation error: "Please enter a valid email address." The order is not submitted.</div></div>
+<div class="bug-field"><label>Actual Result</label><div class="value">The form accepts the invalid email format and proceeds to payment processing without any validation error.</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+<h2 class="section-title reveal">Have a product that needs testing?</h2>
+<p class="section-subtitle reveal">I can help evaluate software quality, discover defects, and provide structured QA feedback. Let's discuss your testing needs.</p>
+<div class="contact-grid reveal">
+<div class="contact-form" id="contactForm">
+<div class="form-group"><label for="cName">Name</label><input type="text" id="cName" placeholder="Your name" required></div>
+<div class="form-group"><label for="cEmail">Email</label><input type="email" id="cEmail" placeholder="your@email.com" required></div>
+<div class="form-group"><label for="cType">Project Type</label>
+<select id="cType" required>
+<option value="">Select project type</option>
+<option value="web">Web Application Testing</option>
+<option value="api">API Testing</option>
+<option value="regression">Regression Testing</option>
+<option value="ui">UI / Usability Testing</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group"><label for="cMsg">Message</label><textarea id="cMsg" placeholder="Tell me about your project and testing requirements..." required></textarea></div>
+<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Inquiry</button>
+<div class="form-success" id="formSuccess">Thank you for your inquiry. Please reach out directly via your preferred contact method to follow up, as this form prepares your message for review.</div>
+</div>
+<div class="contact-info">
+<h3>Let's discuss your testing needs</h3>
+<p>I am available for freelance QA projects, short-term testing contracts, and ongoing quality assurance partnerships. Whether you need a one-time test cycle or continuous QA support, I can adapt to your workflow and tools.</p>
+<div class="contact-item"><div class="contact-item-icon">&#128187;</div><div><strong>Freelance QA</strong><div style="font-size:.85rem">Remote testing services worldwide</div></div></div>
+<div class="contact-item"><div class="contact-item-icon">&#128203;</div><div><strong>Flexible Engagement</strong><div style="font-size:.85rem">Hourly, daily, or project-based</div></div></div>
+<div class="contact-item"><div class="contact-item-icon">&#9989;</div><div><strong>Quick Turnaround</strong><div style="font-size:.85rem">Structured reporting within agreed timelines</div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">Alaa<span>Adel</span></div>
+<p class="footer-desc">Software Tester & QA Engineer focused on finding defects, validating quality, and helping teams ship reliable software.</p>
+</div>
+<ul class="footer-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-copy">&copy; 2026 Alaa Adel. All rights reserved.</div>
+</div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">&#8593;</button>
+
+<script>
+(function(){
+const nav=document.getElementById('nav');
+const navLinks=document.getElementById('navLinks');
+const mobileToggle=document.getElementById('mobileToggle');
+const backTop=document.getElementById('backTop');
+const form=document.getElementById('contactForm');
+const formSuccess=document.getElementById('formSuccess');
+
+mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');mobileToggle.innerHTML=navLinks.classList.contains('open')?'&#10005;':'&#9776;'});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');mobileToggle.innerHTML='&#9776;';}));
+
+window.addEventListener('scroll',()=>{
+if(window.scrollY>100)backTop.classList.add('show');else backTop.classList.remove('show');
+let current='';
+document.querySelectorAll('section[id]').forEach(s=>{const r=s.getBoundingClientRect();if(r.top<=120)current=s.id;});
+document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color='';if(a.getAttribute('href')==='#/'+current)a.style.color='var(--accent)';});
+});
+
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+form.addEventListener('submit',function(e){
+e.preventDefault();
+const n=document.getElementById('cName'),em=document.getElementById('cEmail'),t=document.getElementById('cType'),m=document.getElementById('cMsg');
+if(!n.value.trim()||!em.value.trim()||!t.value||!m.value.trim()){alert('Please fill in all fields.');return;}
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)){alert('Please enter a valid email address.');return;}
+formSuccess.classList.add('show');
+form.reset();
+setTimeout(()=>formSuccess.classList.remove('show'),8000);
+});
+
+document.querySelectorAll('.project-card').forEach(card=>{
+card.addEventListener('click',()=>{const id=card.dataset.modal;const mo=document.getElementById(id);if(mo){mo.classList.add('active');document.body.style.overflow='hidden';}});
+});
+
+document.querySelectorAll('.modal-overlay').forEach(mo=>{
+mo.addEventListener('click',e=>{if(e.target===mo){mo.classList.remove('active');document.body.style.overflow='';}});
+});
+document.querySelectorAll('.modal-close').forEach(btn=>{
+btn.addEventListener('click',()=>{btn.closest('.modal-overlay').classList.remove('active');document.body.style.overflow='';});
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.active').forEach(mo=>{mo.classList.remove('active');document.body.style.overflow='';});}});
+
+const reveal=()=>{
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+};
+if('IntersectionObserver' in window)reveal();else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+})();
+</script>
+</body>
+</html>

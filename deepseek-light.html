@@ -1,0 +1,212 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>Alaa Adel · QA Engineer</title>
+  <meta name="description" content="Alaa Adel · Software Tester & QA Engineer · Manual & API testing, bug reports, test cases, freelance QA.">
+  <meta property="og:title" content="Alaa Adel · QA Engineer">
+  <meta property="og:description" content="Systematic software testing · web, API, UI/UX, regression, and test documentation.">
+  <meta property="og:type" content="website">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:#f6f4f0;color:#222;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;line-height:1.5;font-weight:400}
+    a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:0 1.8rem}.grid{display:grid;gap:2rem}
+    /* typography */
+    h1,h2,h3{font-weight:500;letter-spacing:-0.02em;line-height:1.2}h1{font-size:clamp(2.2rem,8vw,4.2rem)}h2{font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:1.2rem;border-bottom:2px solid #d9d2c5;padding-bottom:0.5rem;display:inline-block}.section-title{display:flex;align-items:center;gap:0.75rem}
+    .pill{background:#e6e1d8;border-radius:40px;padding:0.2rem 1rem;font-size:0.8rem;font-weight:450;letter-spacing:0.02em;color:#3b3b3b}
+    .badge{display:inline-block;background:#2a2a2a;color:#f0ede7;border-radius:30px;padding:0.2rem 1rem;font-size:0.7rem;font-weight:450;letter-spacing:0.03em;text-transform:uppercase}
+    /* header */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;flex-wrap:wrap;gap:0.8rem}.logo{font-weight:480;font-size:1.4rem;letter-spacing:-0.02em}.logo span{background:#2a2a2a;color:#f0ede7;padding:0.1rem 0.7rem;border-radius:30px;font-weight:400;margin-left:0.2rem}.nav-links{display:flex;gap:1.8rem;font-weight:430;font-size:0.95rem;flex-wrap:wrap}
+    .nav-links a{transition:color 0.2s;border-bottom:2px solid transparent;padding-bottom:0.2rem}.nav-links a:hover{color:#3f3f3f;border-bottom-color:#2a2a2a}
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:3rem 0 4rem;align-items:center}@media(max-width:720px){.hero{grid-template-columns:1fr;gap:1.5rem;padding-top:1.8rem}}
+    .hero-tagline{font-size:1.1rem;color:#3b3b3b;max-width:28rem;margin:1.2rem 0 1.8rem;font-weight:390}.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .btn{background:#2a2a2a;border:0;color:#f6f4f0;padding:0.7rem 2rem;border-radius:60px;font-weight:450;font-size:1rem;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.4rem}.btn-outline{background:transparent;color:#2a2a2a;border:1.5px solid #2a2a2a}.btn:hover{background:#434343;transform:scale(1.02)}.btn-outline:hover{background:#2a2a2a;color:#f6f4f0}
+    .hero-stats{display:flex;gap:2.5rem;margin-top:2rem;flex-wrap:wrap;font-size:0.95rem}.hero-stats strong{display:block;font-size:1.8rem;font-weight:460;letter-spacing:-0.02em}
+    .visual-dash{background:#eae6df;border-radius:28px;padding:1.2rem 1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.8rem;border:1px solid #d6cec2}
+    .status-item{display:flex;justify-content:space-between;border-bottom:1px dashed #cbc1b2;padding:0.4rem 0}.status-dot{width:8px;height:8px;border-radius:50%;background:#2a2a2a;display:inline-block;margin-right:6px}.pass{background:#4a6f54}.fail{background:#9f5b5b}
+    /* sections */
+    section{padding:3.2rem 0;border-top:1px solid #ddd6cb}section:first-of-type{border-top:0}
+    .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.8rem;margin-top:0.8rem}.skill-tag{background:#eae6df;padding:0.5rem 1rem;border-radius:50px;font-size:0.85rem;text-align:center;border:1px solid #d4ccc0}
+    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-top:0.8rem}.service-card{background:#fcfbf9;border-radius:20px;padding:1.4rem 1.2rem;border:1px solid #ddd6cb;transition:0.2s}.service-card:hover{background:#f3f0e9;border-color:#b7ab99}.service-card strong{display:block;font-weight:480;margin-bottom:0.2rem}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin:1.5rem 0}.project-card{background:#fcfbf9;border-radius:24px;padding:1.6rem;border:1px solid #ddd6cb;transition:0.2s;display:flex;flex-direction:column}.project-card:hover{background:#f3f0e9;border-color:#b7ab99}.project-card h3{font-weight:470;font-size:1.2rem;margin-bottom:0.4rem}.project-card .meta{font-size:0.8rem;color:#4f4f4f;margin-bottom:0.8rem}
+    .bug-report-sample{background:#f3f0e9;border-radius:20px;padding:1.4rem 1.8rem;border-left:6px solid #2a2a2a;font-size:0.9rem;margin:1rem 0;font-family:'SF Mono','Menlo',monospace;white-space:pre-wrap;word-break:break-word;border:1px solid #d4ccc0;border-left-width:6px}
+    .deliverable-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.6rem;list-style:none;margin:0.8rem 0}.deliverable-list li{background:#eae6df;padding:0.3rem 1rem;border-radius:30px;font-size:0.85rem;text-align:center}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.8rem;margin-top:1rem}@media(max-width:700px){.contact-grid{grid-template-columns:1fr;gap:1.5rem}}
+    .contact-item{margin:0.6rem 0;display:flex;align-items:center;gap:0.8rem;font-size:1rem}.contact-item svg{flex-shrink:0}
+    input,textarea{width:100%;padding:0.8rem 1rem;border:1px solid #d4ccc0;border-radius:30px;background:#fcfbf9;font-family:inherit;font-size:0.95rem;margin-bottom:1rem;transition:0.2s}input:focus,textarea:focus{outline:2px solid #2a2a2a;border-color:transparent}textarea{min-height:100px;border-radius:24px}
+    footer{text-align:center;padding:2rem 0;border-top:1px solid #ddd6cb;margin-top:1.8rem;font-size:0.9rem;color:#3b3b3b}
+    .inline-svg{display:inline-block;vertical-align:middle}
+    @media (max-width:550px){.nav-links{gap:1rem;font-size:0.9rem;width:100%;justify-content:space-around}.hero-actions .btn{width:100%;justify-content:center}}
+    /* reduced motion */
+    @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+    /* back-to-top */
+    .back-top{position:fixed;bottom:2rem;right:2rem;background:#2a2a2a;color:#f6f4f0;border:0;border-radius:60px;padding:0.5rem 1.2rem;font-size:0.9rem;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:0.2s;z-index:100;display:none}.back-top.show{display:block}.back-top:hover{background:#434343}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Alaa Adel <span>QA</span></div>
+        <div class="nav-links">
+          <a href="#expertise">Expertise</a>
+          <a href="#work">Testing</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section style="border:0;padding-top:0.8rem">
+      <div class="container hero">
+        <div>
+          <span class="pill">QA Engineer · Manual &amp; API</span>
+          <h1>Systematic testing<br>for reliable software</h1>
+          <p class="hero-tagline">Alaa Adel — I validate workflows, uncover edge cases, and deliver clear bug reports so your product works as expected.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Start a project</a>
+            <a href="#work" class="btn btn-outline">See testing samples</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>8+</strong> testing methodologies</div>
+            <div><strong>15+</strong> test suites designed</div>
+          </div>
+        </div>
+        <div class="visual-dash">
+          <div><span class="status-dot pass"></span> Functional UI · pass</div>
+          <div><span class="status-dot pass"></span> Regression · pass</div>
+          <div><span class="status-dot fail"></span> Edge case · fail</div>
+          <div><span class="status-dot pass"></span> API response · pass</div>
+          <div class="status-item"><span>Test cases</span> <strong>24</strong></div>
+          <div class="status-item"><span>Bugs found</span> <strong>7</strong></div>
+          <div class="status-item"><span>Coverage</span> <strong>92%</strong></div>
+          <div class="status-item"><span>Status</span> <span style="background:#4a6f54;padding:0.1rem 0.8rem;border-radius:40px;color:#f6f4f0;font-size:0.7rem">review</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise">
+      <div class="container">
+        <div class="section-title"><h2>Testing expertise</h2><span class="pill">methodologies</span></div>
+        <div class="skill-grid">
+          <span class="skill-tag">Functional testing</span><span class="skill-tag">Regression</span>
+          <span class="skill-tag">Integration</span><span class="skill-tag">System testing</span>
+          <span class="skill-tag">Smoke / sanity</span><span class="skill-tag">Exploratory</span>
+          <span class="skill-tag">UI/UX validation</span><span class="skill-tag">Responsive</span>
+          <span class="skill-tag">Cross-browser</span><span class="skill-tag">API testing</span>
+          <span class="skill-tag">Negative &amp; boundary</span><span class="skill-tag">E2E workflows</span>
+          <span class="skill-tag">Bug reporting</span><span class="skill-tag">Test case design</span>
+        </div>
+        <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:0.6rem">
+          <span class="badge">Postman</span><span class="badge">Selenium</span>
+          <span class="badge">Playwright</span><span class="badge">Jira</span>
+          <span class="badge">Git/GitHub</span><span class="badge">DevTools</span>
+          <span class="badge">SQL</span><span class="badge">HTML/CSS/JS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED TESTING WORK -->
+    <section id="work">
+      <div class="container">
+        <div class="section-title"><h2>Sample testing work</h2><span class="pill">selected projects</span></div>
+        <div class="project-grid">
+          <div class="project-card"><h3>E‑commerce checkout</h3><div class="meta">Functional · regression</div><p>Validated cart, coupon, payment flows. Found 4 critical defects (edge cases with quantity &amp; discounts).</p></div>
+          <div class="project-card"><h3>REST API · user auth</h3><div class="meta">API · negative testing</div><p>Tested login, registration, JWT expiry, rate limiting. Identified 500 error on malformed payload.</p></div>
+          <div class="project-card"><h3>Responsive web app</h3><div class="meta">UI/UX · cross‑browser</div><p>Checked layout on 12 viewports, 5 browsers. Reported 11 UI inconsistencies and 3 functional breaks.</p></div>
+        </div>
+        <!-- bug report sample -->
+        <div style="margin-top:1.8rem">
+          <span class="pill">sample bug report</span>
+          <div class="bug-report-sample"><strong>BUG-042 · checkout total miscalculation</strong>
+  Severity: high | Status: open
+  Steps: add 2 items, apply discount code “SAVE10”, proceed.
+  Actual: total does not reflect discount.
+  Expected: discount applied to subtotal.
+  Environment: Chrome 118 / Windows 11</div>
+        </div>
+        <div style="margin-top:1.2rem"><span class="badge">Test cases</span><span class="badge" style="background:#4f4f4f">Bug reports</span><span class="badge" style="background:#6a6a6a">QA summary</span></div>
+      </div>
+    </section>
+
+    <!-- SERVICES + DELIVERABLES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title"><h2>QA services</h2><span class="pill">what you get</span></div>
+        <div class="service-grid">
+          <div class="service-card"><strong>Manual QA</strong> Web, mobile, desktop — full regression cycles.</div>
+          <div class="service-card"><strong>API testing</strong> Postman, REST, schema validation, edge cases.</div>
+          <div class="service-card"><strong>UI/UX testing</strong> Consistency, responsiveness, accessibility.</div>
+          <div class="service-card"><strong>Test documentation</strong> Cases, scenarios, execution reports.</div>
+        </div>
+        <div style="margin-top:2rem">
+          <span class="pill">deliverables</span>
+          <ul class="deliverable-list">
+            <li>Test cases</li><li>Bug reports</li><li>Regression results</li>
+            <li>API test logs</li><li>QA summary</li><li>Defect documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title"><h2>Start a quality conversation</h2><span class="pill">let’s test</span></div>
+        <div class="contact-grid">
+          <div>
+            <p style="margin-bottom:1.6rem;font-size:1rem">Need a systematic QA partner? Let’s discuss your project, timeline, and how I can help you ship with confidence.</p>
+            <div class="contact-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 6l-10 7L2 6"/></svg> alaa.qa@proton.me</div>
+            <div class="contact-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg> freelance · remote</div>
+          </div>
+          <form id="contactForm" style="display:flex;flex-direction:column">
+            <input type="text" placeholder="Name" aria-label="Your name" required>
+            <input type="email" placeholder="Email" aria-label="Email" required>
+            <textarea placeholder="Tell me about your project and testing needs..." aria-label="Project details" required></textarea>
+            <button type="submit" class="btn" style="width:fit-content">Send message →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Alaa Adel · Software Tester / QA Engineer · built for precision</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑ top</button>
+
+  <script>
+    (function() {
+      const backBtn = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+      });
+      backBtn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        btn.textContent = '✓ sent (demo)';
+        btn.style.background = '#4a6f54';
+        setTimeout(() => { btn.textContent = 'Send message →'; btn.style.background = ''; }, 2000);
+        form.reset();
+      });
+
+      // keyboard accessible focus
+      document.querySelectorAll('a, button, input, textarea').forEach(el => el.setAttribute('tabindex', '0'));
+    })();
+  </script>
+</body>
+</html>
+```

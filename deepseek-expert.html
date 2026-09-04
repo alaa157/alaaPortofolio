@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaa Adel | Software Tester & QA Engineer</title>
+    <meta name="description" content="Alaa Adel – Software Tester & QA Engineer delivering systematic manual testing, API testing, regression testing, and QA documentation for web applications. Freelance QA services for reliable software.">
+    <meta property="og:title" content="Alaa Adel | Software Tester & QA Engineer">
+    <meta property="og:description" content="Systematic software testing, bug reporting, and QA documentation for web apps and APIs. Freelance QA services focused on reliability and clarity.">
+    <meta property="og:type" content="website">
+    <meta name="keywords" content="software tester, QA engineer, manual testing, API testing, regression testing, freelance QA, bug reporting, test cases, web application testing">
+    <style>
+        :root {
+            --bg: #F8F6F2;
+            --bg-alt: #F0EDE8;
+            --surface: #FFFFFF;
+            --text: #1C1A17;
+            --text-muted: #5A554D;
+            --text-faint: #8A8377;
+            --primary: #1E5631;
+            --primary-dark: #163F24;
+            --primary-light: #E8F0EA;
+            --accent: #C87E2C;
+            --accent-light: #F5E8D8;
+            --pass: #2E8B57;
+            --pass-bg: #E4F2E9;
+            --fail: #C0392B;
+            --fail-bg: #FAE8E6;
+            --warn: #E67E22;
+            --warn-bg: #FDF0E3;
+            --border: #E3DED6;
+            --border-strong: #D4CDC2;
+            --shadow: 0 2px 16px rgba(28, 26, 23, 0.06);
+            --shadow-lg: 0 8px 40px rgba(28, 26, 23, 0.1);
+            --radius: 6px;
+            --radius-lg: 10px;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
+            --max-w: 1120px;
+            --nav-h: 64px;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--primary-dark);
+        }
+        img,
+        svg {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: var(--radius);
+            z-index: 9999;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .skip-link:focus {
+            top: 12px;
+        }
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 246, 242, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+        }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.02em;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .main-nav a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+            letter-spacing: 0.01em;
+        }
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            color: var(--primary);
+        }
+        .nav-cta {
+            padding: 8px 18px;
+            background: var(--primary);
+            color: #fff !important;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-strong);
+            border-radius: var(--radius);
+            padding: 8px 10px;
+            cursor: pointer;
+            color: var(--text);
+        }
+        .menu-toggle svg {
+            width: 22px;
+            height: 22px;
+        }
+        @media (max-width: 767px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: var(--nav-h);
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 2px solid var(--border);
+                box-shadow: var(--shadow-lg);
+                align-items: flex-start;
+            }
+            .main-nav.open {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: var(--primary-light);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--pass);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.01em;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+        /* QA Dashboard Card */
+        .qa-dashboard {
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        .qa-dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-alt);
+        }
+        .qa-dashboard-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .qa-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--pass-bg);
+            color: var(--pass);
+        }
+        .qa-dashboard-body {
+            padding: 20px;
+        }
+        .test-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+        }
+        .test-row:last-child {
+            border-bottom: none;
+        }
+        .test-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .test-status {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.03em;
+        }
+        .test-status.pass {
+            background: var(--pass-bg);
+            color: var(--pass);
+        }
+        .test-status.warn {
+            background: var(--warn-bg);
+            color: var(--warn);
+        }
+        .test-status.info {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+        .qa-dashboard-footer {
+            padding: 14px 20px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-alt);
+            font-size: 0.8rem;
+            color: var(--text-faint);
+            text-align: center;
+            font-style: italic;
+        }
+        /* Section styles */
+        section {
+            padding: 72px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        /* Expertise grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 18px;
+        }
+        .expertise-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .expertise-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        .expertise-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius);
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        .expertise-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+        .expertise-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+        .expertise-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        /* Methodology */
+        .methodology {
+            background: var(--bg-alt);
+        }
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            counter-reset: step;
+        }
+        .method-step {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .method-step:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        .method-step::before {
+            counter-increment: step;
+            content: '0' counter(step);
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.25;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        .method-step h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .method-step p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+        /* Toolkit */
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 14px;
+        }
+        .tool-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .tool-chip:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+        .tool-chip svg {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 800px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.25s;
+        }
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-header {
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        .project-header h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .project-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: var(--primary-light);
+            color: var(--primary);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .project-body {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .project-card.open .project-body {
+            max-height: 500px;
+            padding: 22px 24px;
+        }
+        .project-body p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+        .project-findings {
+            list-style: none;
+            margin: 12px 0;
+        }
+        .project-findings li {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            padding: 6px 0;
+            border-bottom: 1px dotted var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .project-findings li::before {
+            content: '›';
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        .project-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.2s;
+        }
+        .project-toggle:hover {
+            color: var(--primary);
+        }
+        .project-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s;
+        }
+        .project-card.open .project-toggle svg {
+            transform: rotate(180deg);
+        }
+        /* Bug report */
+        .bug-report {
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        .bug-report-header {
+            background: var(--bg-alt);
+            padding: 18px 24px;
+            border-bottom: 2px solid var(--border-strong);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .bug-id {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--text);
+            font-size: 1rem;
+        }
+        .bug-severity {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--fail-bg);
+            color: var(--fail);
+        }
+        .bug-status {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: var(--warn-bg);
+            color: var(--warn);
+        }
+        .bug-report-body {
+            padding: 24px;
+        }
+        .bug-field {
+            margin-bottom: 16px;
+        }
+        .bug-field-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            margin-bottom: 4px;
+        }
+        .bug-field-value {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+        .bug-code-block {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 14px 18px;
+            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        /* Deliverables */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .deliverable-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            transition: all 0.2s;
+        }
+        .deliverable-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        .deliverable-card h3 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .deliverable-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 22px;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .service-card h3 {
+            font-size: 0.98rem;
+            font-weight: 600;
+        }
+        .service-card p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            flex-grow: 1;
+        }
+        .service-outcome {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 0.02em;
+        }
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .contact-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .contact-method svg {
+            width: 18px;
+            height: 18px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        .contact-form {
+            background: var(--surface);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-family: inherit;
+            background: var(--bg);
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 86, 49, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-error {
+            color: var(--fail);
+            font-size: 0.78rem;
+            margin-top: 4px;
+            display: none;
+        }
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: var(--fail);
+        }
+        .form-group.error .form-error {
+            display: block;
+        }
+        .form-success {
+            background: var(--pass-bg);
+            border: 1px solid var(--pass);
+            border-radius: var(--radius);
+            padding: 14px 18px;
+            color: var(--pass);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: none;
+            margin-top: 16px;
+        }
+        .form-success.show {
+            display: block;
+        }
+        /* Footer */
+        .site-footer {
+            padding: 32px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: var(--bg-alt);
+        }
+        .site-footer p {
+            font-size: 0.82rem;
+            color: var(--text-faint);
+        }
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 900;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .back-to-top:hover {
+            background: var(--primary-dark);
+        }
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 50px 0 40px;
+            }
+            section {
+                padding: 48px 0;
+            }
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.88rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+            .deliverables-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 400px) {
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container">
+            <a href="#" class="logo" aria-label="Alaa Adel Home">Alaa<span>Adel</span></a>
+            <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="#expertise">Expertise</a>
+                <a href="#methodology">Methodology</a>
+                <a href="#toolkit">Toolkit</a>
+                <a href="#projects">Sample Work</a>
+                <a href="#bug-report">Bug Report</a>
+                <a href="#services">Services</a>
+                <a href="#contact" class="nav-cta">Hire Alaa</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="hero" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="reveal visible">
+                        <div class="hero-badge">Available for freelance QA work</div>
+                        <h1>Alaa Adel —<br><span class="highlight">Software Tester</span> & QA Engineer</h1>
+                        <p class="hero-sub">I help teams ship reliable software by systematically testing web applications and APIs, documenting defects with precision, and delivering clear QA insights that improve product quality.</p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn btn-primary">
+                                Start a QA Conversation
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                            <a href="#projects" class="btn btn-outline">View Sample Work</a>
+                        </div>
+                    </div>
+                    <div class="reveal visible" style="transition-delay:0.15s;">
+                        <div class="qa-dashboard" role="figure" aria-label="QA test status dashboard">
+                            <div class="qa-dashboard-header">
+                                <span class="qa-dashboard-title">QA Test Run — Web App</span>
+                                <span class="qa-status-badge">● 92% PASS</span>
+                            </div>
+                            <div class="qa-dashboard-body">
+                                <div class="test-row">
+                                    <span class="test-label">Authentication flows</span>
+                                    <span class="test-status pass">PASS</span>
+                                </div>
+                                <div class="test-row">
+                                    <span class="test-label">Product search & filtering</span>
+                                    <span class="test-status pass">PASS</span>
+                                </div>
+                                <div class="test-row">
+                                    <span class="test-label">Checkout & payment validation</span>
+                                    <span class="test-status warn">2 ISSUES</span>
+                                </div>
+                                <div class="test-row">
+                                    <span class="test-label">API response integrity</span>
+                                    <span class="test-status pass">PASS</span>
+                                </div>
+                                <div class="test-row">
+                                    <span class="test-label">Responsive breakpoint testing</span>
+                                    <span class="test-status info">IN REVIEW</span>
+                                </div>
+                            </div>
+                            <div class="qa-dashboard-footer">Sample test run — representative QA monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise -->
+        <section id="expertise" aria-labelledby="expertise-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Test Coverage Areas</p>
+                    <h2 class="section-title" id="expertise-title">What I can test for your product</h2>
+                    <p class="section-desc">Focused QA coverage across the most critical aspects of web and API applications — from functional correctness to edge cases and user-facing behavior.</p>
+                </div>
+                <div class="expertise-grid">
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+                        <h3>Functional Testing</h3>
+                        <p>Verifying each feature behaves as specified against requirements.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <h3>Regression Testing</h3>
+                        <p>Ensuring new changes don't break existing functionality after updates.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="2" x2="8" y2="22"/><line x1="16" y1="2" x2="16" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="8" x2="8" y2="8"/><line x1="16" y1="16" x2="22" y2="16"/></svg></div>
+                        <h3>API Testing</h3>
+                        <p>Validating endpoints, request/response structures, status codes, and error handling.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 11 20 8 17 5"/><line x1="20" y1="8" x2="4" y2="8"/><polyline points="7 13 4 16 7 19"/><line x1="4" y1="16" x2="20" y2="16"/></svg></div>
+                        <h3>Integration Testing</h3>
+                        <p>Checking how modules, services, and third-party systems interact.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-5 18.6V22a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.4A10 10 0 0 0 12 2z"/></svg></div>
+                        <h3>UI/UX Testing</h3>
+                        <p>Validating user workflows, visual consistency, and responsive design across breakpoints.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                        <h3>Exploratory Testing</h3>
+                        <p>Investigating application behavior without a script to uncover unexpected defects.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+                        <h3>Negative & Boundary Testing</h3>
+                        <p>Testing edge cases, invalid inputs, and boundary conditions to harden reliability.</p>
+                    </div>
+                    <div class="expertise-card reveal">
+                        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                        <h3>Bug Reporting</h3>
+                        <p>Clear, reproducible defect documentation with steps, expectations, and evidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology -->
+        <section id="methodology" class="methodology" aria-labelledby="methodology-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// QA Process</p>
+                    <h2 class="section-title" id="methodology-title">How I approach testing</h2>
+                    <p class="section-desc">A systematic, repeatable process that adapts to the project's context while ensuring thorough coverage and clear communication.</p>
+                </div>
+                <div class="methodology-grid">
+                    <div class="method-step reveal">
+                        <h3>Understand Requirements</h3>
+                        <p>Review specs, user stories, and acceptance criteria to define what "correct" means for each feature.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <h3>Design Test Cases</h3>
+                        <p>Build structured test scenarios covering happy paths, edge cases, negative cases, and boundary values.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <h3>Execute Tests</h3>
+                        <p>Run tests systematically across browsers and devices, documenting results and deviations.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <h3>Report Defects</h3>
+                        <p>Log clear, actionable bug reports with reproduction steps, expected vs. actual behavior, and severity.</p>
+                    </div>
+                    <div class="method-step reveal">
+                        <h3>Verify Fixes</h3>
+                        <p>Re-test fixed issues and run regression tests to confirm stability before release.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toolkit -->
+        <section id="toolkit" aria-labelledby="toolkit-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Testing Instruments</p>
+                    <h2 class="section-title" id="toolkit-title">Toolkit & technologies</h2>
+                    <p class="section-desc">Tools I work with to test, document, and report on software quality effectively.</p>
+                </div>
+                <div class="toolkit-grid">
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="12" cy="12" r="4"/></svg>Postman</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2 12 12"/><polyline points="16 2 22 2 22 8"/></svg>Selenium</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 7 22 17 12 22 2 17 2 7"/></svg>Playwright</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/></svg>JUnit</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/><path d="M9 3h6v4H9z"/><path d="M15 3a2 2 0 0 1 2 2v4h-2V5a2 2 0 0 0-2-2"/></svg>REST APIs</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>Git</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>GitHub</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="8" y1="2" x2="8" y2="22"/></svg>Jira</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>Browser DevTools</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>SQL</div>
+                    <div class="tool-chip reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>HTML/CSS/JS</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="methodology" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Selected Testing Work</p>
+                    <h2 class="section-title" id="projects-title">Sample QA projects</h2>
+                    <p class="section-desc">Demonstration testing projects showing approach, coverage, and deliverables. These are sample projects, not client engagements.</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card reveal">
+                        <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Expand project details">
+                            <h3>E-commerce Application QA</h3>
+                            <span class="project-tag">Demo</span>
+                            <button class="project-toggle" aria-label="Toggle project details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                        </div>
+                        <div class="project-body">
+                            <p><strong>Scope:</strong> Full functional QA of a demo e-commerce platform including product browsing, cart, checkout, and order confirmation.</p>
+                            <p><strong>Approach:</strong> Designed 40+ test cases covering happy paths, boundary values, and negative scenarios. Executed cross-browser and at responsive breakpoints.</p>
+                            <ul class="project-findings">
+                                <li>Identified cart persistence issue when refreshing after adding items</li>
+                                <li>Found validation gap in promo code input allowing SQL-adjacent characters</li>
+                                <li>Documented responsive layout breakage at 768px on product grid</li>
+                                <li>Delivered test case suite, bug reports, and a QA summary document</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Expand project details">
+                            <h3>REST API Testing</h3>
+                            <span class="project-tag">Demo</span>
+                            <button class="project-toggle" aria-label="Toggle project details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                        </div>
+                        <div class="project-body">
+                            <p><strong>Scope:</strong> Testing a sample REST API for a blog platform with CRUD endpoints, auth, and rate limiting.</p>
+                            <p><strong>Approach:</strong> Used Postman collections with environment variables. Verified status codes, response schemas, authentication tokens, error handling, and boundary inputs.</p>
+                            <ul class="project-findings">
+                                <li>Confirmed 201/200/204/400/401/404/429 status code correctness</li>
+                                <li>Found missing 400 response when empty body sent to POST /posts</li>
+                                <li>Validated token expiry behavior and refresh flow</li>
+                                <li>Delivered Postman collection, API test results matrix, and defect log</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Expand project details">
+                            <h3>Authentication & User Management QA</h3>
+                            <span class="project-tag">Demo</span>
+                            <button class="project-toggle" aria-label="Toggle project details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                        </div>
+                        <div class="project-body">
+                            <p><strong>Scope:</strong> Testing a demo auth system with registration, login, password reset, account deletion, and session management.</p>
+                            <p><strong>Approach:</strong> Created test scenarios for each auth flow. Tested input validation, password policy enforcement, email verification logic, and session timeout behavior.</p>
+                            <ul class="project-findings">
+                                <li>Identified weak password accepted when policy was supposed to enforce complexity</li>
+                                <li>Found inconsistent error messaging between login and reset flows</li>
+                                <li>Documented session still active after password change</li>
+                                <li>Delivered auth test matrix, defect descriptions, and remediation recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-header" tabindex="0" role="button" aria-expanded="false" aria-label="Expand project details">
+                            <h3>Responsive Web Application Testing</h3>
+                            <span class="project-tag">Demo</span>
+                            <button class="project-toggle" aria-label="Toggle project details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                        </div>
+                        <div class="project-body">
+                            <p><strong>Scope:</strong> Testing a demo dashboard application across mobile, tablet, and desktop viewports.</p>
+                            <p><strong>Approach:</strong> Tested at 5 breakpoints (320, 480, 768, 1024, 1440) using DevTools and multiple browser engines. Verified layout integrity, touch targets, and content visibility.</p>
+                            <ul class="project-findings">
+                                <li>Found sidebar overlap at 768px when submenu expanded</li>
+                                <li>Identified tap target smaller than 44px on mobile filter buttons</li>
+                                <li>Documented table truncation without horizontal scroll at 480px</li>
+                                <li>Delivered responsive test report with screenshot evidence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Bug Report -->
+        <section id="bug-report" aria-labelledby="bug-report-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// QA Deliverable Sample</p>
+                    <h2 class="section-title" id="bug-report-title">Sample bug report</h2>
+                    <p class="section-desc">A polished example of the defect documentation quality clients can expect. This is a demonstration report for a fictional issue on a demo application.</p>
+                </div>
+                <div class="bug-report reveal" role="article" aria-label="Sample bug report">
+                    <div class="bug-report-header">
+                        <span class="bug-id">BUG-0041</span>
+                        <span class="bug-severity">High Severity</span>
+                        <span class="bug-status">Open</span>
+                    </div>
+                    <div class="bug-report-body">
+                        <div class="bug-field">
+                            <div class="bug-field-label">Title</div>
+                            <div class="bug-field-value">Checkout fails with "Invalid shipping method" when selecting express delivery on mobile viewport</div>
+                        </div>
+                        <div class="bug-field">
+                            <div class="bug-field-label">Environment</div>
+                            <div class="bug-field-value">Chrome 120 / Safari 17 — Mobile (375px) — Staging build v2.4.1</div>
+                        </div>
+                        <div class="bug-field">
+                            <div class="bug-field-label">Steps to Reproduce</div>
+                            <div class="bug-code-block">1. Open demo-store.example on mobile viewport (375px width)
+2. Add any product to cart
+3. Proceed to checkout
+4. Select "Express Delivery — 2-3 days" as shipping method
+5. Tap "Continue to Payment"
+6. Observe error banner: "Invalid shipping method selected"
+7. Selecting "Standard Delivery" works normally</div>
+                        </div>
+                        <div class="bug-field">
+                            <div class="bug-field-label">Expected Result</div>
+                            <div class="bug-field-value">Express Delivery should be selectable and proceed to payment without error.</div>
+                        </div>
+                        <div class="bug-field">
+                            <div class="bug-field-label">Actual Result</div>
+                            <div class="bug-field-value">Error banner appears specifically for Express Delivery on mobile viewport. The same flow works on desktop (1440px).</div>
+                        </div>
+                        <div class="bug-field">
+                            <div class="bug-field-label">Impact</div>
+                            <div class="bug-field-value">Blocks mobile users from completing checkout with express shipping. Affects all products. Reproducible 100% of the time.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables -->
+        <section id="deliverables" class="methodology" aria-labelledby="deliverables-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Client Artifacts</p>
+                    <h2 class="section-title" id="deliverables-title">What you receive</h2>
+                    <p class="section-desc">Every engagement produces structured, actionable QA documentation that your team can use immediately.</p>
+                </div>
+                <div class="deliverables-grid">
+                    <div class="deliverable-card reveal">
+                        <h3>Test Case Suite</h3>
+                        <p>Structured test scenarios with steps, expected outcomes, and coverage mapping.</p>
+                    </div>
+                    <div class="deliverable-card reveal">
+                        <h3>Bug Reports</h3>
+                        <p>Detailed defect tickets with reproduction steps, severity, and evidence.</p>
+                    </div>
+                    <div class="deliverable-card reveal">
+                        <h3>Test Execution Report</h3>
+                        <p>Pass/fail matrix with environment details and execution timestamps.</p>
+                    </div>
+                    <div class="deliverable-card reveal">
+                        <h3>Regression Results</h3>
+                        <p>Confirmation that fixes didn't introduce new issues in related areas.</p>
+                    </div>
+                    <div class="deliverable-card reveal">
+                        <h3>API Test Results</h3>
+                        <p>Endpoint-by-endpoint response validation with status codes and schema checks.</p>
+                    </div>
+                    <div class="deliverable-card reveal">
+                        <h3>QA Summary Report</h3>
+                        <p>High-level quality assessment with key findings and recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Freelance Services</p>
+                    <h2 class="section-title" id="services-title">How I can support your team</h2>
+                    <p class="section-desc">Flexible QA engagements focused on practical outcomes — find issues before your users do.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <h3>Manual Web QA</h3>
+                        <p>Systematic functional and exploratory testing of your web application across browsers and devices.</p>
+                        <span class="service-outcome">Outcome: Confidence your app works as intended</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <h3>API Testing</h3>
+                        <p>Validating your REST endpoints for correctness, error handling, and response consistency using Postman.</p>
+                        <span class="service-outcome">Outcome: Reliable API behavior for your consumers</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <h3>Regression Testing</h3>
+                        <p>Re-testing after updates to ensure existing features remain stable and no new defects were introduced.</p>
+                        <span class="service-outcome">Outcome: Safe releases without surprises</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <h3>UI/UX Testing</h3>
+                        <p>Validating user workflows, visual consistency, and responsive behavior across screen sizes.</p>
+                        <span class="service-outcome">Outcome: A polished, usable interface</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <h3>Test Case Design</h3>
+                        <p>Creating structured test cases and scenarios your team can reuse for ongoing development.</p>
+                        <span class="service-outcome">Outcome: Repeatable quality standards</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <h3>QA Documentation</h3>
+                        <p>Bug reports, test execution summaries, and quality assessments your stakeholders can act on.</p>
+                        <span class="service-outcome">Outcome: Clarity on quality status and risks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="methodology" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">// Start the Conversation</p>
+                    <h2 class="section-title" id="contact-title">Let's test your product</h2>
+                    <p class="section-desc">Tell me about your application and what you need tested. I'll respond with questions and a proposed testing approach.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <h3>Direct inquiry</h3>
+                        <p>Whether you're preparing for a launch, updating an existing product, or need an ongoing QA partner, I'm ready to understand your context and help you ship with confidence.</p>
+                        <div class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>alaa.qa.tester@example.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>Available for remote QA work worldwide</span>
+                        </div>
+                    </div>
+                    <form class="contact-form reveal" id="contact-form" novalidate aria-label="Contact form">
+                        <div class="form-group" id="fg-name">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g., Sarah Johnson" required autocomplete="name">
+                            <span class="form-error">Please enter your name.</span>
+                        </div>
+                        <div class="form-group" id="fg-email">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+                            <span class="form-error">Please enter a valid email address.</span>
+                        </div>
+                        <div class="form-group" id="fg-message">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="What kind of application do you need tested? What are your main concerns?" required></textarea>
+                            <span class="form-error">Please describe your testing needs.</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Inquiry</button>
+                        <div class="form-success" id="form-success" role="alert">Thank you for reaching out. Your inquiry has been noted — I'll respond within one business day.</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>© 2026 Alaa Adel — Software Tester & QA Engineer. Focused on reliable, well-tested software.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script>
+        (function() {
+            // Mobile menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isOpen = mainNav.classList.toggle('open');
+                    menuToggle.setAttribute('aria-expanded', isOpen);
+                });
+                mainNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                document.addEventListener('click', function(e) {
+                    if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains(
+                            'open')) {
+                        mainNav.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+            // Project accordions
+            document.querySelectorAll('.project-card').forEach(function(card) {
+                const header = card.querySelector('.project-header');
+                const toggle = card.querySelector('.project-toggle');
+                const trigger = header || toggle;
+                if (trigger) {
+                    const openCard = function() {
+                        const isOpen = card.classList.contains('open');
+                        card.classList.toggle('open');
+                        card.setAttribute('aria-expanded', !isOpen);
+                    };
+                    trigger.addEventListener('click', openCard);
+                    header.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openCard();
+                        }
+                    });
+                }
+            });
+            // Back to top
+            const backToTop = document.getElementById('back-to-top');
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 400) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                }, { passive: true });
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            // Scroll reveal
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length > 0) {
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+                    revealEls.forEach(function(el) {
+                        observer.observe(el);
+                    });
+                } else {
+                    revealEls.forEach(function(el) {
+                        el.classList.add('visible');
+                    });
+                }
+            }
+            // Contact form validation
+            const form = document.getElementById('contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let valid = true;
+                    const name = document.getElementById('name');
+                    const email = document.getElementById('email');
+                    const message = document.getElementById('message');
+                    const fgName = document.getElementById('fg-name');
+                    const fgEmail = document.getElementById('fg-email');
+                    const fgMessage = document.getElementById('fg-message');
+                    [fgName, fgEmail, fgMessage].forEach(function(fg) {
+                        if (fg) fg.classList.remove('error');
+                    });
+                    if (name && name.value.trim().length < 2) {
+                        fgName.classList.add('error');
+                        valid = false;
+                    }
+                    if (email) {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(email.value.trim())) {
+                            fgEmail.classList.add('error');
+                            valid = false;
+                        }
+                    }
+                    if (message && message.value.trim().length < 10) {
+                        fgMessage.classList.add('error');
+                        valid = false;
+                    }
+                    if (valid) {
+                        const success = document.getElementById('form-success');
+                        if (success) {
+                            success.classList.add('show');
+                            form.reset();
+                            setTimeout(function() {
+                                success.classList.remove('show');
+                            }, 5000);
+                        }
+                    }
+                });
+                // Clear errors on input
+                form.querySelectorAll('input, textarea').forEach(function(field) {
+                    field.addEventListener('input', function() {
+                        const fg = field.closest('.form-group');
+                        if (fg) fg.classList.remove('error');
+                    });
+                });
+            }
+            // Smooth anchor scroll for all nav links (native CSS handles it, but ensure click works)
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.length > 1) {
+                        const target = document.querySelector(targetId);
+                        if (target) {
+                            e.preventDefault();
+                            const headerOffset = 70;
+                            const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                            window.scrollTo({ top: top, behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
+

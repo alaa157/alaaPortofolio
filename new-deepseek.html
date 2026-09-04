@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa Adel | Software Tester & QA Engineer</title>
+  <meta name="description" content="Alaa Adel – Software Tester & QA Engineer. Manual, API, web & regression testing. Freelance QA portfolio.">
+  <meta property="og:title" content="Alaa Adel | Software Tester & QA Engineer">
+  <meta property="og:description" content="Professional QA portfolio – systematic testing, clear bug reports, quality-driven.">
+  <meta property="og:type" content="website">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #0d0e12;
+      --surface: #16181f;
+      --surface2: #1e212a;
+      --border: #2c313c;
+      --text: #f0f2f5;
+      --text2: #a8b0c0;
+      --accent: #4bc9f0;
+      --accent-glow: rgba(75, 201, 240, 0.15);
+      --radius: 16px;
+      --shadow: 0 10px 30px -10px rgba(0,0,0,0.7);
+      --transition: 0.25s ease;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      font-weight: 400;
+      padding: 0 20px;
+    }
+    a, button {
+      color: var(--accent);
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    a:hover, button:hover {
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0 40px;
+    }
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+
+    /* nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 14, 18, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--text2);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: var(--accent);
+      color: #0d0e12 !important;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+    }
+    .nav-cta:hover {
+      background: #8ad8f5;
+      color: #0d0e12 !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 26px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px 0 10px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+      width: 100%;
+    }
+    .mobile-nav a {
+      color: var(--text2);
+      font-weight: 500;
+    }
+    .mobile-nav a:hover {
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav.open { display: flex; }
+      .nav-cta { display: inline-block; }
+    }
+
+    /* sections */
+    section {
+      padding: 60px 0 20px;
+      scroll-margin-top: 80px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-title .num {
+      color: var(--accent);
+      font-weight: 300;
+      font-size: 1.4rem;
+      opacity: 0.5;
+    }
+    .section-sub {
+      color: var(--text2);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 24px;
+    }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px -12px rgba(0,0,0,0.8);
+    }
+    .card h3 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .card p, .card li {
+      color: var(--text2);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card ul li::before {
+      content: "▹ ";
+      color: var(--accent);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 4px 14px;
+      font-size: 0.8rem;
+      color: var(--text2);
+      margin: 4px 4px 4px 0;
+    }
+    .badge-accent {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(75, 201, 240, 0.08);
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0 20px;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+    .hero-text .tagline {
+      font-size: 1.3rem;
+      color: var(--text2);
+      margin: 8px 0 16px;
+      font-weight: 400;
+    }
+    .hero-text p {
+      color: var(--text2);
+      max-width: 500px;
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0d0e12;
+    }
+    .btn-primary:hover {
+      background: #8ad8f5;
+      border-color: #8ad8f5;
+      color: #0d0e12;
+    }
+    .btn-outline:hover {
+      border-color: var(--text);
+      color: var(--text);
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(75, 201, 240, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+    .status-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #4bc9f0;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+    /* hero visual */
+    .hero-visual {
+      flex: 1 1 300px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      font-family: 'Menlo', 'Monaco', monospace;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-visual .line {
+      display: flex;
+      gap: 12px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+    }
+    .hero-visual .line .label { color: var(--accent); min-width: 80px; }
+    .hero-visual .line .ok { color: #6fcf97; }
+    .hero-visual .line .fail { color: #eb5757; }
+    .hero-visual .line .value { color: var(--text); }
+
+    /* about profile card */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .profile-card .qualities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 2.6rem; }
+    }
+
+    /* timeline process */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 20px;
+    }
+    .process-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .process-step .step-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.3;
+      margin-bottom: 4px;
+    }
+    .process-step h4 {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .process-step p {
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    /* modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 600px;
+      width: 90%;
+      padding: 30px 28px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .modal h2 {
+      margin-bottom: 12px;
+    }
+    .modal p, .modal li {
+      color: var(--text2);
+    }
+    .modal ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .modal ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+    .modal-close {
+      float: right;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--text2);
+      line-height: 1;
+    }
+    .modal-close:hover {
+      color: var(--text);
+    }
+
+    /* bug report sample */
+    .bug-sample {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      font-size: 0.95rem;
+    }
+    .bug-sample .field {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 0;
+    }
+    .bug-sample .field .label {
+      min-width: 130px;
+      color: var(--text2);
+      font-weight: 500;
+    }
+
+    /* contact form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 560px;
+    }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-message {
+      padding: 14px 18px;
+      background: rgba(75, 201, 240, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    /* back to top */
+    .back-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--text);
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-top:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0 20px;
+      margin-top: 40px;
+      color: var(--text2);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+    /* reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* misc */
+    .mt-2 { margin-top: 20px; }
+    .mb-1 { margin-bottom: 8px; }
+    .text-center { text-align: center; }
+    .flex { display: flex; gap: 12px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner container">
+    <div class="logo">Alaa <span>Adel</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="container mobile-nav" id="mobileNav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact" class="nav-cta" style="display:inline-block;width:fit-content;">Hire Me</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Alaa <span>Adel</span></h1>
+        <div class="tagline">Software Tester &amp; QA Engineer</div>
+        <p>Breaking software before your users do. I systematically validate applications, uncover defects, and deliver clear, actionable QA feedback so teams ship reliable products.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Hire Me</a>
+          <a href="#projects" class="btn btn-outline">View My Work</a>
+          <span class="status-badge"><span class="dot"></span> Available for freelance QA</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="line"><span class="label">⏵ test-suite</span><span class="ok">● 12 passed</span><span class="fail">● 2 failed</span></div>
+        <div class="line"><span class="label">⏵ bug-report</span><span class="value">#QA-0042</span><span class="ok"> critical</span></div>
+        <div class="line"><span class="label">⏵ regression</span><span class="ok">✓ stable</span></div>
+        <div class="line"><span class="label">⏵ coverage</span><span class="value">94%</span></div>
+        <div class="line"><span class="label">⏵ status</span><span class="ok">● ready</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title"><span class="num">01</span> About Me</div>
+    <div class="about-grid">
+      <div>
+        <p style="color:var(--text2);font-size:1.05rem;margin-bottom:16px;">I approach testing with a user-first mindset: I don't just check boxes, I explore how real people interact with software. My philosophy is to find the hidden failures before they reach production.</p>
+        <p style="color:var(--text2);">From test planning and functional validation to regression suites and bug reporting, I bring structure, clarity, and a relentless eye for detail. I collaborate with developers to resolve issues efficiently and help deliver quality that users trust.</p>
+      </div>
+      <div class="profile-card">
+        <h4 style="font-weight:600;margin-bottom:4px;">QA Profile</h4>
+        <div class="qualities">
+          <span class="badge badge-accent">Detail-oriented</span>
+          <span class="badge badge-accent">Analytical</span>
+          <span class="badge badge-accent">User-focused</span>
+          <span class="badge badge-accent">Systematic</span>
+          <span class="badge badge-accent">Quality-driven</span>
+          <span class="badge badge-accent">Clear communicator</span>
+        </div>
+        <p style="margin-top:12px;color:var(--text2);font-size:0.9rem;">I help teams ship with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-title"><span class="num">02</span> Core QA Skills</div>
+    <div class="grid-3">
+      <div class="card"><h3>Functional Testing</h3><ul><li>Functional Testing</li><li>Feature Validation</li><li>Requirement-Based Testing</li><li>End-to-End Testing</li><li>Smoke &amp; Sanity</li></ul></div>
+      <div class="card"><h3>Regression &amp; Integration</h3><ul><li>Regression Testing</li><li>Integration Testing</li><li>System Testing</li><li>Compatibility Testing</li></ul></div>
+      <div class="card"><h3>UI / UX Quality</h3><ul><li>UI Testing</li><li>Usability Testing</li><li>Cross-Browser Testing</li><li>Responsive Testing</li><li>User Flow Validation</li></ul></div>
+      <div class="card"><h3>API &amp; Backend</h3><ul><li>REST API Testing</li><li>Request/Response Validation</li><li>Status Code Validation</li><li>Data Validation</li><li>API Workflow Testing</li></ul></div>
+      <div class="card"><h3>Defect Management</h3><ul><li>Bug Identification</li><li>Bug Reproduction</li><li>Severity/Priority Classification</li><li>Root-Cause Investigation</li><li>Clear Bug Documentation</li></ul></div>
+      <div class="card"><h3>QA Practices</h3><ul><li>Test Case Design</li><li>Test Scenarios</li><li>Test Planning</li><li>Test Execution</li><li>Regression Suites</li><li>Test Reporting</li></ul></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-title"><span class="num">03</span> QA Services</div>
+    <div class="grid-2">
+      <div class="card"><h3>Manual Software Testing</h3><p>Thorough validation of web and software applications against requirements and expected user behavior.</p></div>
+      <div class="card"><h3>Functional Testing</h3><p>Validate features, workflows, forms, authentication, business rules, and edge cases.</p></div>
+      <div class="card"><h3>Regression Testing</h3><p>Ensure existing functionality remains stable after updates and new releases.</p></div>
+      <div class="card"><h3>Web Application Testing</h3><p>Evaluate websites across workflows, browsers, screen sizes, and real-world usage scenarios.</p></div>
+      <div class="card"><h3>API Testing</h3><p>Validate REST APIs, responses, status codes, data consistency, and endpoint behavior.</p></div>
+      <div class="card"><h3>UI &amp; Usability Testing</h3><p>Identify interface inconsistencies, usability problems, confusing interactions, and responsive issues.</p></div>
+      <div class="card"><h3>Bug Reporting</h3><p>Deliver clear, reproducible defect reports with steps, expected/actual behavior, severity, and evidence.</p></div>
+      <div class="card"><h3>Test Case &amp; Scenario Creation</h3><p>Create structured test scenarios and cases designed to provide meaningful coverage.</p></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-title"><span class="num">04</span> Testing Process</div>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-num">1</div><h4>Understand Requirements</h4><p>Clarify scope, user stories, and acceptance criteria.</p></div>
+      <div class="process-step"><div class="step-num">2</div><h4>Analyze User Flows</h4><p>Map key paths and identify edge cases.</p></div>
+      <div class="process-step"><div class="step-num">3</div><h4>Build Test Scenarios</h4><p>Design structured test cases for coverage.</p></div>
+      <div class="process-step"><div class="step-num">4</div><h4>Execute Tests</h4><p>Run functional, regression, and exploratory tests.</p></div>
+      <div class="process-step"><div class="step-num">5</div><h4>Identify &amp; Reproduce Defects</h4><p>Isolate and reliably reproduce issues.</p></div>
+      <div class="process-step"><div class="step-num">6</div><h4>Document Findings</h4><p>Create clear, detailed bug reports.</p></div>
+      <div class="process-step"><div class="step-num">7</div><h4>Regression Test Fixes</h4><p>Verify fixes and ensure no new issues.</p></div>
+      <div class="process-step"><div class="step-num">8</div><h4>Deliver QA Report</h4><p>Provide summary, results, and recommendations.</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title"><span class="num">05</span> Selected Testing Projects</div>
+    <div class="grid-2">
+      <div class="card"><h3>E-Commerce Web Application QA</h3><p><strong>Scope:</strong> Product browsing, search, filtering, cart, checkout, authentication, form validation, responsive behavior.</p><p><strong>Testing:</strong> Functional, regression, UI, edge-case, cross-browser.</p><button class="btn btn-outline" style="margin-top:12px;" data-modal="modal1">View Details</button></div>
+      <div class="card"><h3>REST API Testing Project</h3><p><strong>Scope:</strong> Authentication, CRUD operations, response validation, status codes, error handling, data consistency.</p><p><strong>Testing:</strong> API functional, negative, boundary, response validation.</p><button class="btn btn-outline" style="margin-top:12px;" data-modal="modal2">View Details</button></div>
+      <div class="card"><h3>Responsive Web Application Testing</h3><p><strong>Scope:</strong> Desktop, tablet, mobile, navigation, forms, layout behavior, interactive elements.</p><p><strong>Testing:</strong> Responsive, cross-browser, UI consistency, usability.</p><button class="btn btn-outline" style="margin-top:12px;" data-modal="modal3">View Details</button></div>
+      <div class="card"><h3>Authentication &amp; User Management QA</h3><p><strong>Scope:</strong> Registration, login, logout, password validation, invalid credentials, session behavior, access control.</p><p><strong>Testing:</strong> Functional, negative, boundary, security-minded validation.</p><button class="btn btn-outline" style="margin-top:12px;" data-modal="modal4">View Details</button></div>
+    </div>
+  </section>
+
+  <!-- TESTING TECHNIQUES -->
+  <section id="techniques">
+    <div class="section-title"><span class="num">06</span> Testing Techniques</div>
+    <div class="flex">
+      <span class="badge">Equivalence Partitioning</span>
+      <span class="badge">Boundary Value Analysis</span>
+      <span class="badge">Decision Table Testing</span>
+      <span class="badge">State Transition Testing</span>
+      <span class="badge">Error Guessing</span>
+      <span class="badge">Exploratory Testing</span>
+      <span class="badge">Positive Testing</span>
+      <span class="badge">Negative Testing</span>
+      <span class="badge">Retesting</span>
+      <span class="badge">Regression Testing</span>
+      <span class="badge">Smoke Testing</span>
+      <span class="badge">Sanity Testing</span>
+      <span class="badge">End-to-End Testing</span>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="section-title"><span class="num">07</span> Testing Toolkit</div>
+    <div class="flex">
+      <span class="badge badge-accent">Postman</span>
+      <span class="badge badge-accent">Selenium</span>
+      <span class="badge badge-accent">Playwright</span>
+      <span class="badge badge-accent">JUnit</span>
+      <span class="badge badge-accent">REST APIs</span>
+      <span class="badge badge-accent">Git</span>
+      <span class="badge badge-accent">GitHub</span>
+      <span class="badge badge-accent">Jira</span>
+      <span class="badge badge-accent">Browser DevTools</span>
+      <span class="badge badge-accent">SQL</span>
+      <span class="badge badge-accent">HTML/CSS/JS</span>
+    </div>
+  </section>
+
+  <!-- QA DELIVERABLES -->
+  <section>
+    <div class="section-title"><span class="num">08</span> QA Deliverables</div>
+    <div class="grid-2">
+      <div class="card"><h3>Test Cases</h3><p>Detailed steps, inputs, expected results.</p></div>
+      <div class="card"><h3>Test Scenarios</h3><p>High-level user-oriented test coverage.</p></div>
+      <div class="card"><h3>Bug Reports</h3><p>Reproducible defects with evidence.</p></div>
+      <div class="card"><h3>Test Execution Reports</h3><p>Pass/fail status, coverage, observations.</p></div>
+      <div class="card"><h3>Regression Results</h3><p>Impact analysis and stability metrics.</p></div>
+      <div class="card"><h3>API Test Results</h3><p>Status codes, payloads, performance.</p></div>
+      <div class="card"><h3>QA Summary Reports</h3><p>Overall quality assessment and recommendations.</p></div>
+      <div class="card"><h3>Defect Documentation</h3><p>Comprehensive tracking and lifecycle.</p></div>
+    </div>
+  </section>
+
+  <!-- WHY WORK WITH ME -->
+  <section>
+    <div class="section-title"><span class="num">09</span> Why Work With Me</div>
+    <div class="grid-2">
+      <div class="card"><h3>Detail-Oriented Testing</h3><p>Look beyond happy paths and investigate edge cases.</p></div>
+      <div class="card"><h3>Clear Communication</h3><p>Translate technical findings into actionable information.</p></div>
+      <div class="card"><h3>User-Centered QA</h3><p>Test software from the perspective of real users.</p></div>
+      <div class="card"><h3>Structured Process</h3><p>Use organized testing workflows and documented results.</p></div>
+      <div class="card"><h3>Reliable Feedback</h3><p>Provide clear evidence and reproducible defect reports.</p></div>
+      <div class="card"><h3>Quality Mindset</h3><p>Focus on preventing issues from reaching users.</p></div>
+    </div>
+  </section>
+
+  <!-- BUG REPORT SAMPLE -->
+  <section>
+    <div class="section-title"><span class="num">10</span> Sample QA Deliverable</div>
+    <div class="bug-sample">
+      <h4 style="margin-bottom:8px;">🐞 Checkout form accepts an invalid email format</h4>
+      <div class="field"><span class="label">Severity</span> Medium</div>
+      <div class="field"><span class="label">Priority</span> Medium</div>
+      <div class="field"><span class="label">Environment</span> Web Application</div>
+      <div class="field"><span class="label">Preconditions</span> User is on checkout page</div>
+      <div class="field"><span class="label">Steps to Reproduce</span> 1. Enter "test@invalid" in email field. 2. Proceed.</div>
+      <div class="field"><span class="label">Expected Result</span> Validation error: "Please enter a valid email".</div>
+      <div class="field"><span class="label">Actual Result</span> Form submits without validation.</div>
+      <div class="field"><span class="label">Status</span> Open</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title"><span class="num">11</span> Have a product that needs testing?</div>
+    <p style="color:var(--text2);max-width:600px;margin-bottom:24px;">Let's discuss your software quality needs. I'll help you uncover defects, improve reliability, and deliver a better user experience.</p>
+    <form id="contactForm" class="contact-form">
+      <input type="text" id="name" placeholder="Your name" required>
+      <input type="email" id="email" placeholder="Email address" required>
+      <select id="projectType">
+        <option value="">Project type</option>
+        <option value="Web Application">Web Application</option>
+        <option value="API Testing">API Testing</option>
+        <option value="Mobile/Responsive">Mobile/Responsive</option>
+        <option value="Regression Suite">Regression Suite</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+      <button type="submit" class="btn btn-primary" style="width:fit-content;">Send Inquiry</button>
+      <div id="formFeedback" class="form-message" style="display:none;"></div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <strong style="color:var(--text);">Alaa Adel</strong><br>
+      <span style="font-size:0.9rem;">Software Tester &amp; QA Engineer</span>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="font-size:0.85rem;">© 2026 Alaa Adel. All rights reserved.</div>
+  </footer>
+
+</main>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal1"><div class="modal"><button class="modal-close" data-close="modal1">&times;</button><h2>E-Commerce QA Details</h2><ul><li>Full regression suite for cart & checkout</li><li>Edge-case validation (empty states, invalid inputs)</li><li>Cross-browser & responsive testing</li><li>Delivered 45+ test cases, 12 bug reports</li></ul></div></div>
+<div class="modal-overlay" id="modal2"><div class="modal"><button class="modal-close" data-close="modal2">&times;</button><h2>REST API Testing</h2><ul><li>CRUD endpoint validation (GET, POST, PUT, DELETE)</li><li>Status code & error response validation</li><li>Boundary testing for request payloads</li><li>Delivered API test collection & report</li></ul></div></div>
+<div class="modal-overlay" id="modal3"><div class="modal"><button class="modal-close" data-close="modal3">&times;</button><h2>Responsive Web Testing</h2><ul><li>Tested on 5+ viewport sizes</li><li>UI consistency & layout validation</li><li>Navigation & interactive element testing</li><li>Cross-browser (Chrome, Firefox, Safari)</li></ul></div></div>
+<div class="modal-overlay" id="modal4"><div class="modal"><button class="modal-close" data-close="modal4">&times;</button><h2>Authentication QA</h2><ul><li>Registration, login, logout flows</li><li>Password policy & invalid credential testing</li><li>Session timeout & access control validation</li><li>Negative testing for edge cases</li></ul></div></div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+  (function() {
+    // mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    // close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.remove('open'));
+    });
+
+    // modals
+    const modals = document.querySelectorAll('.modal-overlay');
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = btn.getAttribute('data-modal');
+        const modal = document.getElementById(id);
+        if (modal) {
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = btn.getAttribute('data-close');
+        const modal = document.getElementById(id);
+        if (modal) {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+      overlay.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // back to top
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backTop.classList.add('visible');
+      else backTop.classList.remove('visible');
+    });
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.card, .process-step, .hero-visual, .profile-card, .bug-sample').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    // contact form
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if (!name || !email || !msg) {
+        feedback.style.display = 'block';
+        feedback.textContent = 'Please fill in all fields.';
+        feedback.style.borderColor = '#eb5757';
+        return;
+      }
+      feedback.style.display = 'block';
+      feedback.textContent = '✓ Your inquiry has been prepared. Please use the contact method provided to reach Alaa directly.';
+      feedback.style.borderColor = 'var(--accent)';
+      feedback.style.color = 'var(--text)';
+      form.reset();
+    });
+
+    // active nav (simple)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = link.getAttribute('href') === '#' + current ? 'var(--text)' : 'var(--text2)';
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

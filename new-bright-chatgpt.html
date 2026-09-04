@@ -1,0 +1,4289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alaa Adel | Software Tester & QA Engineer</title>
+  <meta name="description" content="Alaa Adel — Software Tester and QA Engineer focused on functional testing, web application testing, API testing, regression testing, usability validation, and clear defect reporting.">
+  <meta name="keywords" content="Alaa Adel, Software Tester, QA Engineer, Manual Testing, Web Testing, API Testing, Bug Reporting, Regression Testing, Freelance QA">
+  <meta name="author" content="Alaa Adel">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Alaa Adel | Software Tester & QA Engineer">
+  <meta property="og:description" content="Software testing and QA portfolio focused on reliable products, structured testing, and actionable defect reporting.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #f5f7f9;
+      --bg-soft: #edf1f4;
+      --surface: #ffffff;
+      --surface-alt: #f8fafb;
+      --ink: #172126;
+      --muted: #647278;
+      --line: #dce3e6;
+
+      --primary: #173f43;
+      --primary-dark: #103033;
+      --primary-soft: #e0eeee;
+
+      --accent: #d18a42;
+      --accent-soft: #f6eadc;
+
+      --success: #2d795c;
+      --success-soft: #e5f2eb;
+
+      --warning: #a46b20;
+      --warning-soft: #fbefd9;
+
+      --danger: #a74747;
+      --danger-soft: #f7e5e5;
+
+      --shadow-sm: 0 8px 24px rgba(23, 33, 38, 0.06);
+      --shadow-md: 0 18px 45px rgba(23, 33, 38, 0.10);
+      --shadow-lg: 0 28px 70px rgba(23, 33, 38, 0.14);
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+
+      --nav-height: 78px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 24px);
+    }
+
+    body {
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    ::selection {
+      background: var(--primary);
+      color: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(209, 138, 66, 0.65);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section--soft {
+      background: var(--bg-soft);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 17px;
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    .text-accent {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-size: 0.9rem;
+      font-weight: 750;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn--primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 8px 20px rgba(23, 63, 67, 0.18);
+    }
+
+    .btn--primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 13px 28px rgba(23, 63, 67, 0.23);
+    }
+
+    .btn--outline {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--primary);
+    }
+
+    .btn--outline:hover {
+      background: var(--surface);
+      border-color: var(--primary);
+    }
+
+    .btn--light {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .nav {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      background: rgba(245, 247, 249, 0.88);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      transition:
+        background 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-color: var(--line);
+      box-shadow: 0 5px 25px rgba(23, 33, 38, 0.06);
+    }
+
+    .nav__inner {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand__mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--primary);
+      border-radius: 9px;
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .brand__text {
+      font-size: 0.94rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav__link {
+      position: relative;
+      padding: 9px 10px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: color 180ms ease;
+    }
+
+    .nav__link::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 3px;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .nav__link:hover,
+    .nav__link.active {
+      color: var(--primary);
+    }
+
+    .nav__link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav__cta {
+      min-height: 41px;
+      padding-inline: 17px;
+      font-size: 0.78rem;
+    }
+
+    .nav__toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--primary);
+    }
+
+    .nav__toggle svg {
+      width: 21px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 25%, rgba(209, 138, 66, 0.09), transparent 27%),
+        radial-gradient(circle at 12% 75%, rgba(23, 63, 67, 0.08), transparent 30%),
+        var(--bg);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.34;
+      background-image:
+        linear-gradient(rgba(23, 63, 67, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23, 63, 67, 0.035) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .hero__grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(430px, 0.95fr);
+      gap: 70px;
+      align-items: center;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      margin-bottom: 23px;
+      border: 1px solid #cfe2d8;
+      border-radius: 999px;
+      background: rgba(229, 242, 235, 0.72);
+      color: var(--success);
+      font-size: 0.75rem;
+      font-weight: 750;
+    }
+
+    .availability__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(45, 121, 92, 0.1);
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(3.2rem, 6.5vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      margin-bottom: 25px;
+    }
+
+    .hero__role {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 750;
+    }
+
+    .hero__role::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero__description {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 30px;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero__note {
+      margin-top: 23px;
+      color: var(--muted);
+      font-size: 0.77rem;
+    }
+
+    /* QA dashboard */
+
+    .qa-dashboard {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin-inline: auto;
+      padding: 17px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(220, 227, 230, 0.95);
+      border-radius: 22px;
+      box-shadow: var(--shadow-lg);
+      transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+    }
+
+    .qa-dashboard::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 25px -25px -25px 25px;
+      border-radius: 28px;
+      background: rgba(23, 63, 67, 0.06);
+      filter: blur(2px);
+    }
+
+    .dashboard__topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 4px 4px 15px;
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-controls span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+
+    .window-title {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.67rem;
+    }
+
+    .dashboard__status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--success);
+      font-size: 0.67rem;
+      font-weight: 800;
+    }
+
+    .dashboard__status span {
+      width: 6px;
+      height: 6px;
+      background: var(--success);
+      border-radius: 50%;
+    }
+
+    .dashboard__main {
+      padding: 22px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dashboard__main::after {
+      content: "QA";
+      position: absolute;
+      right: -18px;
+      bottom: -35px;
+      color: rgba(255, 255, 255, 0.035);
+      font-size: 10rem;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.1em;
+    }
+
+    .dashboard__heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
+
+    .dashboard__heading small {
+      display: block;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 5px;
+    }
+
+    .dashboard__heading strong {
+      font-size: 1rem;
+    }
+
+    .quality-badge {
+      padding: 5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #d9eee6;
+      font-size: 0.61rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .metric {
+      padding: 13px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .metric__label {
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .metric__value {
+      font-size: 1.15rem;
+      font-weight: 850;
+    }
+
+    .metric--passed .metric__value {
+      color: #9dd8bb;
+    }
+
+    .metric--failed .metric__value {
+      color: #f0a6a6;
+    }
+
+    .test-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .test-row {
+      display: grid;
+      grid-template-columns: 24px 1fr auto;
+      gap: 9px;
+      align-items: center;
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+      font-size: 0.67rem;
+    }
+
+    .test-icon {
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      font-weight: 900;
+    }
+
+    .test-icon--pass {
+      background: rgba(157, 216, 187, 0.13);
+      color: #9dd8bb;
+    }
+
+    .test-icon--fail {
+      background: rgba(240, 166, 166, 0.13);
+      color: #f0a6a6;
+    }
+
+    .test-name {
+      color: rgba(255, 255, 255, 0.83);
+    }
+
+    .test-status {
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.59rem;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    .dashboard__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.59rem;
+      color: var(--muted);
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 6px;
+      height: 10px;
+      margin-left: 4px;
+      vertical-align: -1px;
+      background: var(--accent);
+      animation: blink 1.1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about__copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .about__copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-card {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .profile-card__header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile-avatar {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-radius: 13px;
+      font-weight: 900;
+    }
+
+    .profile-card__header strong {
+      display: block;
+      font-size: 0.93rem;
+    }
+
+    .profile-card__header span {
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .qualities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .quality {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 11px;
+      background: var(--surface-alt);
+      border: 1px solid #e8edef;
+      border-radius: 9px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .quality svg {
+      width: 15px;
+      height: 15px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .skill-card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition:
+        transform 200ms ease,
+        box-shadow 200ms ease,
+        border-color 200ms ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: #c7d5d8;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-card__number {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.67rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--muted);
+      background: var(--surface-alt);
+      font-size: 0.67rem;
+      font-weight: 650;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      min-height: 260px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border-radius: 11px;
+    }
+
+    .service-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process {
+      position: relative;
+    }
+
+    .process::before {
+      content: "";
+      position: absolute;
+      top: 196px;
+      left: 50%;
+      width: min(950px, 80%);
+      height: 1px;
+      background: var(--line);
+      transform: translateX(-50%);
+    }
+
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px 20px;
+    }
+
+    .process-step {
+      position: relative;
+    }
+
+    .process-step__number {
+      position: relative;
+      z-index: 1;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 23px;
+      background: var(--surface);
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      color: var(--primary);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.68rem;
+      font-weight: 900;
+    }
+
+    .process-step:nth-child(n + 5) .process-step__number {
+      border-color: var(--accent);
+    }
+
+    .process-step h3 {
+      margin-bottom: 8px;
+      font-size: 0.93rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+    }
+
+    .project-card:nth-child(2)::before,
+    .project-card:nth-child(4)::before {
+      background: var(--accent);
+    }
+
+    .project-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 21px;
+    }
+
+    .project-type {
+      color: var(--primary);
+      font-size: 0.64rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-demo {
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.59rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      max-width: 440px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .project-card__intro {
+      color: var(--muted);
+      font-size: 0.79rem;
+      margin-bottom: 22px;
+    }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-group strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .detail-group ul {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .detail-group li {
+      position: relative;
+      padding-left: 12px;
+      color: var(--muted);
+      font-size: 0.69rem;
+    }
+
+    .detail-group li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .project-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .project-card__footer span {
+      color: var(--muted);
+      font-size: 0.66rem;
+    }
+
+    .text-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 0;
+      background: transparent;
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .text-btn svg {
+      width: 15px;
+      transition: transform 180ms ease;
+    }
+
+    .text-btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* =========================
+       TECHNIQUES
+    ========================== */
+
+    .technique-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .technique-intro {
+      position: sticky;
+      top: 110px;
+    }
+
+    .technique-intro p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .technique-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .technique {
+      padding: 15px 17px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .technique strong {
+      display: block;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+    }
+
+    .technique span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.67rem;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       TOOLS
+    ========================== */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .tool {
+      min-height: 115px;
+      padding: 18px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .tool:hover {
+      transform: translateY(-3px);
+      border-color: #c3d2d4;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool__icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 11px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-radius: 10px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .tool strong {
+      font-size: 0.72rem;
+    }
+
+    .tool span {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.58rem;
+    }
+
+    .toolkit-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.69rem;
+      text-align: center;
+    }
+
+    /* =========================
+       DELIVERABLES
+    ========================== */
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .deliverable {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .deliverable__number {
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.62rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .deliverable h3 {
+      font-size: 0.88rem;
+      margin-bottom: 8px;
+    }
+
+    .deliverable p {
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       WHY ME
+    ========================== */
+
+    .why {
+      background: var(--primary);
+      color: white;
+      overflow: hidden;
+    }
+
+    .why::before {
+      content: "";
+      position: absolute;
+      top: -220px;
+      right: -150px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 70px rgba(255, 255, 255, 0.015),
+        0 0 0 140px rgba(255, 255, 255, 0.01);
+    }
+
+    .why .eyebrow,
+    .why .section-description {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .why .eyebrow {
+      color: #d6e8e7;
+    }
+
+    .why .section-title {
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .why-card {
+      padding: 31px;
+      background: var(--primary);
+    }
+
+    .why-card__icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9px;
+      color: #e1b47e;
+    }
+
+    .why-card__icon svg {
+      width: 18px;
+    }
+
+    .why-card h3 {
+      margin-bottom: 9px;
+      font-size: 0.94rem;
+    }
+
+    .why-card p {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.74rem;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       BUG REPORT
+    ========================== */
+
+    .bug-report-wrap {
+      max-width: 920px;
+      margin-inline: auto;
+    }
+
+    .sample-label {
+      display: inline-flex;
+      padding: 6px 10px;
+      margin-bottom: 13px;
+      background: var(--warning-soft);
+      color: var(--warning);
+      border: 1px solid #efd9b5;
+      border-radius: 6px;
+      font-size: 0.63rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .bug-report {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .bug-report__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 19px;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bug-report__bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bug-report__bar-left span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--danger);
+    }
+
+    .bug-report__bar strong {
+      font-size: 0.69rem;
+    }
+
+    .bug-report__bar small {
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      font-size: 0.58rem;
+    }
+
+    .bug-report__body {
+      padding: 27px;
+    }
+
+    .bug-title {
+      margin-bottom: 22px;
+    }
+
+    .bug-title small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .bug-title h3 {
+      font-size: 1.2rem;
+      letter-spacing: -0.025em;
+    }
+
+    .bug-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .bug-meta-item {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--surface-alt);
+    }
+
+    .bug-meta-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.57rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .bug-meta-item strong {
+      font-size: 0.72rem;
+    }
+
+    .status-medium {
+      color: var(--warning);
+    }
+
+    .bug-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .bug-field {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .bug-field h4 {
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+    }
+
+    .bug-field p,
+    .bug-field ol {
+      color: var(--muted);
+      font-size: 0.7rem;
+      line-height: 1.65;
+    }
+
+    .bug-field ol {
+      padding-left: 17px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-section {
+      background:
+        radial-gradient(circle at 90% 20%, rgba(209, 138, 66, 0.08), transparent 25%),
+        var(--bg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .contact-point__icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border-radius: 8px;
+    }
+
+    .contact-point__icon svg {
+      width: 16px;
+    }
+
+    .contact-point strong {
+      display: block;
+      font-size: 0.73rem;
+    }
+
+    .contact-point span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.66rem;
+    }
+
+    .contact-form {
+      padding: 29px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 0.69rem;
+      font-weight: 800;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 13px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      outline: none;
+      transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    textarea.form-control {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(23, 63, 67, 0.08);
+    }
+
+    .form-control.invalid {
+      border-color: var(--danger);
+    }
+
+    .form-error {
+      display: none;
+      margin-top: 5px;
+      color: var(--danger);
+      font-size: 0.62rem;
+    }
+
+    .form-error.visible {
+      display: block;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 3px;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.6rem;
+      text-align: center;
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 15px;
+      padding: 13px;
+      background: var(--success-soft);
+      border: 1px solid #cde5d7;
+      border-radius: 9px;
+      color: var(--success);
+      font-size: 0.7rem;
+      line-height: 1.55;
+    }
+
+    .form-success.visible {
+      display: block;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer {
+      padding: 40px 0 28px;
+      background: #102f32;
+      color: white;
+    }
+
+    .footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__brand p {
+      max-width: 350px;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.53);
+      font-size: 0.72rem;
+    }
+
+    .footer .brand__mark {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 20px;
+    }
+
+    .footer__links a {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.69rem;
+      font-weight: 650;
+      transition: color 180ms ease;
+    }
+
+    .footer__links a:hover {
+      color: white;
+    }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.62rem;
+    }
+
+    /* =========================
+       BACK TO TOP
+    ========================== */
+
+    .back-top {
+      position: fixed;
+      z-index: 900;
+      right: 24px;
+      bottom: 24px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition:
+        opacity 180ms ease,
+        visibility 180ms ease,
+        transform 180ms ease;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-top svg {
+      width: 17px;
+    }
+
+    /* =========================
+       MODAL
+    ========================== */
+
+    .modal {
+      position: fixed;
+      z-index: 2000;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      background: rgba(10, 24, 26, 0.58);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 180ms ease,
+        visibility 180ms ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal__dialog {
+      width: min(720px, 100%);
+      max-height: min(760px, 90vh);
+      overflow-y: auto;
+      background: var(--surface);
+      border-radius: 18px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(15px) scale(0.98);
+      transition: transform 180ms ease;
+    }
+
+    .modal.open .modal__dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal__header {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 25px;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal__header small {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 0.61rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .modal__header h2 {
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .modal__close {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--primary);
+    }
+
+    .modal__close svg {
+      width: 16px;
+    }
+
+    .modal__body {
+      padding: 26px;
+    }
+
+    .modal__intro {
+      color: var(--muted);
+      font-size: 0.79rem;
+      margin-bottom: 23px;
+    }
+
+    .modal__section {
+      margin-bottom: 23px;
+    }
+
+    .modal__section:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal__section h3 {
+      margin-bottom: 10px;
+      font-size: 0.77rem;
+    }
+
+    .modal__section ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .modal__section li {
+      position: relative;
+      padding-left: 15px;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .modal__section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* =========================
+       SCROLL REVEAL
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 650ms ease,
+        transform 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1050px) {
+      .nav__links {
+        gap: 0;
+      }
+
+      .nav__link {
+        padding-inline: 7px;
+        font-size: 0.74rem;
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+
+      .hero__content {
+        max-width: 800px;
+      }
+
+      .qa-dashboard {
+        max-width: 650px;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .deliverables-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about__grid,
+      .contact-grid {
+        gap: 50px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      :root {
+        --nav-height: 68px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__toggle {
+        display: grid;
+      }
+
+      .nav__links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 20px;
+        right: 20px;
+        display: grid;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.97);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow-md);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition:
+          opacity 180ms ease,
+          visibility 180ms ease,
+          transform 180ms ease;
+      }
+
+      .nav__links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav__link {
+        padding: 12px;
+      }
+
+      .nav__link::after {
+        display: none;
+      }
+
+      .nav__links .nav__link:last-child {
+        margin-bottom: 0;
+      }
+
+      .about__grid,
+      .technique-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .technique-intro {
+        position: static;
+      }
+
+      .process::before {
+        display: none;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__top {
+        flex-direction: column;
+      }
+
+      .footer__links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container,
+      .nav__inner {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .hero {
+        padding-top: calc(var(--nav-height) + 55px);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 14vw, 4.3rem);
+      }
+
+      .hero__actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero__actions .btn {
+        width: 100%;
+      }
+
+      .qa-dashboard {
+        padding: 10px;
+        border-radius: 16px;
+        transform: none;
+      }
+
+      .dashboard__main {
+        padding: 15px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skill-grid,
+      .services-grid,
+      .project-grid,
+      .process-grid,
+      .why-grid,
+      .deliverables-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .technique-list {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+
+      .bug-meta,
+      .bug-content {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .back-top {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .modal {
+        padding: 12px;
+      }
+
+      .modal__body,
+      .modal__header {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="nav" id="navbar">
+    <div class="nav__inner">
+
+      <a href="#home" class="brand" aria-label="Alaa Adel home">
+        <span class="brand__mark">AA</span>
+        <span class="brand__text">Alaa Adel</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav__link active" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#services">Services</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="#process">Process</a>
+        <a class="nav__link" href="#tools">Tools</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--primary nav__cta">Hire Me</a>
+
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero__grid">
+
+          <div class="hero__content reveal">
+
+            <div class="availability">
+              <span class="availability__dot"></span>
+              Available for freelance QA projects
+            </div>
+
+            <div class="hero__role">
+              Software Tester & QA Engineer
+            </div>
+
+            <h1>
+              Breaking software<br>
+              <span class="text-accent">before your users do.</span>
+            </h1>
+
+            <p class="hero__description">
+              I approach software quality systematically: understanding requirements,
+              exploring real user flows, finding defects, reproducing them clearly,
+              and delivering structured QA feedback that helps teams ship with confidence.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#contact" class="btn btn--primary">
+                Hire Me
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+
+              <a href="#projects" class="btn btn--outline">
+                View My Work
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </a>
+            </div>
+
+            <p class="hero__note">
+              Focused on practical testing, actionable findings, and product quality.
+            </p>
+
+          </div>
+
+
+          <div class="qa-dashboard reveal" aria-label="Illustrative QA testing dashboard">
+
+            <div class="dashboard__topbar">
+              <div class="window-controls" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="window-title">qa_test_session / overview</div>
+
+              <div class="dashboard__status">
+                <span></span>
+                ACTIVE
+              </div>
+            </div>
+
+            <div class="dashboard__main">
+
+              <div class="dashboard__heading">
+                <div>
+                  <small>Testing overview</small>
+                  <strong>Quality Validation</strong>
+                </div>
+                <span class="quality-badge">DEMO VIEW</span>
+              </div>
+
+              <div class="metric-grid">
+
+                <div class="metric">
+                  <div class="metric__label">Test Cases</div>
+                  <div class="metric__value">24</div>
+                </div>
+
+                <div class="metric metric--passed">
+                  <div class="metric__label">Passed</div>
+                  <div class="metric__value">21</div>
+                </div>
+
+                <div class="metric metric--failed">
+                  <div class="metric__label">Failed</div>
+                  <div class="metric__value">03</div>
+                </div>
+
+                <div class="metric">
+                  <div class="metric__label">Defects</div>
+                  <div class="metric__value">03</div>
+                </div>
+
+              </div>
+
+              <div class="test-list">
+
+                <div class="test-row">
+                  <span class="test-icon test-icon--pass">✓</span>
+                  <span class="test-name">Authentication workflow</span>
+                  <span class="test-status">Passed</span>
+                </div>
+
+                <div class="test-row">
+                  <span class="test-icon test-icon--pass">✓</span>
+                  <span class="test-name">Product search & filtering</span>
+                  <span class="test-status">Passed</span>
+                </div>
+
+                <div class="test-row">
+                  <span class="test-icon test-icon--fail">!</span>
+                  <span class="test-name">Checkout email validation</span>
+                  <span class="test-status">Defect</span>
+                </div>
+
+                <div class="test-row">
+                  <span class="test-icon test-icon--pass">✓</span>
+                  <span class="test-name">Responsive navigation</span>
+                  <span class="test-status">Passed</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="dashboard__footer">
+              <span>$ test --execute regression<span class="terminal-cursor"></span></span>
+              <span>QA / SAMPLE</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">01 / About</span>
+          <h2 class="section-title">Quality starts with <span class="text-accent">asking the right questions.</span></h2>
+          <p class="section-description">
+            Testing is more than checking whether a button works. It is understanding
+            how a product should behave, how users will actually interact with it,
+            and where unexpected behavior can affect the experience.
+          </p>
+        </div>
+
+        <div class="about__grid">
+
+          <div class="about__copy reveal">
+            <p>
+              I focus on structured software testing with an emphasis on finding
+              meaningful defects and communicating them clearly. My approach combines
+              requirement-based testing, exploratory thinking, functional validation,
+              regression testing, UI evaluation, API testing, and careful defect documentation.
+            </p>
+
+            <p>
+              A strong QA process begins before test execution. I look at requirements,
+              break features into user flows and test scenarios, identify edge cases,
+              and then execute tests with a mindset that considers both expected behavior
+              and unexpected behavior.
+            </p>
+
+            <p>
+              When an issue is discovered, the goal is not simply to say that something
+              is broken. A useful defect report gives developers enough context to
+              understand, reproduce, investigate, and resolve the problem efficiently.
+            </p>
+
+            <p>
+              The result is a practical QA workflow built around clarity, repeatability,
+              user experience, and continuous improvement.
+            </p>
+          </div>
+
+          <aside class="profile-card reveal">
+
+            <div class="profile-card__header">
+              <div class="profile-avatar">AA</div>
+              <div>
+                <strong>Alaa Adel</strong>
+                <span>Software Tester & QA Engineer</span>
+              </div>
+            </div>
+
+            <div class="qualities">
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M8 12l2.5 2.5L16 9"/>
+                </svg>
+                Detail-oriented
+              </div>
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7"/>
+                  <path d="m20 20-4-4"/>
+                </svg>
+                Analytical
+              </div>
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 5h16v11H4z"/>
+                  <path d="M8 20h8M12 16v4"/>
+                </svg>
+                User-focused
+              </div>
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 3h12v18H6z"/>
+                  <path d="M9 7h6M9 11h6M9 15h4"/>
+                </svg>
+                Systematic
+              </div>
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m5 12 4 4L19 6"/>
+                </svg>
+                Quality-driven
+              </div>
+
+              <div class="quality">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 5h16v12H4z"/>
+                  <path d="m8 10 2 2 5-5M8 20h8"/>
+                </svg>
+                Clear communicator
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="section section--soft" id="skills">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">02 / Core QA Skills</span>
+          <h2 class="section-title">Structured testing across the <span class="text-accent">product lifecycle.</span></h2>
+          <p class="section-description">
+            A practical testing toolkit covering functionality, integrations,
+            interfaces, APIs, defects, and QA planning.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">01</div>
+            <h3>Functional Testing</h3>
+            <div class="tags">
+              <span class="tag">Functional Testing</span>
+              <span class="tag">Feature Validation</span>
+              <span class="tag">Requirement-Based</span>
+              <span class="tag">End-to-End</span>
+              <span class="tag">Smoke Testing</span>
+              <span class="tag">Sanity Testing</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">02</div>
+            <h3>Regression & Integration</h3>
+            <div class="tags">
+              <span class="tag">Regression Testing</span>
+              <span class="tag">Integration Testing</span>
+              <span class="tag">System Testing</span>
+              <span class="tag">Compatibility Testing</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">03</div>
+            <h3>UI / UX Quality</h3>
+            <div class="tags">
+              <span class="tag">UI Testing</span>
+              <span class="tag">Usability Testing</span>
+              <span class="tag">Cross-Browser</span>
+              <span class="tag">Responsive Testing</span>
+              <span class="tag">User Flow Validation</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">04</div>
+            <h3>API & Backend Testing</h3>
+            <div class="tags">
+              <span class="tag">REST API Testing</span>
+              <span class="tag">Request / Response</span>
+              <span class="tag">Status Codes</span>
+              <span class="tag">Data Validation</span>
+              <span class="tag">API Workflows</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">05</div>
+            <h3>Defect Management</h3>
+            <div class="tags">
+              <span class="tag">Bug Identification</span>
+              <span class="tag">Bug Reproduction</span>
+              <span class="tag">Severity / Priority</span>
+              <span class="tag">Root-Cause Investigation</span>
+              <span class="tag">Defect Documentation</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card__number">06</div>
+            <h3>QA Practices</h3>
+            <div class="tags">
+              <span class="tag">Test Case Design</span>
+              <span class="tag">Test Scenarios</span>
+              <span class="tag">Test Planning</span>
+              <span class="tag">Test Execution</span>
+              <span class="tag">Regression Suites</span>
+              <span class="tag">Test Reporting</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">03 / Services</span>
+          <h2 class="section-title">QA that gives your product <span class="text-accent">useful answers.</span></h2>
+          <p class="section-description">
+            Practical testing services designed to uncover defects, validate behavior,
+            and give development teams clear information they can act on.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M5 4h14v16H5z"/>
+                <path d="M8 8h8M8 12h8M8 16h5"/>
+              </svg>
+            </div>
+            <h3>Manual Software Testing</h3>
+            <p>
+              Thorough validation of web and software applications against requirements
+              and expected user behavior.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 6h16v12H4z"/>
+                <path d="m8 12 2 2 5-5"/>
+              </svg>
+            </div>
+            <h3>Functional Testing</h3>
+            <p>
+              Validation of features, workflows, forms, authentication, business rules,
+              and important edge cases.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 7v5h-5"/>
+                <path d="M4 17v-5h5"/>
+                <path d="M18.5 12A6.5 6.5 0 0 0 7 8.5L4 12M6 12a6.5 6.5 0 0 0 11.5 3.5L20 12"/>
+              </svg>
+            </div>
+            <h3>Regression Testing</h3>
+            <p>
+              Verification that existing functionality remains stable after updates,
+              fixes, and new feature releases.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="14" rx="2"/>
+                <path d="M8 21h8M12 18v3"/>
+              </svg>
+            </div>
+            <h3>Web Application Testing</h3>
+            <p>
+              Evaluation across workflows, browsers, screen sizes, navigation,
+              forms, and realistic usage scenarios.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M7 4h10v16H7z"/>
+                <path d="M10 8h4M10 12h4M10 16h2"/>
+              </svg>
+            </div>
+            <h3>API Testing</h3>
+            <p>
+              Validation of REST APIs, responses, status codes, data consistency,
+              error handling, and endpoint behavior.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16v12H4z"/>
+                <path d="M8 21h8M12 17v4"/>
+                <path d="M8 9h8M8 12h5"/>
+              </svg>
+            </div>
+            <h3>UI & Usability Testing</h3>
+            <p>
+              Identification of interface inconsistencies, confusing interactions,
+              usability problems, and responsive issues.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M5 4h14v16H5z"/>
+                <path d="M8 8h8M8 12h4M8 16h6"/>
+                <path d="m16 15 3 3"/>
+              </svg>
+            </div>
+            <h3>Bug Reporting</h3>
+            <p>
+              Clear, reproducible defect reports with steps, expected behavior,
+              actual behavior, severity, and supporting context.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16v14H4z"/>
+                <path d="M8 9h8M8 13h5M8 17h3"/>
+              </svg>
+            </div>
+            <h3>Test Case & Scenario Creation</h3>
+            <p>
+              Structured test scenarios and cases designed to provide meaningful
+              coverage around expected and unexpected behavior.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section class="section section--soft process" id="process">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">04 / Testing Process</span>
+          <h2 class="section-title">A repeatable process from <span class="text-accent">requirements to report.</span></h2>
+          <p class="section-description">
+            Every testing engagement can be approached as a sequence of clear,
+            traceable decisions rather than an unstructured search for bugs.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-step reveal">
+            <div class="process-step__number">01</div>
+            <h3>Understand Requirements</h3>
+            <p>
+              Clarify expected behavior, business rules, acceptance criteria,
+              and important product constraints.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">02</div>
+            <h3>Analyze User Flows</h3>
+            <p>
+              Map the journeys users are expected to take and identify critical
+              paths and potential failure points.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">03</div>
+            <h3>Build Test Scenarios</h3>
+            <p>
+              Convert requirements and flows into focused test scenarios,
+              cases, conditions, and edge cases.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">04</div>
+            <h3>Execute Tests</h3>
+            <p>
+              Run planned checks while also exploring behavior outside the
+              obvious happy paths.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">05</div>
+            <h3>Identify & Reproduce Defects</h3>
+            <p>
+              Investigate unexpected behavior and establish reliable reproduction
+              steps before reporting an issue.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">06</div>
+            <h3>Document Findings</h3>
+            <p>
+              Record defects with enough evidence and context for efficient
+              developer investigation.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">07</div>
+            <h3>Regression Test Fixes</h3>
+            <p>
+              Verify fixes and check surrounding functionality for unintended
+              regressions.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-step__number">08</div>
+            <h3>Deliver QA Report</h3>
+            <p>
+              Summarize coverage, findings, outstanding issues, and useful
+              quality observations in a clear final report.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">05 / Selected Projects</span>
+          <h2 class="section-title">Testing scenarios built to demonstrate <span class="text-accent">real QA thinking.</span></h2>
+          <p class="section-description">
+            These are sample testing projects demonstrating scope, techniques,
+            scenarios, and expected QA deliverables. They are presented as
+            testing exercises rather than paid client work.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card reveal">
+            <div class="project-card__meta">
+              <span class="project-type">Web Application QA</span>
+              <span class="project-demo">Sample Project</span>
+            </div>
+
+            <h3>E-Commerce Web Application QA</h3>
+
+            <p class="project-card__intro">
+              A structured QA exercise covering the customer journey from product
+              discovery through checkout and form validation.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-group">
+                <strong>Testing Scope</strong>
+                <ul>
+                  <li>Product browsing</li>
+                  <li>Search & filtering</li>
+                  <li>Cart & checkout</li>
+                  <li>Authentication</li>
+                  <li>Form validation</li>
+                  <li>Responsive behavior</li>
+                </ul>
+              </div>
+
+              <div class="detail-group">
+                <strong>Techniques</strong>
+                <ul>
+                  <li>Functional testing</li>
+                  <li>Regression testing</li>
+                  <li>UI testing</li>
+                  <li>Edge-case testing</li>
+                  <li>Cross-browser testing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card__footer">
+              <span>Deliverables: cases, defects & QA summary</span>
+              <button class="text-btn project-details-btn" type="button" data-project="ecommerce">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+
+          <article class="project-card reveal">
+            <div class="project-card__meta">
+              <span class="project-type">API Quality Assurance</span>
+              <span class="project-demo">Sample Project</span>
+            </div>
+
+            <h3>REST API Testing Project</h3>
+
+            <p class="project-card__intro">
+              A focused API testing exercise validating endpoint behavior,
+              responses, negative paths, and data consistency.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-group">
+                <strong>Testing Scope</strong>
+                <ul>
+                  <li>Authentication</li>
+                  <li>CRUD operations</li>
+                  <li>Response validation</li>
+                  <li>Status codes</li>
+                  <li>Error handling</li>
+                  <li>Data consistency</li>
+                </ul>
+              </div>
+
+              <div class="detail-group">
+                <strong>Techniques</strong>
+                <ul>
+                  <li>API functional testing</li>
+                  <li>Negative testing</li>
+                  <li>Boundary testing</li>
+                  <li>Response validation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card__footer">
+              <span>Deliverables: API checks & defect documentation</span>
+              <button class="text-btn project-details-btn" type="button" data-project="api">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+
+          <article class="project-card reveal">
+            <div class="project-card__meta">
+              <span class="project-type">Responsive QA</span>
+              <span class="project-demo">Sample Project</span>
+            </div>
+
+            <h3>Responsive Web Application Testing</h3>
+
+            <p class="project-card__intro">
+              A responsive QA exercise focused on consistent behavior across
+              desktop, tablet, and mobile screen sizes.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-group">
+                <strong>Testing Scope</strong>
+                <ul>
+                  <li>Desktop</li>
+                  <li>Tablet</li>
+                  <li>Mobile</li>
+                  <li>Navigation</li>
+                  <li>Forms</li>
+                  <li>Layout behavior</li>
+                </ul>
+              </div>
+
+              <div class="detail-group">
+                <strong>Techniques</strong>
+                <ul>
+                  <li>Responsive testing</li>
+                  <li>Cross-browser testing</li>
+                  <li>UI consistency</li>
+                  <li>Usability testing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card__footer">
+              <span>Deliverables: responsive findings & test report</span>
+              <button class="text-btn project-details-btn" type="button" data-project="responsive">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+
+          <article class="project-card reveal">
+            <div class="project-card__meta">
+              <span class="project-type">Authentication QA</span>
+              <span class="project-demo">Sample Project</span>
+            </div>
+
+            <h3>Authentication & User Management QA</h3>
+
+            <p class="project-card__intro">
+              A scenario-driven QA exercise around account access, invalid inputs,
+              session behavior, and authorization boundaries.
+            </p>
+
+            <div class="project-details">
+              <div class="detail-group">
+                <strong>Testing Scope</strong>
+                <ul>
+                  <li>Registration</li>
+                  <li>Login & logout</li>
+                  <li>Password validation</li>
+                  <li>Invalid credentials</li>
+                  <li>Session behavior</li>
+                  <li>Access control</li>
+                </ul>
+              </div>
+
+              <div class="detail-group">
+                <strong>Techniques</strong>
+                <ul>
+                  <li>Functional testing</li>
+                  <li>Negative testing</li>
+                  <li>Boundary testing</li>
+                  <li>Security-minded validation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-card__footer">
+              <span>Deliverables: scenarios, cases & defect reports</span>
+              <button class="text-btn project-details-btn" type="button" data-project="authentication">
+                View Details
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TECHNIQUES
+    ========================== -->
+
+    <section class="section section--soft" id="techniques">
+      <div class="container">
+
+        <div class="technique-layout">
+
+          <div class="technique-intro reveal">
+            <span class="eyebrow">06 / Testing Techniques</span>
+            <h2 class="section-title">Test beyond the <span class="text-accent">happy path.</span></h2>
+            <p>
+              Good test design deliberately explores normal behavior, invalid behavior,
+              boundaries, state changes, and combinations that users may encounter.
+            </p>
+            <a href="#contact" class="btn btn--primary">
+              Discuss a Project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="technique-list">
+
+            <article class="technique reveal">
+              <strong>Equivalence Partitioning</strong>
+              <span>Divide input data into meaningful groups that can be tested efficiently.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Boundary Value Analysis</strong>
+              <span>Focus on values at and around input boundaries where defects commonly appear.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Decision Table Testing</strong>
+              <span>Validate outcomes across combinations of business rules and conditions.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>State Transition Testing</strong>
+              <span>Check how application behavior changes as users move between states.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Error Guessing</strong>
+              <span>Use testing experience and product context to explore likely failure areas.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Exploratory Testing</strong>
+              <span>Learn, design, and execute tests dynamically while investigating the product.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Positive Testing</strong>
+              <span>Confirm that valid inputs and expected user actions produce correct results.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Negative Testing</strong>
+              <span>Check how the system behaves when given invalid, unexpected, or incomplete inputs.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Retesting</strong>
+              <span>Verify that a reported defect has actually been corrected.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Regression Testing</strong>
+              <span>Confirm that changes have not unintentionally affected existing functionality.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Smoke Testing</strong>
+              <span>Perform a focused health check to determine whether a build is ready for deeper testing.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>Sanity Testing</strong>
+              <span>Quickly validate targeted functionality after specific changes or fixes.</span>
+            </article>
+
+            <article class="technique reveal">
+              <strong>End-to-End Testing</strong>
+              <span>Validate complete user journeys across the relevant application workflow.</span>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================== -->
+
+    <section class="section" id="tools">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">07 / Testing Toolkit</span>
+          <h2 class="section-title">Tools that support a <span class="text-accent">practical QA workflow.</span></h2>
+          <p class="section-description">
+            A working toolkit spanning API testing, browser automation, test execution,
+            version control, issue tracking, debugging, and web technologies.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+
+          <div class="tool reveal">
+            <div class="tool__icon">PM</div>
+            <strong>Postman</strong>
+            <span>API Testing</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">SE</div>
+            <strong>Selenium</strong>
+            <span>Automation</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">PW</div>
+            <strong>Playwright</strong>
+            <span>Browser Testing</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">JU</div>
+            <strong>JUnit</strong>
+            <span>Test Framework</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">API</div>
+            <strong>REST APIs</strong>
+            <span>Integration</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">GI</div>
+            <strong>Git</strong>
+            <span>Version Control</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">GH</div>
+            <strong>GitHub</strong>
+            <span>Code Hosting</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">JR</div>
+            <strong>Jira</strong>
+            <span>Issue Tracking</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">DT</div>
+            <strong>DevTools</strong>
+            <span>Browser Debugging</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">SQL</div>
+            <strong>SQL</strong>
+            <span>Data Validation</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">HT</div>
+            <strong>HTML</strong>
+            <span>Web Technology</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">CS</div>
+            <strong>CSS</strong>
+            <span>Web Technology</span>
+          </div>
+
+          <div class="tool reveal">
+            <div class="tool__icon">JS</div>
+            <strong>JavaScript</strong>
+            <span>Web Technology</span>
+          </div>
+
+        </div>
+
+        <p class="toolkit-note reveal">
+          Toolkit representation reflects testing areas and technologies relevant to the portfolio;
+          it does not imply certifications or a particular level of mastery.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         DELIVERABLES
+    ========================== -->
+
+    <section class="section section--soft" id="deliverables">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">08 / QA Deliverables</span>
+          <h2 class="section-title">Clear outputs, not just <span class="text-accent">test execution.</span></h2>
+          <p class="section-description">
+            A freelance QA engagement should leave the product team with information
+            they can use after the testing session ends.
+          </p>
+        </div>
+
+        <div class="deliverables-grid">
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">01</div>
+            <h3>Test Cases</h3>
+            <p>Structured checks that make expected behavior and test coverage easy to follow.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">02</div>
+            <h3>Test Scenarios</h3>
+            <p>High-level situations that organize testing around meaningful product behavior.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">03</div>
+            <h3>Bug Reports</h3>
+            <p>Reproducible defect documentation with clear expected and actual results.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">04</div>
+            <h3>Test Execution Reports</h3>
+            <p>A concise view of what was tested, what passed, and what requires attention.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">05</div>
+            <h3>Regression Results</h3>
+            <p>Evidence that fixes and changes were checked against relevant existing behavior.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">06</div>
+            <h3>API Test Results</h3>
+            <p>Documented endpoint checks covering responses, validation, errors, and workflows.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">07</div>
+            <h3>QA Summary Reports</h3>
+            <p>Useful summaries that turn testing activity into an understandable quality picture.</p>
+          </article>
+
+          <article class="deliverable reveal">
+            <div class="deliverable__number">08</div>
+            <h3>Defect Documentation</h3>
+            <p>Actionable findings with the context needed for investigation and resolution.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         WHY WORK WITH ME
+    ========================== -->
+
+    <section class="section why" id="why">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">09 / Why Work With Me</span>
+          <h2 class="section-title">Testing with a <span style="color:#e1b47e;">quality mindset.</span></h2>
+          <p class="section-description">
+            The objective is not to produce a long list of issues. It is to identify
+            meaningful problems, explain them clearly, and help teams make better
+            decisions about product quality.
+          </p>
+        </div>
+
+        <div class="why-grid">
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-4-4"/>
+              </svg>
+            </div>
+            <h3>Detail-Oriented Testing</h3>
+            <p>Look beyond obvious happy paths and investigate edge cases, unusual inputs, and inconsistent behavior.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16v12H4z"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3>Clear Communication</h3>
+            <p>Translate technical findings into concise information that developers and stakeholders can act on.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="3"/>
+                <path d="M5 20c.7-4 2.9-6 7-6s6.3 2 7 6"/>
+              </svg>
+            </div>
+            <h3>User-Centered QA</h3>
+            <p>Consider the product from the perspective of real users, not only from the perspective of implementation.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16M4 12h16M4 19h16"/>
+                <circle cx="8" cy="5" r="2"/>
+                <circle cx="15" cy="12" r="2"/>
+                <circle cx="10" cy="19" r="2"/>
+              </svg>
+            </div>
+            <h3>Structured Process</h3>
+            <p>Use organized testing workflows so coverage, findings, and follow-up work remain understandable.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 6h16v12H4z"/>
+                <path d="M7 10h10M7 14h6"/>
+              </svg>
+            </div>
+            <h3>Reliable Feedback</h3>
+            <p>Provide reproducible evidence and useful context rather than vague descriptions of unexpected behavior.</p>
+          </article>
+
+          <article class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m5 12 4 4L19 6"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+            <h3>Quality Mindset</h3>
+            <p>Focus on reducing risk and improving the product experience instead of simply checking boxes.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         BUG REPORT
+    ========================== -->
+
+    <section class="section" id="bug-report">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">10 / Sample Deliverable</span>
+          <h2 class="section-title">A bug report should make the <span class="text-accent">problem obvious.</span></h2>
+          <p class="section-description">
+            A fictional demonstration of the structure and level of clarity a QA
+            defect report can provide.
+          </p>
+        </div>
+
+        <div class="bug-report-wrap reveal">
+
+          <span class="sample-label">Sample QA Deliverable</span>
+
+          <div class="bug-report">
+
+            <div class="bug-report__bar">
+              <div class="bug-report__bar-left">
+                <span></span>
+                <strong>Defect Report</strong>
+              </div>
+              <small>DEMO-001 / WEB</small>
+            </div>
+
+            <div class="bug-report__body">
+
+              <div class="bug-title">
+                <small>Title</small>
+                <h3>Checkout form accepts an invalid email format</h3>
+              </div>
+
+              <div class="bug-meta">
+
+                <div class="bug-meta-item">
+                  <small>Severity</small>
+                  <strong class="status-medium">Medium</strong>
+                </div>
+
+                <div class="bug-meta-item">
+                  <small>Priority</small>
+                  <strong class="status-medium">Medium</strong>
+                </div>
+
+                <div class="bug-meta-item">
+                  <small>Environment</small>
+                  <strong>Web Application</strong>
+                </div>
+
+              </div>
+
+              <div class="bug-content">
+
+                <div class="bug-field">
+                  <h4>Preconditions</h4>
+                  <p>
+                    A user has added a product to the cart and reached the checkout form.
+                  </p>
+                </div>
+
+                <div class="bug-field">
+                  <h4>Expected Result</h4>
+                  <p>
+                    The form should reject an invalid email format and clearly indicate
+                    that a valid email address is required.
+                  </p>
+                </div>
+
+                <div class="bug-field">
+                  <h4>Steps to Reproduce</h4>
+                  <ol>
+                    <li>Open the checkout form.</li>
+                    <li>Enter an invalid email format.</li>
+                    <li>Complete the remaining required fields.</li>
+                    <li>Submit the form.</li>
+                  </ol>
+                </div>
+
+                <div class="bug-field">
+                  <h4>Actual Result</h4>
+                  <p>
+                    The form accepts the invalid email value and allows the checkout
+                    flow to continue.
+                  </p>
+                </div>
+
+                <div class="bug-field">
+                  <h4>Status</h4>
+                  <p>
+                    Open — requires validation behavior review and regression coverage
+                    after the fix.
+                  </p>
+                </div>
+
+                <div class="bug-field">
+                  <h4>QA Observation</h4>
+                  <p>
+                    This validation gap may allow incorrect contact information to
+                    progress further into the checkout workflow.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-copy reveal">
+
+            <span class="eyebrow">11 / Contact</span>
+
+            <h2 class="section-title">
+              Have a product that needs <span class="text-accent">testing?</span>
+            </h2>
+
+            <p>
+              Tell me what you are building, what needs to be tested, and where
+              you want additional confidence. A clear testing scope is the first
+              step toward a useful QA engagement.
+            </p>
+
+            <div class="contact-points">
+
+              <div class="contact-point">
+                <div class="contact-point__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 5h16v14H4z"/>
+                    <path d="m4 7 8 6 8-6"/>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Let's discuss your testing needs</strong>
+                  <span>Use the inquiry form to prepare your project details.</span>
+                </div>
+              </div>
+
+              <div class="contact-point">
+                <div class="contact-point__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 5h16v14H4z"/>
+                    <path d="M8 9h8M8 13h5M8 17h3"/>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Structured QA feedback</strong>
+                  <span>Testing scope, defects, scenarios, and useful findings.</span>
+                </div>
+              </div>
+
+              <div class="contact-point">
+                <div class="contact-point__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M8 12l2.5 2.5L16 9"/>
+                  </svg>
+                </div>
+                <div>
+                  <strong>Quality-focused approach</strong>
+                  <span>Practical testing centered around product behavior and user experience.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Your name"
+                  required
+                >
+                <span class="form-error" data-error-for="name">
+                  Please enter your name.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                >
+                <span class="form-error" data-error-for="email">
+                  Please enter a valid email address.
+                </span>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="projectType">Project Type</label>
+
+              <select class="form-control" id="projectType" name="projectType" required>
+                <option value="">Select a project type</option>
+                <option value="Manual Software Testing">Manual Software Testing</option>
+                <option value="Functional Testing">Functional Testing</option>
+                <option value="Web Application Testing">Web Application Testing</option>
+                <option value="API Testing">API Testing</option>
+                <option value="Regression Testing">Regression Testing</option>
+                <option value="UI & Usability Testing">UI & Usability Testing</option>
+                <option value="Test Case Creation">Test Case Creation</option>
+                <option value="Other QA Work">Other QA Work</option>
+              </select>
+
+              <span class="form-error" data-error-for="projectType">
+                Please select a project type.
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                name="message"
+                placeholder="Tell me about the product, testing scope, and what you need validated."
+                required
+              ></textarea>
+              <span class="form-error" data-error-for="message">
+                Please describe your testing needs.
+              </span>
+            </div>
+
+            <button class="btn btn--primary form-submit" type="submit">
+              Prepare Inquiry
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </button>
+
+            <p class="form-note">
+              This form does not send information to a server. It validates your inquiry
+              and prepares it for the next contact step.
+            </p>
+
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+              Your inquiry has been prepared successfully. No information was submitted
+              to a server. Please use your preferred available contact method to send
+              the prepared project details.
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a href="#home" class="brand">
+            <span class="brand__mark">AA</span>
+            <span class="brand__text">Alaa Adel</span>
+          </a>
+
+          <p>
+            Software Tester & QA Engineer focused on systematic testing,
+            clear defect reporting, and reliable product experiences.
+          </p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#tools">Tools</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Alaa Adel. All rights reserved.</span>
+        <span>Software Tester & QA Engineer</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================
+       BACK TO TOP
+  ========================== -->
+
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+
+  <!-- =========================
+       PROJECT MODAL
+  ========================== -->
+
+  <div
+    class="modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+    aria-hidden="true"
+  >
+    <div class="modal__dialog">
+
+      <div class="modal__header">
+
+        <div>
+          <small id="modalType">Sample Testing Project</small>
+          <h2 id="modalTitle">Project Details</h2>
+        </div>
+
+        <button
+          class="modal__close"
+          id="modalClose"
+          type="button"
+          aria-label="Close project details"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 6l12 12M18 6 6 18"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <div class="modal__body">
+
+        <p class="modal__intro" id="modalIntro"></p>
+
+        <div class="modal__section">
+          <h3>Testing Scope</h3>
+          <ul id="modalScope"></ul>
+        </div>
+
+        <div class="modal__section">
+          <h3>Testing Approach</h3>
+          <ul id="modalApproach"></ul>
+        </div>
+
+        <div class="modal__section">
+          <h3>Key Scenarios</h3>
+          <ul id="modalScenarios"></ul>
+        </div>
+
+        <div class="modal__section">
+          <h3>QA Deliverables</h3>
+          <ul id="modalDeliverables"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    (() => {
+      "use strict";
+
+      /* =========================
+         NAVIGATION
+      ========================== */
+
+      const navbar = document.getElementById("navbar");
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      const navItems = document.querySelectorAll(".nav__link");
+
+      function updateNavbar() {
+        navbar.classList.toggle("scrolled", window.scrollY > 20);
+      }
+
+      updateNavbar();
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+      });
+
+
+      navItems.forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Open navigation menu");
+        });
+      });
+
+
+      document.addEventListener("click", event => {
+        if (
+          window.innerWidth <= 820 &&
+          navLinks.classList.contains("open") &&
+          !navLinks.contains(event.target) &&
+          !navToggle.contains(event.target)
+        ) {
+          navLinks.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", "Open navigation menu");
+        }
+      });
+
+
+      /* =========================
+         ACTIVE NAVIGATION
+      ========================== */
+
+      const sections = [
+        "about",
+        "skills",
+        "services",
+        "projects",
+        "process",
+        "tools",
+        "contact"
+      ]
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+      const sectionObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+
+              navItems.forEach(link => {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === `#${id}`
+                );
+              });
+            }
+          });
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px",
+          threshold: 0
+        }
+      );
+
+      sections.forEach(section => sectionObserver.observe(section));
+
+
+      /* =========================
+         SCROLL REVEAL
+      ========================== */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -35px 0px"
+        }
+      );
+
+      revealElements.forEach(element => revealObserver.observe(element));
+
+
+      /* =========================
+         BACK TO TOP
+      ========================== */
+
+      const backTop = document.getElementById("backTop");
+
+      function updateBackTop() {
+        backTop.classList.toggle("visible", window.scrollY > 500);
+      }
+
+      updateBackTop();
+      window.addEventListener("scroll", updateBackTop, { passive: true });
+
+      backTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+
+      /* =========================
+         PROJECT DATA
+      ========================== */
+
+      const projects = {
+        ecommerce: {
+          type: "Web Application QA",
+          title: "E-Commerce Web Application QA",
+          intro:
+            "A sample QA exercise designed around the complete customer journey. The objective is to validate critical commerce workflows while looking for edge cases that can interrupt or confuse the user experience.",
+          scope: [
+            "Product browsing and product details",
+            "Search and filtering behavior",
+            "Shopping cart operations",
+            "Checkout workflow",
+            "Authentication and account access",
+            "Required-field and input validation",
+            "Responsive behavior across screen sizes"
+          ],
+          approach: [
+            "Requirement-based functional testing",
+            "Positive and negative testing",
+            "Boundary-value checks for forms",
+            "Regression coverage around critical workflows",
+            "Cross-browser and responsive validation",
+            "Exploratory testing around the purchase journey"
+          ],
+          scenarios: [
+            "Search for an existing product and verify relevant results",
+            "Apply multiple filters and verify that results remain consistent",
+            "Add, remove, and modify cart items",
+            "Attempt checkout with valid and invalid customer information",
+            "Navigate through checkout using different screen sizes",
+            "Verify that validation messages are clear and actionable"
+          ],
+          deliverables: [
+            "Structured test scenarios and test cases",
+            "Execution results for critical workflows",
+            "Reproducible defect reports",
+            "Regression checklist for corrected issues",
+            "Concise QA summary"
+          ]
+        },
+
+        api: {
+          type: "API Quality Assurance",
+          title: "REST API Testing Project",
+          intro:
+            "A sample API testing exercise focused on verifying endpoint behavior, response correctness, validation rules, error handling, and consistency between related operations.",
+          scope: [
+            "Authentication endpoints",
+            "Create, read, update, and delete operations",
+            "HTTP status code behavior",
+            "Request and response validation",
+            "Required and optional fields",
+            "Invalid request handling",
+            "Data consistency across related endpoints"
+          ],
+          approach: [
+            "Functional API testing",
+            "Positive and negative request validation",
+            "Boundary and input-condition testing",
+            "Status-code verification",
+            "Response body and schema checks",
+            "Workflow testing across dependent endpoints"
+          ],
+          scenarios: [
+            "Send valid requests and validate expected response structures",
+            "Submit incomplete or invalid payloads",
+            "Verify unauthorized access behavior",
+            "Create a resource and confirm it can be retrieved",
+            "Update resource data and verify persistence",
+            "Delete a resource and verify the expected follow-up behavior"
+          ],
+          deliverables: [
+            "API test scenarios",
+            "Request and response validation results",
+            "Negative-testing findings",
+            "Defect documentation",
+            "API QA summary"
+          ]
+        },
+
+        responsive: {
+          type: "Responsive QA",
+          title: "Responsive Web Application Testing",
+          intro:
+            "A sample responsive QA exercise focused on maintaining usable layouts and consistent interactions across desktop, tablet, and mobile environments.",
+          scope: [
+            "Desktop viewport behavior",
+            "Tablet viewport behavior",
+            "Mobile viewport behavior",
+            "Navigation and menus",
+            "Forms and input controls",
+            "Layout and spacing",
+            "Interactive elements"
+          ],
+          approach: [
+            "Responsive layout validation",
+            "Cross-browser testing",
+            "UI consistency checks",
+            "Usability-focused exploration",
+            "Viewport boundary testing",
+            "Interaction and content visibility checks"
+          ],
+          scenarios: [
+            "Resize the application across common viewport ranges",
+            "Open and close mobile navigation",
+            "Complete forms at smaller screen widths",
+            "Verify that content remains readable without unintended overflow",
+            "Check interactive controls for adequate visibility and usability",
+            "Compare important user flows across viewport sizes"
+          ],
+          deliverables: [
+            "Responsive test checklist",
+            "Cross-browser findings",
+            "UI defect reports",
+            "Usability observations",
+            "Responsive QA summary"
+          ]
+        },
+
+        authentication: {
+          type: "Authentication QA",
+          title: "Authentication & User Management QA",
+          intro:
+            "A sample authentication testing exercise covering account creation, login, invalid credentials, session behavior, and access-control expectations.",
+          scope: [
+            "User registration",
+            "Login and logout",
+            "Password validation",
+            "Invalid credentials",
+            "Session behavior",
+            "Authenticated and unauthenticated states",
+            "Access control"
+          ],
+          approach: [
+            "Functional authentication testing",
+            "Negative testing",
+            "Boundary testing for credential fields",
+            "State-transition thinking",
+            "Security-minded validation",
+            "Regression testing around account workflows"
+          ],
+          scenarios: [
+            "Register with valid account information",
+            "Attempt registration with invalid or incomplete inputs",
+            "Log in using valid credentials",
+            "Attempt login with incorrect credentials",
+            "Verify logout and subsequent access behavior",
+            "Check protected areas when a user is not authenticated",
+            "Validate session-related behavior after navigation"
+          ],
+          deliverables: [
+            "Authentication test scenarios",
+            "Positive and negative test cases",
+            "Defect reports",
+            "Regression checklist",
+            "QA summary"
+          ]
+        }
+      };
+
+
+      /* =========================
+         PROJECT MODAL
+      ========================== */
+
+      const modal = document.getElementById("projectModal");
+      const modalClose = document.getElementById("modalClose");
+      const modalType = document.getElementById("modalType");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalIntro = document.getElementById("modalIntro");
+      const modalScope = document.getElementById("modalScope");
+      const modalApproach = document.getElementById("modalApproach");
+      const modalScenarios = document.getElementById("modalScenarios");
+      const modalDeliverables = document.getElementById("modalDeliverables");
+
+      let lastFocusedElement = null;
+
+      function fillList(element, items) {
+        element.innerHTML = "";
+
+        items.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          element.appendChild(li);
+        });
+      }
+
+      function openProjectModal(projectKey) {
+        const project = projects[projectKey];
+
+        if (!project) {
+          return;
+        }
+
+        lastFocusedElement = document.activeElement;
+
+        modalType.textContent = project.type;
+        modalTitle.textContent = project.title;
+        modalIntro.textContent = project.intro;
+
+        fillList(modalScope, project.scope);
+        fillList(modalApproach, project.approach);
+        fillList(modalScenarios, project.scenarios);
+        fillList(modalDeliverables, project.deliverables);
+
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+
+        requestAnimationFrame(() => {
+          modalClose.focus();
+        });
+      }
+
+      function closeProjectModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+
+        if (lastFocusedElement) {
+          lastFocusedElement.focus();
+          lastFocusedElement = null;
+        }
+      }
+
+      document.querySelectorAll(".project-details-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          openProjectModal(button.dataset.project);
+        });
+      });
+
+      modalClose.addEventListener("click", closeProjectModal);
+
+      modal.addEventListener("click", event => {
+        if (event.target === modal) {
+          closeProjectModal();
+        }
+      });
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+          closeProjectModal();
+        }
+      });
+
+
+      /* =========================
+         CONTACT FORM
+      ========================== */
+
+      const contactForm = document.getElementById("contactForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      const fields = {
+        name: document.getElementById("name"),
+        email: document.getElementById("email"),
+        projectType: document.getElementById("projectType"),
+        message: document.getElementById("message")
+      };
+
+      function setFieldError(field, hasError) {
+        const error = document.querySelector(
+          `[data-error-for="${field.id}"]`
+        );
+
+        field.classList.toggle("invalid", hasError);
+
+        if (error) {
+          error.classList.toggle("visible", hasError);
+        }
+
+        field.setAttribute("aria-invalid", String(hasError));
+      }
+
+      function validateName() {
+        const valid = fields.name.value.trim().length >= 2;
+        setFieldError(fields.name, !valid);
+        return valid;
+      }
+
+      function validateEmail() {
+        const email = fields.email.value.trim();
+
+        const valid =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        setFieldError(fields.email, !valid);
+        return valid;
+      }
+
+      function validateProjectType() {
+        const valid = fields.projectType.value !== "";
+        setFieldError(fields.projectType, !valid);
+        return valid;
+      }
+
+      function validateMessage() {
+        const valid = fields.message.value.trim().length >= 15;
+        setFieldError(fields.message, !valid);
+        return valid;
+      }
+
+      fields.name.addEventListener("blur", validateName);
+      fields.email.addEventListener("blur", validateEmail);
+      fields.projectType.addEventListener("change", validateProjectType);
+      fields.message.addEventListener("blur", validateMessage);
+
+      Object.values(fields).forEach(field => {
+        field.addEventListener("input", () => {
+          formSuccess.classList.remove("visible");
+        });
+      });
+
+      contactForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const validName = validateName();
+        const validEmail = validateEmail();
+        const validProject = validateProjectType();
+        const validMessage = validateMessage();
+
+        const isValid =
+          validName &&
+          validEmail &&
+          validProject &&
+          validMessage;
+
+        if (!isValid) {
+          const firstInvalid = Object.values(fields).find(
+            field => field.classList.contains("invalid")
+          );
+
+          if (firstInvalid) {
+            firstInvalid.focus();
+          }
+
+          return;
+        }
+
+        /*
+          Intentionally no network request is made.
+          This portfolio has no backend endpoint and does not
+          pretend to send information anywhere.
+        */
+
+        formSuccess.classList.add("visible");
+
+        formSuccess.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+        contactForm.reset();
+
+        Object.values(fields).forEach(field => {
+          field.classList.remove("invalid");
+          field.setAttribute("aria-invalid", "false");
+
+          const error = document.querySelector(
+            `[data-error-for="${field.id}"]`
+          );
+
+          if (error) {
+            error.classList.remove("visible");
+          }
+        });
+      });
+
+
+      /* =========================
+         KEYBOARD-FRIENDLY MODAL FOCUS
+      ========================== */
+
+      modal.addEventListener("keydown", event => {
+        if (
+          event.key !== "Tab" ||
+          !modal.classList.contains("open")
+        ) {
+          return;
+        }
+
+        const focusable = modal.querySelectorAll(
+          "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
+        );
+
+        if (!focusable.length) {
+          return;
+        }
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+
+
+      /* =========================
+         CURRENT YEAR SAFETY
+      ========================== */
+
+      const currentYear = new Date().getFullYear();
+
+      /*
+        The requested copyright is intentionally 2026.
+        This keeps the portfolio copy aligned with its stated
+        publication year rather than dynamically changing it.
+      */
+
+    })();
+  </script>
+
+</body>
+</html>

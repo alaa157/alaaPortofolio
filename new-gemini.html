@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa Adel | Software Tester & QA Engineer Portfolio</title>
+  <meta name="description" content="Professional portfolio of Alaa Adel, Software Tester & QA Engineer. Specializing in manual testing, web application QA, API validation, and clear defect reporting for freelance contracts.">
+  <meta name="keywords" content="Software Tester, QA Engineer, Manual Testing, Web Testing, API Testing, Bug Reporting, Regression Testing, Freelance QA, Alaa Adel">
+  <meta name="author" content="Alaa Adel">
+  <meta property="og:title" content="Alaa Adel | Software Tester & QA Engineer">
+  <meta property="og:description" content="Structured QA engineering, systematic bug discovery, and actionable reporting for software products.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg-primary: #0a0d12;
+      --bg-secondary: #121721;
+      --bg-surface: #1a2130;
+      --bg-surface-hover: #222b3d;
+      --border-color: #2a3447;
+      --border-focus: #3b82f6;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-primary: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --accent-secondary: #0ea5e9;
+      --status-pass: #10b981;
+      --status-pass-bg: rgba(16, 185, 129, 0.1);
+      --status-fail: #ef4444;
+      --status-fail-bg: rgba(239, 68, 68, 0.1);
+      --status-warn: #f59e0b;
+      --status-warn-bg: rgba(245, 158, 11, 0.1);
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --container-width: 1200px;
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s ease;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      font-size: 1rem;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-main);
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+    p { color: var(--text-muted); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    a:hover { color: var(--text-main); }
+
+    /* Layout Utilities */
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      border-bottom: 1px solid rgba(42, 52, 71, 0.5);
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+      text-align: left;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      background: var(--accent-glow);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .section-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      max-width: 650px;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+    /* Buttons & Controls */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid transparent;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+    }
+    .btn-primary:hover {
+      background-color: #7dd3fc;
+      color: var(--bg-primary);
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+    .btn-secondary:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--text-muted);
+      color: var(--text-main);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+    }
+
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-primary);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent-primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding-top: 9rem;
+      padding-bottom: 6rem;
+      background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.9rem;
+      background-color: var(--status-pass-bg);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--status-pass);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--status-pass);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--status-pass);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
+    .hero-title {
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--accent-primary);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-mono);
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Hero QA Terminal Visual */
+    .hero-visual {
+      position: relative;
+    }
+
+    .qa-terminal {
+      background-color: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .terminal-header {
+      background-color: #161b22;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .terminal-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background-color: #ff5f56; }
+    .dot-yellow { background-color: #ffbd2e; }
+    .dot-green { background-color: #27c93f; }
+
+    .terminal-title {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+    }
+
+    .terminal-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .terminal-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .terminal-tag {
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .tag-pass { background: var(--status-pass-bg); color: var(--status-pass); }
+    .tag-fail { background: var(--status-fail-bg); color: var(--status-fail); }
+    .tag-warn { background: var(--status-warn-bg); color: var(--status-warn); }
+
+    .terminal-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .metric-box {
+      text-align: center;
+      padding: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-sm);
+    }
+
+    .metric-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .metric-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+    }
+
+    .profile-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+
+    .profile-card-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .profile-traits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .trait-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .trait-icon {
+      color: var(--accent-primary);
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-primary);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Services */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-glow);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .service-card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+
+    /* Process Flow */
+    .process-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .process-step {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(56, 189, 248, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Projects */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-type {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .project-section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .project-list {
+      list-style: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-muted);
+    }
+
+    .project-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
+    }
+
+    .project-footer {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Techniques Matrix */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .tech-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .tech-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .tech-card p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* Tools Grid */
+    .tools-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-box {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .tool-box:hover {
+      border-color: var(--accent-primary);
+      background: var(--bg-surface);
+    }
+
+    .tool-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--accent-primary);
+    }
+
+    .tool-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Deliverables */
+    .deliverable-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .deliverable-icon {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-primary);
+      flex-shrink: 0;
+    }
+
+    /* Bug Report Preview Component */
+    .bug-report-wrapper {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .bug-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .bug-id-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .bug-id {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-primary);
+    }
+
+    .bug-badges {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    .badge-medium { background: var(--status-warn-bg); color: var(--status-warn); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-open { background: rgba(56, 189, 248, 0.1); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3); }
+
+    .bug-grid-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      background: var(--bg-surface);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .bug-detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bug-detail-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .bug-detail-val {
+      color: var(--text-main);
+      font-family: var(--font-mono);
+    }
+
+    .bug-steps-list {
+      margin-left: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .bug-steps-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .bug-results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .bug-result-box {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+    }
+
+    .bug-result-expected {
+      background: var(--status-pass-bg);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .bug-result-actual {
+      background: var(--status-fail-bg);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .bug-result-title {
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .bug-result-expected .bug-result-title { color: var(--status-pass); }
+    .bug-result-actual .bug-result-title { color: var(--status-fail); }
+
+    /* Why Work With Me */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .reason-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .reason-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    /* Contact Form & Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-notification {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .form-notification.success {
+      display: block;
+      background: var(--status-pass-bg);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--status-pass);
+    }
+
+    /* Modal System */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-container {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      max-width: 700px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      transform: translateY(20px);
+      transition: transform var(--transition-normal);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .modal-close:hover {
+      color: var(--text-main);
+      background: var(--bg-surface-hover);
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 0 2rem 0;
+      background-color: #07090d;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(42, 52, 71, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .back-to-top {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .back-to-top:hover {
+      color: var(--text-main);
+      border-color: var(--accent-primary);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero-grid, .about-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 4rem 0; }
+      
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.25rem;
+        align-items: flex-start;
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+      }
+
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .bug-grid-details, .bug-results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <span class="logo-dot"></span> Alaa Adel <span style="color: var(--text-dim); font-weight: normal;">| QA</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#tools" class="nav-link">Tools</a></li>
+        <li><a href="#contact" class="btn btn-primary btn-sm">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="availability-badge">
+            <span class="status-dot"></span>
+            Available for Freelance QA Projects
+          </div>
+          <h1 class="hero-title">Breaking software before your users do.</h1>
+          <div class="hero-subtitle">Software Tester & QA Engineer</div>
+          <p class="hero-description">
+            Dedicated to identifying critical defects, validating complex user flows, and elevating digital product quality. I help software teams and product owners deliver reliable, seamless web experiences through systematic manual testing and detailed bug reporting.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Hire Me
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#projects" class="btn btn-secondary">View Testing Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="qa-terminal">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <div class="terminal-title">qa-execution-suite.v2.4</div>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-row">
+                <span style="color: var(--text-muted);">SUITE: Web_Checkout_Flow</span>
+                <span class="terminal-tag tag-pass">PASS</span>
+              </div>
+              <div class="terminal-row">
+                <span style="color: var(--text-muted);">SUITE: REST_API_Auth</span>
+                <span class="terminal-tag tag-pass">PASS</span>
+              </div>
+              <div class="terminal-row">
+                <span style="color: var(--text-muted);">SUITE: CrossBrowser_Layout</span>
+                <span class="terminal-tag tag-warn">WARNING</span>
+              </div>
+              <div class="terminal-row">
+                <span style="color: var(--text-muted);">SUITE: Input_Validation_Edge</span>
+                <span class="terminal-tag tag-fail">DEFECT</span>
+              </div>
+
+              <div class="terminal-metrics">
+                <div class="metric-box">
+                  <div class="metric-val" style="color: var(--status-pass);">142</div>
+                  <div class="metric-lbl">Passed</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-val" style="color: var(--status-fail);">3</div>
+                  <div class="metric-lbl">Defects</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-val" style="color: var(--accent-primary);">97.9%</div>
+                  <div class="metric-lbl">Coverage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">01. Quality Philosophy</div>
+        <h2 class="section-title">Methodical Testing for High-Stakes Applications</h2>
+        <p class="section-subtitle">Bridging the gap between user expectations and system stability.</p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <p>
+            Software quality is not an afterthought—it is a core feature. As a Software Tester & QA Engineer, my primary focus is uncovering hidden flaws, verifying business rules, and evaluating applications from the perspective of real-world end users.
+          </p>
+          <p>
+            My testing methodology goes beyond simple happy-path verification. I systematically explore edge cases, stress user input fields, interrogate API responses, and ensure cross-platform consistency. By identifying issues early in the release cycle, I help teams save development overhead and maintain brand reputation.
+          </p>
+          <p>
+            Whether working directly with developers or serving independent clients, I provide transparent, actionable defect documentation with precise reproduction steps—eliminating ambiguity and speeding up bug resolution.
+          </p>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <h3>Professional Profile</h3>
+            <span style="font-size: 0.85rem; color: var(--text-dim);">Alaa Adel | QA Specialist</span>
+          </div>
+          <div class="profile-traits">
+            <div class="trait-item">
+              <span class="trait-icon">✓</span>
+              <span><strong>Analytical Mindset:</strong> Deconstructs requirements into comprehensive test conditions.</span>
+            </div>
+            <div class="trait-item">
+              <span class="trait-icon">✓</span>
+              <span><strong>User-Centric Focus:</strong> Protects product usability and workflow intuition.</span>
+            </div>
+            <div class="trait-item">
+              <span class="trait-icon">✓</span>
+              <span><strong>Clear Communicator:</strong> Delivers technical bug reports without fluff.</span>
+            </div>
+            <div class="trait-item">
+              <span class="trait-icon">✓</span>
+              <span><strong>Defect Investigator:</strong> Investigates root causes via DevTools & server logs.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background-color: rgba(18, 23, 33, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">02. Expertise</div>
+        <h2 class="section-title">Core QA Competencies</h2>
+        <p class="section-subtitle">Structured testing domains and technical execution capabilities.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Functional Testing
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Feature Validation</span>
+            <span class="skill-tag">Requirement Verification</span>
+            <span class="skill-tag">End-to-End Testing</span>
+            <span class="skill-tag">Smoke Testing</span>
+            <span class="skill-tag">Sanity Testing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            Regression & Integration
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Regression Suites</span>
+            <span class="skill-tag">Integration Validation</span>
+            <span class="skill-tag">System Testing</span>
+            <span class="skill-tag">Cross-Feature Impact</span>
+            <span class="skill-tag">Release Verification</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            UI / UX Quality
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">UI Testing</span>
+            <span class="skill-tag">Usability Validation</span>
+            <span class="skill-tag">Cross-Browser Testing</span>
+            <span class="skill-tag">Responsive Verification</span>
+            <span class="skill-tag">User Flow Audit</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 20 16z"></path></svg>
+            API & Backend Testing
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">REST API Validation</span>
+            <span class="skill-tag">Status Code Verification</span>
+            <span class="skill-tag">Payload Inspection</span>
+            <span class="skill-tag">Data Integrity</span>
+            <span class="skill-tag">Endpoint Workflow</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Defect Management
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Bug Identification</span>
+            <span class="skill-tag">Reproduction Profiling</span>
+            <span class="skill-tag">Severity Classification</span>
+            <span class="skill-tag">Root-Cause Tracing</span>
+            <span class="skill-tag">Structured Documentation</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            QA Documentation
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Test Case Design</span>
+            <span class="skill-tag">Scenario Mapping</span>
+            <span class="skill-tag">Test Execution Reports</span>
+            <span class="skill-tag">Traceability Matrix</span>
+            <span class="skill-tag">QA Sign-off Reports</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">03. Offerings</div>
+        <h2 class="section-title">QA & Testing Services</h2>
+        <p class="section-subtitle">Tailored testing solutions designed to safeguard freelance and contract software projects.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Manual Software Testing</h3>
+            <p>Comprehensive hands-on testing of web applications to ensure behavior aligns perfectly with business requirements and expected functionality.</p>
+          </div>
+        </div>
+
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            </div>
+            <h3>Functional Testing</h3>
+            <p>Detailed verification of application features, registration flows, forms, business logic, and potential edge-case scenarios.</p>
+          </div>
+        </div>
+
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+            </div>
+            <h3>Regression Testing</h3>
+            <p>Targeted testing after new updates or bug fixes to ensure that existing stable features remain completely uncompromised.</p>
+          </div>
+        </div>
+
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3>Web Application QA</h3>
+            <p>Evaluating desktop and web apps across multiple browser engines, screen dimensions, and hardware configurations for complete compatibility.</p>
+          </div>
+        </div>
+
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3>API Testing</h3>
+            <p>Validating backend endpoints using Postman to verify status codes, payload parameters, error messages, and server performance.</p>
+          </div>
+        </div>
+
+        <div class="card service-card">
+          <div>
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+            </div>
+            <h3>UI & Usability Testing</h3>
+            <p>Auditing visual alignment, font hierarchy, interactive feedback, layout breakage, and non-intuitive user interfaces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="background-color: rgba(18, 23, 33, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">04. Portfolio</div>
+        <h2 class="section-title">Selected Testing Projects</h2>
+        <p class="section-subtitle">Practical QA engagements and specialized testing coverage demonstrations.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card project-card">
+          <div class="project-type">Web Application QA</div>
+          <h3>E-Commerce Platform Test Suite</h3>
+          <p>Full functional and workflow evaluation of an e-commerce platform covering guest and registered buyer journeys.</p>
+
+          <div class="project-section-title">Testing Scope:</div>
+          <ul class="project-list">
+            <li>Product Search, Filtering, and Sorting mechanisms</li>
+            <li>Shopping Cart quantity alterations & persistent states</li>
+            <li>Checkout payment validation and input edge cases</li>
+            <li>User account registration & session handling</li>
+          </ul>
+
+          <div class="project-footer">
+            <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">Deliverable: 45 Test Cases</span>
+            <button class="btn btn-secondary btn-sm open-modal" data-modal="modal-project-1">View Project Details</button>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-type">API & Backend QA</div>
+          <h3>REST API Integration Test Project</h3>
+          <p>Systematic API testing covering endpoint authorization, CRUD logic, data verification, and status responses.</p>
+
+          <div class="project-section-title">Testing Scope:</div>
+          <ul class="project-list">
+            <li>Bearer token authentication & access permissions</li>
+            <li>JSON payload validation and field data type checks</li>
+            <li>Boundary testing on request parameters</li>
+            <li>Negative testing for malformed requests (400/401/404)</li>
+          </ul>
+
+          <div class="project-footer">
+            <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">Deliverable: Postman Collection</span>
+            <button class="btn btn-secondary btn-sm open-modal" data-modal="modal-project-2">View Project Details</button>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-type">Responsive & Cross-Browser</div>
+          <h3>SaaS Dashboard Responsive Audit</h3>
+          <p>Multi-device testing audit analyzing UI alignment, responsive grid mechanics, and feature functionality across browsers.</p>
+
+          <div class="project-section-title">Testing Scope:</div>
+          <ul class="project-list">
+            <li>Breakpoint layout validation (Mobile, Tablet, Desktop)</li>
+            <li>Cross-browser compatibility (Chrome, Firefox, Safari)</li>
+            <li>Interactive chart and table responsive behavior</li>
+            <li>Touch screen gesture and navigation drawer interaction</li>
+          </ul>
+
+          <div class="project-footer">
+            <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">Deliverable: UI Audit Matrix</span>
+            <button class="btn btn-secondary btn-sm open-modal" data-modal="modal-project-3">View Project Details</button>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-type">Security & Access QA</div>
+          <h3>Auth & User Portal Security Testing</h3>
+          <p>Dedicated QA coverage targeting access control mechanisms, session states, and boundary validation for security.</p>
+
+          <div class="project-section-title">Testing Scope:</div>
+          <ul class="project-list">
+            <li>Password strength enforcement & injection safety</li>
+            <li>Session timeout and multi-tab logout persistence</li>
+            <li>Privilege escalation prevention across role tiers</li>
+            <li>Form input boundary value testing</li>
+          </ul>
+
+          <div class="project-footer">
+            <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">Deliverable: Security QA Report</span>
+            <button class="btn btn-secondary btn-sm open-modal" data-modal="modal-project-4">View Project Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">05. Methodology</div>
+        <h2 class="section-title">Structured Testing Workflow</h2>
+        <p class="section-subtitle">How I approach every QA project to guarantee thorough coverage and actionable results.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Requirement Analysis</h3>
+          <p>Examine project specifications, user stories, and acceptance criteria to identify test scenarios and clear validation targets.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Test Scenario Design</h3>
+          <p>Structure comprehensive test scenarios and detailed test cases using established black-box techniques.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Test Execution</h3>
+          <p>Perform systematic manual test passes across happy paths, negative flows, boundary values, and system edge cases.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Defect Logging & Reporting</h3>
+          <p>Document identified bugs with clear steps to reproduce, severity ratings, logs, screenshots, and system context.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-number">05</div>
+          <h3>Retesting & Regression</h3>
+          <p>Re-evaluate deployed bug fixes and execute targeted regression sweeps to protect existing product integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="techniques" style="background-color: rgba(18, 23, 33, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">06. Techniques</div>
+        <h2 class="section-title">Test Design Methodologies</h2>
+        <p class="section-subtitle">Industry-standard techniques applied during test case creation and exploratory testing.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Equivalence Partitioning</h3>
+          <p>Dividing input data into valid and invalid partitions to reduce total test cases while maintaining total coverage.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Boundary Value Analysis</h3>
+          <p>Testing at the extreme boundaries of input ranges where defects are statistically most likely to occur.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Decision Table Testing</h3>
+          <p>Mapping complex business rules and multi-condition inputs to ensure every logical combination is verified.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>State Transition Testing</h3>
+          <p>Validating system behavior as it transitions between different operational states based on user actions.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Exploratory Testing</h3>
+          <p>Simultaneous learning, test design, and execution to uncover unpredictable defects outside written scripts.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Negative Testing</h3>
+          <p>Intentionally inputting invalid, out-of-range, or unexpected data to ensure robust system error handling.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Error Guessing</h3>
+          <p>Leveraging QA experience to anticipate common developer mistakes and targeted application failure points.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Sanity & Smoke Testing</h3>
+          <p>Quick health check executions to verify basic functionality before deeper testing passes commence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bug-report-sample">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">07. Artifact Sample</div>
+        <h2 class="section-title">Sample Bug Report Deliverable</h2>
+        <p class="section-subtitle">An example of the actionable, precise defect documentation delivered to engineering teams.</p>
+      </div>
+
+      <div class="bug-report-wrapper">
+        <div class="bug-header">
+          <div class="bug-id-title">
+            <span class="bug-id">DEFECT-2026-084</span>
+            <h3 style="font-size: 1.2rem; color: var(--text-main);">Checkout form accepts invalid email address format during guest purchase</h3>
+          </div>
+          <div class="bug-badges">
+            <span class="badge badge-medium">Severity: Medium</span>
+            <span class="badge badge-open">Status: Open</span>
+          </div>
+        </div>
+
+        <div class="bug-grid-details">
+          <div class="bug-detail-item">
+            <span class="bug-detail-label">Environment</span>
+            <span class="bug-detail-val">Production-Staging v1.8 / Chrome 122 (macOS)</span>
+          </div>
+          <div class="bug-detail-item">
+            <span class="bug-detail-label">Module / Area</span>
+            <span class="bug-detail-val">E-Commerce Checkout / Billing Info</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 0.9rem; color: var(--accent-primary); margin-bottom: 0.5rem; font-family: var(--font-mono);">Preconditions:</h4>
+          <p style="font-size: 0.9rem;">User has added at least one item to cart and navigated to step 2 (Billing Information).</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 0.9rem; color: var(--accent-primary); margin-bottom: 0.5rem; font-family: var(--font-mono);">Steps to Reproduce:</h4>
+          <ol class="bug-steps-list">
+            <li>Enter valid full name and shipping address details.</li>
+            <li>In the Email Address input field, enter: <code>user@domain..com</code> (double dot domain).</li>
+            <li>Click the "Proceed to Payment" button.</li>
+          </ol>
+        </div>
+
+        <div class="bug-results-grid">
+          <div class="bug-result-box bug-result-expected">
+            <div class="bug-result-title">Expected Behavior</div>
+            <p style="font-size: 0.85rem; color: var(--text-main);">Form validation blocks submission, highlights email field, and displays: "Please enter a valid email address."</p>
+          </div>
+
+          <div class="bug-result-box bug-result-actual">
+            <div class="bug-result-title">Actual Behavior</div>
+            <p style="font-size: 0.85rem; color: var(--text-main);">Form submits successfully, proceeding to payment gateway with malformed email, preventing delivery receipt generation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" style="background-color: rgba(18, 23, 33, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">08. Tech Stack</div>
+        <h2 class="section-title">Testing Toolkit</h2>
+        <p class="section-subtitle">Tools, utilities, and environments utilized during software quality operations.</p>
+      </div>
+
+      <div class="tools-wrapper">
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <span class="tool-name">Postman</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+          <span class="tool-name">Chrome DevTools</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path></svg>
+          <span class="tool-name">Git & GitHub</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          <span class="tool-name">Jira Tracking</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+          <span class="tool-name">SQL Queries</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span class="tool-name">HTML5 / CSS3</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          <span class="tool-name">JavaScript</span>
+        </div>
+        <div class="tool-box">
+          <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span class="tool-name">Playwright Basic</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="deliverables">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">09. Outputs</div>
+        <h2 class="section-title">What Clients Receive</h2>
+        <p class="section-subtitle">Tangible, structured QA assets provided during and after testing projects.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Documented Test Cases</h3>
+            <p style="font-size: 0.9rem;">Organized test suites containing clear setup prerequisites, detailed execution steps, and precise expected results.</p>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Detailed Defect Logs</h3>
+            <p style="font-size: 0.9rem;">Clean bug reports with severity metrics, precise reproduction steps, environmental details, and console logs.</p>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Test Summary Reports</h3>
+            <p style="font-size: 0.9rem;">High-level executive summaries outlining test execution coverage, pass/fail ratios, and deployment risk assessments.</p>
+          </div>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.3rem;">Regression Checklists</h3>
+            <p style="font-size: 0.9rem;">Reusable regression testing suites customized for ongoing product updates and quick patch validation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-me" style="background-color: rgba(18, 23, 33, 0.5);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">10. Value Proposition</div>
+        <h2 class="section-title">Why Collaborate With Me</h2>
+        <p class="section-subtitle">Focused on value, precision, and reliable engineering support.</p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <h3>Detail-Oriented Investigation</h3>
+          <p>I focus on understanding system architecture to catch tricky edge cases, boundary errors, and subtle user experience flaws before launch.</p>
+        </div>
+
+        <div class="reason-card">
+          <h3>Developer-Friendly Reports</h3>
+          <p>Bug reports are structured specifically to save developer time—complete with logs, browser environments, and isolated reproduction steps.</p>
+        </div>
+
+        <div class="reason-card">
+          <h3>User Experience First</h3>
+          <p>Functional correctness is only half the battle. I ensure user interfaces are responsive, visually consistent, and intuitive to navigate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info-panel">
+          <div>
+            <div class="section-tag">11. Get In Touch</div>
+            <h2 class="section-title">Have a product that needs testing?</h2>
+            <p>
+              I am available for freelance software testing contracts, manual QA engagements, web app audits, and API testing assignments.
+            </p>
+            <p>
+              Let's discuss how systematic QA can improve your software stability and ensure seamless user experiences.
+            </p>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); margin-bottom: 0.5rem;">AVAILABILITY</div>
+            <p style="font-size: 0.95rem; color: var(--text-main);">Open to contract, remote freelance, and milestone-based testing assignments.</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 2rem;">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name / Organization</label>
+              <input type="text" id="name" class="form-input" placeholder="e.g. Alex Morgan" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="e.g. alex@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="projectType" class="form-label">Project / Service Scope</label>
+              <select id="projectType" class="form-select" required>
+                <option value="" disabled selected>Select project focus...</option>
+                <option value="Manual Web App Testing">Manual Web App Testing</option>
+                <option value="API Testing">API Testing & Validation</option>
+                <option value="Regression Testing">Regression Sweep</option>
+                <option value="UI/UX Usability Audit">UI/UX Usability Audit</option>
+                <option value="Full QA Consulting">Full QA Consulting</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Project Details</label>
+              <textarea id="message" class="form-textarea" placeholder="Briefly describe your application and QA needs..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Inquiry
+            </button>
+
+            <div id="formNotification" class="form-notification"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+        <div>
+          <div class="logo" style="margin-bottom: 0.75rem;">
+            <span class="logo-dot"></span> Alaa Adel
+          </div>
+          <p style="font-size: 0.9rem; max-width: 320px;">
+            Software Tester & QA Engineer focused on systematic bug discovery, feature validation, and reliable digital experiences.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--text-main);">Navigation</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="#about">About QA</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Selected Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Alaa Adel. All rights reserved. Professional QA Engineering Portfolio.</div>
+        <button class="back-to-top" id="backToTop">↑ Back to top</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modal-project-1" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="project-type">Project Details</div>
+      <h2 id="m1-title" style="margin-bottom: 1rem;">E-Commerce Platform Test Suite</h2>
+      <p>
+        This testing project focused on performing an end-to-end evaluation of an e-commerce platform. Test cases were mapped directly to user stories and payment workflows.
+      </p>
+      <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Executed QA Tasks:</h4>
+      <ul class="project-list">
+        <li>Auth validation: Password rules, invalid login triggers, session persistence.</li>
+        <li>Cart operations: Adding out-of-stock items, quantity limits, coupon code boundaries.</li>
+        <li>Checkout flow: Form field validation, address errors, simulated payment statuses.</li>
+        <li>Cross-device verification across mobile and desktop screen widths.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-project-2" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="project-type">Project Details</div>
+      <h2 id="m2-title" style="margin-bottom: 1rem;">REST API Integration Test Project</h2>
+      <p>
+        A structured API testing suite targeting backend microservices to ensure parameter enforcement, data integrity, and correct HTTP response handling.
+      </p>
+      <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Executed QA Tasks:</h4>
+      <ul class="project-list">
+        <li>Constructed Postman collections with pre-request scripts and test scripts.</li>
+        <li>Verified JWT Bearer token authentication and unauthorized status code (401).</li>
+        <li>Tested CRUD operations with valid, missing, and malformed JSON payloads.</li>
+        <li>Checked backend field validations and database consistency response objects.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-project-3" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="project-type">Project Details</div>
+      <h2 id="m3-title" style="margin-bottom: 1rem;">SaaS Dashboard Responsive Audit</h2>
+      <p>
+        A visual and usability testing audit across web browsers and mobile viewports for an analytics dashboard interface.
+      </p>
+      <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Executed QA Tasks:</h4>
+      <ul class="project-list">
+        <li>Tested viewport breakdowns from 320px up to 2560px resolutions.</li>
+        <li>Documented visual overlap bugs, truncated text elements, and broken flex layouts.</li>
+        <li>Evaluated dropdown accessibility and mobile touch target sizing.</li>
+        <li>Created a comprehensive UI defect matrix categorized by viewport breakpoint.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-project-4" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="m4-title">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="project-type">Project Details</div>
+      <h2 id="m4-title" style="margin-bottom: 1rem;">Auth & User Portal Security Testing</h2>
+      <p>
+        A security-minded functional evaluation focusing on access management, authentication edge cases, and user session safety.
+      </p>
+      <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Executed QA Tasks:</h4>
+      <ul class="project-list">
+        <li>Validated session expiration behaviors and forced multi-tab logout scenarios.</li>
+        <li>Tested basic input sanitization across public contact forms and profile inputs.</li>
+        <li>Checked direct URL access restrictions for unauthenticated user roles.</li>
+        <li>Evaluated password reset link mechanics and expiration intervals.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Navigation Menu Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+          });
+        });
+      }
+
+      // Smooth Navigation Active Link Highlight on Scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navItems = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            current = sectionId;
+          }
+        });
+
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === `#${current}`) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Modal Dialog Interactions
+      const openModalBtns = document.querySelectorAll('.open-modal');
+      const closeModalBtns = document.querySelectorAll('.modal-close');
+      const overlays = document.querySelectorAll('.modal-overlay');
+
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.add('active');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal(modal) {
+        if (modal) {
+          modal.classList.remove('active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+
+      openModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetModal = btn.getAttribute('data-modal');
+          openModal(targetModal);
+        });
+      });
+
+      closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const modal = btn.closest('.modal-overlay');
+          closeModal(modal);
+        });
+      });
+
+      overlays.forEach(overlay => {
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) {
+            closeModal(overlay);
+          }
+        });
+      });
+
+      // Escape key to close active modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const activeModal = document.querySelector('.modal-overlay.active');
+          if (activeModal) {
+            closeModal(activeModal);
+          }
+        }
+      });
+
+      // Contact Form Handler
+      const contactForm = document.getElementById('contactForm');
+      const formNotification = document.getElementById('formNotification');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const projectType = document.getElementById('projectType').value;
+          const message = document.getElementById('message').value.trim();
+
+          if (!name || !email || !projectType || !message) {
+            formNotification.className = 'form-notification';
+            formNotification.style.display = 'block';
+            formNotification.style.background = 'rgba(239, 68, 68, 0.1)';
+            formNotification.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+            formNotification.style.color = 'var(--status-fail)';
+            formNotification.textContent = 'Please fill out all required form fields.';
+            return;
+          }
+
+          // Successful submission preparation demonstration
+          formNotification.className = 'form-notification success';
+          formNotification.textContent = `Thank you, ${name}. Your testing inquiry regarding "${projectType}" has been prepared. Please reach out via direct project discussion to finalize your QA request.`;
+          
+          contactForm.reset();
+        });
+      }
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById('backToTop');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
