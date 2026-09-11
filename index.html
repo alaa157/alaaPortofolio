@@ -215,10 +215,10 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 12px;
-      background: rgba(16, 185, 129, 0.1);
+      background: var(--accent-glow);
       padding: 4px 12px;
       border-radius: var(--radius-full);
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid var(--accent-glow);
     }
 
     .sec-header h2 {
@@ -246,14 +246,14 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #10b981, #059669);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      color: var(--bg);
       box-shadow: 0 4px 18px var(--accent-glow);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 6px 24px var(--accent-glow);
     }
 
     .btn-secondary {
@@ -290,7 +290,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 10, 17, 0.85);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
       transition: var(--transition);
@@ -317,10 +317,10 @@
       font-family: var(--font-mono);
       font-size: 13px;
       color: var(--accent);
-      background: rgba(16, 185, 129, 0.12);
+      background: var(--accent-glow);
       padding: 3px 8px;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      border: 1px solid var(--accent-glow);
     }
 
     .nav-menu {
@@ -424,8 +424,8 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-glow);
       padding: 6px 14px;
       border-radius: var(--radius-full);
       font-size: 13px;
@@ -647,7 +647,7 @@
       width: 36px;
       height: 36px;
       border-radius: var(--radius-sm);
-      background: rgba(16, 185, 129, 0.15);
+      background: var(--accent-glow);
       color: var(--accent);
       display: flex;
       align-items: center;
@@ -699,7 +699,7 @@
 
     .dot-red { background: #ef4444; }
     .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
+    .dot-green { background: var(--accent); }
 
     .terminal-title {
       font-size: 12px;
@@ -709,8 +709,8 @@
     .terminal-run-btn {
       font-size: 12px;
       color: var(--accent);
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-glow);
       padding: 4px 10px;
       border-radius: var(--radius-sm);
       cursor: pointer;
@@ -720,7 +720,7 @@
     }
 
     .terminal-run-btn:hover {
-      background: rgba(16, 185, 129, 0.2);
+      background: var(--accent-glow);
     }
 
     .terminal-screen {
@@ -870,7 +870,7 @@
       width: 48px;
       height: 48px;
       border-radius: var(--radius-md);
-      background: rgba(16, 185, 129, 0.12);
+      background: var(--accent-glow);
       color: var(--accent);
       display: flex;
       align-items: center;
@@ -946,7 +946,7 @@
     }
 
     .bug-tab-btn.active {
-      background: rgba(16, 185, 129, 0.15);
+      background: var(--accent-glow);
       border-color: var(--accent);
       color: var(--accent);
     }
@@ -1000,9 +1000,9 @@
     }
 
     .badge-status {
-      background: rgba(16, 185, 129, 0.15);
+      background: var(--accent-glow);
       color: var(--accent);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      border: 1px solid var(--accent-glow);
       padding: 4px 10px;
       border-radius: var(--radius-full);
       font-size: 12px;
@@ -1117,7 +1117,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--accent);
-      background: rgba(16, 185, 129, 0.1);
+      background: var(--accent-glow);
       padding: 3px 8px;
       border-radius: var(--radius-sm);
     }
@@ -1193,6 +1193,41 @@
       justify-content: center;
       gap: 8px;
       transition: var(--transition);
+    }
+
+    .project-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: stretch;
+      margin-top: auto;
+    }
+
+    .project-actions .view-case-study-btn {
+      width: auto;
+    }
+
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .repo-link:hover {
+      color: var(--bg);
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--accent-glow);
     }
 
     .project-card:hover .view-case-study-btn {
@@ -1283,7 +1318,7 @@
       font-size: 13px;
       font-weight: 700;
       color: var(--accent);
-      background: rgba(16, 185, 129, 0.1);
+      background: var(--accent-glow);
       display: inline-block;
       padding: 4px 10px;
       border-radius: var(--radius-sm);
@@ -1453,7 +1488,7 @@
       width: 40px;
       height: 40px;
       border-radius: var(--radius-sm);
-      background: rgba(16, 185, 129, 0.12);
+      background: var(--accent-glow);
       color: var(--accent);
       display: flex;
       align-items: center;
@@ -1507,7 +1542,7 @@
     .form-control:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 0 0 3px var(--accent-glow);
     }
 
     textarea.form-control {
@@ -1525,8 +1560,8 @@
 
     .form-status-msg.success {
       display: block;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-glow);
       color: var(--accent);
     }
 
@@ -2332,6 +2367,8 @@
     function simulateTestRun() {
       const screen = document.getElementById('terminalScreen');
       const btn = document.getElementById('reRunSuiteBtn');
+      if (btn.disabled) return;
+      btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Running...';
       screen.innerHTML = '<div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">npx playwright test --workers=4</span></div>';
 
@@ -2348,6 +2385,7 @@
         setTimeout(() => {
           screen.innerHTML += step.html;
           if (step === steps[steps.length - 1]) {
+            btn.disabled = false;
             btn.innerHTML = '<i class="fa-solid fa-play"></i> Run Suite';
           }
         }, step.delay);
